@@ -24,8 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             (function() {
               try {
                 const saved = localStorage.getItem('theme');
-                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const theme = saved || (prefersDark ? 'dark' : 'light');
+                // If no saved preference, default to dark mode
+                const theme = saved || 'dark';
                 document.documentElement.classList.remove('light','dark');
                 document.documentElement.classList.add(theme);
               } catch(e) {}
