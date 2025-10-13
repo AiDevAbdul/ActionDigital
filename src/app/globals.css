@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ====== THEME TOKENS ====== */
+/* ====== THEME TOKENS (for Tailwind utilities) ====== */
 @theme {
   --color-node-green: #00ff88;
   --color-node-light-green: #66ffcc;
@@ -16,32 +16,31 @@
   --shadow-glow: 0 0 15px rgba(0, 255, 136, 0.3);
 }
 
-/* ====== LIGHT THEME ====== */
+/* ====== CSS VARIABLES FOR DIRECT USE ====== */
 :root {
   color-scheme: light;
   --bg-color: #ffffff;
   --surface-color: #fafafa;
-  --text-color: var(--color-node-text-dark);
+  --text-color: #1a1a1a; /* Using direct value instead of var reference for safety */
   --text-muted: #555;
   --border-color: #e2e2e2;
-  --accent-color: var(--color-node-green);
-  --button-bg: var(--color-node-green);
-  --button-text: var(--color-node-dark);
+  --accent-color: #00ff88; /* Direct reference instead of var */
+  --button-bg: #00ff88;
+  --button-text: #1a1a1a;
   --input-bg: #f9f9f9;
   --input-border: #ccc;
   --card-bg: #ffffff;
 }
 
-/* ====== DARK THEME ====== */
 .dark {
   color-scheme: dark;
-  --bg-color: var(--color-node-dark);
-  --surface-color: var(--color-node-mid);
-  --text-color: var(--color-node-text-light);
-  --text-muted: var(--color-node-text-muted);
-  --border-color: var(--color-node-border);
-  --accent-color: var(--color-node-light-green);
-  --button-bg: var(--color-node-green);
+  --bg-color: #0d0d0d;
+  --surface-color: #121212;
+  --text-color: #f5f5f5;
+  --text-muted: #999999;
+  --border-color: #222;
+  --accent-color: #66ffcc;
+  --button-bg: #00ff88;
   --button-text: #000000;
   --input-bg: #1b1b1b;
   --input-border: #333;
