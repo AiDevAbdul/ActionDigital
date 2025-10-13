@@ -21,7 +21,7 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-node-text-light mb-4"
+          className="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mb-4"
         >
           Abdul Wahab
         </motion.h1>

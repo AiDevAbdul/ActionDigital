@@ -55,7 +55,7 @@ const Projects = () => {
           <p className="text-sm font-semibold uppercase tracking-wider text-node-green">
             Select Work & Case Studies
           </p>
-          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-node-text-light sm:text-5xl">
+          <h2 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
             Featured Projects & Impact
           </h2>
         </motion.div>
@@ -70,18 +70,18 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: project.delay }}
-              className="flex flex-col rounded-xl p-6 bg-node-dark border border-node-green/30 transform transition-all duration-500 hover:shadow-green-glow"
+              className="flex flex-col rounded-xl p-6 border border-node-green/30 transform transition-all duration-500 hover:shadow-green-glow"
             >
               <div className="flex justify-between items-start">
                 {/* Icon */}
-                <project.icon className="h-8 w-8 text-node-light-green" />
+                <project.icon className="h-8 w-8" />
                 
                 {/* External Link Button */}
                 <Link 
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full text-node-green hover:bg-node-green/10 transition-colors"
+                  className="p-2 rounded-full hover:bg-node-green/10 transition-colors"
                   aria-label={`View ${project.title}`}
                 >
                   <ArrowUpRight className="h-5 w-5" />
@@ -89,10 +89,10 @@ const Projects = () => {
               </div>
 
               {/* Content */}
-              <h3 className="mt-4 text-2xl font-bold text-node-text-light">
+              <h3 className="mt-4 text-2xl font-bold">
                 {project.title}
               </h3>
-              <p className="mt-2 flex-grow text-node-text-muted">
+              <p className="mt-2 flex-grow">
                 {project.description}
               </p>
 
@@ -101,7 +101,7 @@ const Projects = () => {
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="inline-flex items-center rounded-full bg-node-green/20 px-3 py-1 text-xs font-medium text-node-text-light/90"
+                    className="inline-flex items-center rounded-full bg-node-green/20 px-3 py-1 text-xs font-medium"
                   >
                     {t}
                   </span>

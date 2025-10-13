@@ -1,53 +1,72 @@
-// src/data/blogData.ts
+import {
+  Code,
+  Cpu,
+  Zap,
+  Bot,
+  BookOpen,
+  Globe,
+  Terminal,
+  Brain,
+} from 'lucide-react';
 
-// REMOVE: import { LucideIcon } from 'lucide-react'; // No longer needed here
-import { FileText, Lightbulb, Zap } from 'lucide-react'; 
-// We will still define the map here, but only pass the string name in the array.
+// 🔹 Centralized color styling for tags (light + dark harmony)
+export const tagStyles: Record<string, string> = {
+  AI: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300',
+  NextJS: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
+  Tailwind: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300',
+  Default: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200',
+};
 
-// Define the type to use a simple string for the icon identifier
+
+// 🔹 Exported icons map for dynamic rendering
+export const iconMap: Record<string, React.ComponentType<any>> = {
+  Code,
+  Cpu,
+  Zap,
+  Bot,
+  BookOpen,
+  Globe,
+  Terminal,
+  Brain,
+};
+
+// 🔹 Type definitions for clarity
 export type Post = {
   slug: string;
   title: string;
   excerpt: string;
   date: string;
   tags: string[];
-  iconName: string; // <-- CHANGED: Now a string
-  content: string; 
+  iconName: keyof typeof iconMap;
 };
 
-// Map of string names to the actual Lucide components (for use in the Client Component)
-export const iconMap: { [key: string]: typeof FileText | typeof Lightbulb | typeof Zap } = {
-    'Zap': Zap,
-    'Lightbulb': Lightbulb,
-    'FileText': FileText,
-};
-
+// 🔹 Blog posts
 export const posts: Post[] = [
   {
-    slug: 'tailwind-v4-nextjs-integration',
+    slug: 'solving-nextjs-v4-integration',
     title: 'Solving Next.js V4 Integration: The CSS-First Approach',
-    excerpt: "A definitive guide to troubleshooting and fixing common integration issues when adopting Tailwind CSS V4's new architecture in Next.js App Router projects.",
+    excerpt:
+      "A definitive guide to troubleshooting and fixing common integration issues when adopting Tailwind CSS V4’s new architecture in Next.js App Router projects.",
     date: '2025-10-11',
     tags: ['Tailwind V4', 'Next.js', 'V4 Architecture', 'PostCSS'],
-    iconName: 'Zap', // <-- CHANGED: Just the string name
-    content: "The detailed content for this V4 guide goes here.",
+    iconName: 'Zap',
   },
   {
-    slug: 'ai-for-digital-marketing-automation',
+    slug: 'integrating-chatgpt-n8n',
     title: 'Integrating ChatGPT & n8n for Advanced Marketing Automation',
-    excerpt: 'How to build powerful, scalable digital marketing workflows using AI models and no-code/low-code platforms like n8n for SMEs.',
+    excerpt:
+      'Learn how to build powerful, scalable digital marketing workflows using AI models and no-code/low-code platforms like n8n for SMEs.',
     date: '2025-09-28',
-    tags: ['AI', 'Digital Marketing', 'Automation', 'ChatGPT', 'n8n'],
-    iconName: 'Lightbulb', // <-- CHANGED: Just the string name
-    content: "The tutorial on AI marketing automation goes here.",
+    tags: ['AI', 'Digital Marketing', 'Automation', 'n8n'],
+    iconName: 'Brain',
   },
   {
-    slug: 'pyqt-multilingual-whatsapp',
+    slug: 'building-multilingual-gui-tools',
     title: 'Building Multilingual GUI Tools with PyQt and Python',
-    excerpt: 'A technical deep-dive into developing desktop automation tools, specifically focusing on handling complex scripts like Urdu/Arabic in PyQt applications.',
+    excerpt:
+      'A technical deep-dive into developing desktop automation tools, focusing on complex scripts like Urdu/Arabic handling in PyQt applications.',
     date: '2025-09-15',
     tags: ['Python', 'PyQt', 'Automation', 'GUI'],
-    iconName: 'FileText', // <-- CHANGED: Just the string name
-    content: "The technical deep-dive into Python and PyQt goes here.",
+    iconName: 'Terminal',
   },
 ];

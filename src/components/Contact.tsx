@@ -29,7 +29,7 @@ const Contact = () => {
           <p className="text-sm font-semibold uppercase tracking-wider text-node-green">
             Connect with US
           </p>
-          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-node-text-light sm:text-5xl">
+          <h2 className="mt-2 text-4xl font-extrabold tracking-tight  sm:text-5xl">
             Get in Touch with techAI.pk
           </h2>
         </motion.div>
@@ -45,12 +45,12 @@ const Contact = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="p-4 rounded-lg bg-node-dark border border-node-green/20 hover:border-node-green transition-all duration-300"
+                className="p-4 rounded-lg border border-node-green/20 hover:border-node-green transition-all duration-300"
               >
                 <Link href={item.href} target="_blank" rel="noopener noreferrer">
                   <item.icon className="w-6 h-6 text-node-green mb-2" />
-                  <h3 className="text-lg font-bold text-node-text-light">{item.title}</h3>
-                  <p className="text-node-text-muted text-sm break-words">{item.value}</p>
+                  <h3 className="text-lg font-bold">{item.title}</h3>
+                  <p className="text-sm break-words">{item.value}</p>
                 </Link>
               </motion.div>
             ))}
@@ -62,25 +62,25 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="lg:w-2/3 bg-node-dark p-8 rounded-xl border border-node-green/30"
+            className="lg:w-2/3 p-8 rounded-xl border border-node-green/30"
           >
             <form action="#" method="POST" className="space-y-6">
               <input 
                 type="text" 
                 placeholder="Your Name" 
-                className="w-full p-3 rounded-lg bg-node-dark border border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light" 
+                className="w-full p-3 rounded-lg border border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light" 
                 required 
               />
               <input 
                 type="email" 
                 placeholder="Your Email" 
-                className="w-full p-3 rounded-lg bg-node-dark border border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light" 
+                className="w-full p-3 rounded-lg border border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light" 
                 required 
               />
               <textarea 
                 placeholder="Your Message" 
                 rows={5} 
-                className="w-full p-3 rounded-lg bg-node-dark border border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light" 
+                className="w-full p-3 rounded-lg border border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light" 
                 required 
               />
               

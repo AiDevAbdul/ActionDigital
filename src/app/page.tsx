@@ -1,21 +1,58 @@
 // src/app/page.tsx
 
+import { motion } from 'framer-motion';
 import Hero from '@/components/Hero'; 
-import Expertise from '@/components/Expertise'; // <-- Import the new component
-import Projects from '@/components/Projects'; // Next step
+import Expertise from '@/components/Expertise';
+import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
-// ...
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Expertise />
-      <Projects />
-      <Experience />
-      <Contact />
+    <main className="overflow-hidden">
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Hero />
+      </motion.section>
+      
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
+        <Expertise />
+      </motion.section>
+      
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
+        <Projects />
+      </motion.section>
+      
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
+        <Experience />
+      </motion.section>
+      
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, delay: 0.5 }}
+      >
+        <Contact />
+      </motion.section>
     </main>
   );
 }

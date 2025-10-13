@@ -38,7 +38,7 @@ const cardVariants = {
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="py-20 sm:py-32 bg-node-dark">
+    <section id="expertise" className="py-20 sm:py-32 bg-surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -52,7 +52,7 @@ const Expertise = () => {
           <p className="text-sm font-semibold uppercase tracking-wider text-node-green">
             Core Competencies
           </p>
-          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-node-text-light sm:text-5xl">
+          <h2 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
             My Three Pillars of Expertise
           </h2>
         </motion.div>
@@ -67,16 +67,16 @@ const Expertise = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }} // Trigger when 40% of the card is visible
               transition={{ duration: 0.6, delay: item.delay }}
-              className="group flex flex-col p-6 rounded-xl border border-node-green/30 bg-node-dark shadow-xl hover:shadow-green-glow transition-all duration-500 ease-in-out"
+              className="group flex flex-col p-6 rounded-xl border shadow-xl hover:shadow-green-glow transition-all duration-500 ease-in-out"
             >
               {/* Icon */}
               <div className="flex-shrink-0">
-                <item.icon className="h-10 w-10 text-node-green" />
+                <item.icon className="h-10 w-10" />
               </div>
 
               {/* Title */}
               <div className="mt-4">
-                <h3 className="text-2xl font-bold text-node-text-light transition-colors duration-300 group-hover:text-node-light-green">
+                <h3 className="text-2xl font-bold transition-colors duration-300 group-hover:text-node-green">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-node-text-muted">

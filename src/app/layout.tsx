@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AnimatedPageWrapper from '@/components/AnimatedPageWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,7 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {`
             try {
               const saved = localStorage.getItem('theme');
-              if (saved === 'dark') document.documentElement.classList.add('dark');
+              const theme = saved || 'dark'; // Default to dark if no saved preference
+              document.documentElement.classList.remove('light', 'dark');
+              document.documentElement.classList.add(theme);
             } catch(e) {}
           `}
         </Script>
@@ -30,7 +33,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <ThemeProvider>
           <Header />
-          {children}
+          <AnimatedPageWrapper>
+            {children}
+          </AnimatedPageWrapper>
           <Footer />
         </ThemeProvider>
       </body>
