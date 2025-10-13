@@ -70,7 +70,7 @@ const itemVariants = {
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 sm:py-32 border-t border-node-green/10">
+    <section id="experience" className="py-20 sm:py-32 border-t border-default bg-surface transition-colors duration-300">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Title - (Omitted for brevity, assume correct) */}
@@ -81,10 +81,10 @@ const Experience = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-wider text-node-green">
+          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
             Work Experience
           </p>
-          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-node-text-light sm:text-5xl">
+          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-[var(--text-color)] sm:text-5xl">
             Professional Journey & Education
           </h2>
         </motion.div>
@@ -92,7 +92,7 @@ const Experience = () => {
         {/* Vertical Timeline Container */}
         <div className="relative pl-10 md:pl-16"> 
           {/* Vertical Line - Shifted to the left edge of the new padding */}
-          <div className="absolute left-6 w-1 bg-node-green/20 h-full"></div> 
+          <div className="absolute left-6 w-1 bg-[var(--accent-color)]/20 h-full"></div> 
           
           {experienceData.map((item, index) => (
             <motion.div
@@ -107,29 +107,29 @@ const Experience = () => {
                 {/* Timeline Dot & Icon Container (Fixed position relative to line) */}
                 <div className="flex-shrink-0 relative mr-6 -ml-10 md:-ml-12">
                     {/* Inner Content for Icon and Dot */}
-                    <div className="relative z-10 p-2 rounded-full bg-node-dark border border-node-green shadow-green-glow">
-                      <item.icon className="w-5 h-5 text-node-green" />
+                    <div className="relative z-10 p-2 rounded-full bg-[var(--card-bg)] border border-[var(--accent-color)] shadow-glow">
+                      <item.icon className="w-5 h-5 text-[var(--accent-color)]" />
                     </div>
                 </div>
 
                 {/* Content Card (Full width next to the icon) */}
                 <div className="flex-grow">
-                  <div className="p-6 rounded-lg bg-node-dark border border-node-green/30 hover:border-node-green transition-all duration-300">
+                  <div className="p-6 rounded-lg card transition-colors duration-300">
                     
-                    <span className="text-sm font-semibold uppercase text-node-text-muted flex items-center">
+                    <span className="text-sm font-semibold uppercase text-muted flex items-center">
                         <Calendar className="w-3 h-3 mr-2" />
                         {item.duration}
                     </span>
 
-                    <h3 className="mt-1 text-xl font-bold text-node-text-light">
+                    <h3 className="mt-1 text-xl font-bold text-[var(--text-color)]">
                       {item.title}
                     </h3>
-                    <p className={`text-node-green font-medium mb-3 ${item.type === 'education' ? 'text-node-light-green' : ''}`}>
+                    <p className={`text-accent font-medium mb-3 ${item.type === 'education' ? 'text-[var(--color-node-light-green)]' : ''}`}>
                       {item.company}
                     </p>
                     
                     {item.details.length > 0 && (
-                      <ul className="list-disc pl-5 space-y-1 text-node-text-muted text-sm">
+                      <ul className="list-disc pl-5 space-y-1 text-muted text-sm">
                         {item.details.map((detail, idx) => (
                           <li key={idx}>{detail}</li>
                         ))}

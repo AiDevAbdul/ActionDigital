@@ -11,21 +11,20 @@ interface ThemeContextProps {
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>('dark'); // Default to dark mode
+  const [theme, setTheme] = useState<Theme>('dark'); // default
 
-  // ✅ Detect saved value once on mount (default to dark if no saved preference)
   useEffect(() => {
-    const saved = localStorage.getItem('theme') as Theme | null;
-    const initialTheme = saved || 'dark'; // Default to dark mode if no saved preference
-    setTheme(initialTheme);
-    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+    const saved = (localStorage.getItem('theme') as Theme) || 'dark';
+    setTheme(saved);
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(saved);
   }, []);
 
-  // ✅ Handle toggle
   const toggleTheme = () => {
     setTheme(prev => {
       const next = prev === 'dark' ? 'light' : 'dark';
-      document.documentElement.classList.toggle('dark', next === 'dark');
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(next);
       localStorage.setItem('theme', next);
       return next;
     });

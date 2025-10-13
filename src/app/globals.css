@@ -1,32 +1,113 @@
-/* src/app/globals.css */
-
-/* 1. Import Tailwind’s core */
 @import "tailwindcss";
 
-/* 2. Define your theme - standard approach: light mode as default */
+/* ====== THEME TOKENS ====== */
 @theme {
-  --color-node-dark: #ffffff;
-  --color-node-green: #68A063;
-  --color-node-light-green: #7CCF78;
-  --color-node-text-light: #111827;
-  --color-node-text-muted: #6B7280;
-
-  /* Custom shadow */
-  --shadow-green-glow: 0 0 15px rgba(104, 160, 99, 0.6);
+  --color-node-green: #00ff88;
+  --color-node-light-green: #66ffcc;
+  --color-node-dark: #0d0d0d;
+  --color-node-mid: #121212;
+  --color-node-text-light: #f5f5f5;
+  --color-node-text-dark: #1a1a1a;
+  --color-node-text-muted: #999999;
+  --color-node-border: #222;
+  --radius-lg: 12px;
+  --radius-sm: 6px;
+  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 15px rgba(0, 255, 136, 0.3);
 }
 
-/* 3. Define dark theme overrides */
-@theme dark {
-  --color-node-dark: #0D0D0D;
-  --color-node-text-light: #EAEAEA;
-  --color-node-text-muted: #A0A0A0;
+/* ====== LIGHT THEME ====== */
+:root {
+  color-scheme: light;
+  --bg-color: #ffffff;
+  --surface-color: #fafafa;
+  --text-color: var(--color-node-text-dark);
+  --text-muted: #555;
+  --border-color: #e2e2e2;
+  --accent-color: var(--color-node-green);
+  --button-bg: var(--color-node-green);
+  --button-text: var(--color-node-dark);
+  --input-bg: #f9f9f9;
+  --input-border: #ccc;
+  --card-bg: #ffffff;
 }
 
-/* 4. Global styles */
-html {
-  color-scheme: light dark;
+/* ====== DARK THEME ====== */
+.dark {
+  color-scheme: dark;
+  --bg-color: var(--color-node-dark);
+  --surface-color: var(--color-node-mid);
+  --text-color: var(--color-node-text-light);
+  --text-muted: var(--color-node-text-muted);
+  --border-color: var(--color-node-border);
+  --accent-color: var(--color-node-light-green);
+  --button-bg: var(--color-node-green);
+  --button-text: #000000;
+  --input-bg: #1b1b1b;
+  --input-border: #333;
+  --card-bg: #151515;
 }
 
-body {
-  @apply bg-[var(--color-node-dark)] text-[var(--color-node-text-light)] transition-colors duration-300;
+/* ====== GLOBAL STYLES ====== */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ====== REUSABLE CLASSES ====== */
+.bg-surface { background-color: var(--surface-color); }
+.bg-card { background-color: var(--card-bg); }
+.text-muted { color: var(--text-muted); }
+.border-default { border-color: var(--border-color); }
+.text-accent { color: var(--accent-color); }
+.shadow-soft { box-shadow: var(--shadow-soft); }
+.shadow-glow { box-shadow: var(--shadow-glow); }
+
+/* ====== BUTTONS ====== */
+.btn {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: var(--accent-color);
+  filter: brightness(1.1);
+}
+
+/* ====== INPUTS ====== */
+.input {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  outline: none;
+}
+.input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color)33;
+}
+
+/* ====== CARDS ====== */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
 }
