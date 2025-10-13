@@ -1,48 +1,32 @@
 /* src/app/globals.css */
 
-/* Tailwind core import (v4 CSS-first) */
+/* 1. Import Tailwind’s core */
 @import "tailwindcss";
 
-/* Register the dark custom variant for Tailwind v4 */
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* --- Theme variables: default (light) on :root --- */
-:root {
-  --color-node-dark: #ffffff; /* light bg by default */
+/* 2. Define your theme - standard approach: light mode as default */
+@theme {
+  --color-node-dark: #ffffff;
   --color-node-green: #68A063;
   --color-node-light-green: #7CCF78;
-  --color-node-text-light: #111827; /* dark text for light bg */
+  --color-node-text-light: #111827;
   --color-node-text-muted: #6B7280;
+
+  /* Custom shadow */
   --shadow-green-glow: 0 0 15px rgba(104, 160, 99, 0.6);
 }
 
-/* --- Dark overrides when a .dark class exists on an ancestor (eg. <html>) --- */
-.dark {
+/* 3. Define dark theme overrides */
+@theme dark {
   --color-node-dark: #0D0D0D;
   --color-node-text-light: #EAEAEA;
-  --color-node-text-muted: #B0B0B0;
+  --color-node-text-muted: #A0A0A0;
 }
 
-
-/* Keep color-scheme so the browser knows both modes are supported */
+/* 4. Global styles */
 html {
   color-scheme: light dark;
 }
 
-/* Use variables for body so the whole site follows the theme */
 body {
-  background-color: var(--color-node-dark);
-  color: var(--color-node-text-light);
-  transition: background-color 0.25s ease, color 0.25s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply bg-[var(--color-node-dark)] text-[var(--color-node-text-light)] transition-colors duration-300;
 }
-
-/* Helpful small utility classes (optional) */
-.text-node-text-light { color: var(--color-node-text-light) !important; }
-.text-node-text-muted { color: var(--color-node-text-muted) !important; }
-.bg-node-dark { background-color: var(--color-node-dark) !important; }
-.bg-node-green { background-color: var(--color-node-green) !important; }
-.text-node-green { color: var(--color-node-green) !important; }
-.border-node-green { border-color: var(--color-node-green) !important; }
-.shadow-green-glow { box-shadow: var(--shadow-green-glow) !important; }
