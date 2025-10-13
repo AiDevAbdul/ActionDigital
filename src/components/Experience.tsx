@@ -70,10 +70,10 @@ const itemVariants = {
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 sm:py-32 border-t border-default bg-surface transition-colors duration-300">
+    <section id="experience" className="section bg-surface">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         
-        {/* Section Title - (Omitted for brevity, assume correct) */}
+        {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,15 +84,18 @@ const Experience = () => {
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">
             Work Experience
           </p>
-          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-[var(--text-color)] sm:text-5xl">
+          <h2 className="section-title text-primary">
             Professional Journey & Education
           </h2>
+          <p className="section-subtitle text-secondary">
+            A timeline of my professional growth and achievements
+          </p>
         </motion.div>
 
         {/* Vertical Timeline Container */}
-        <div className="relative pl-10 md:pl-16"> 
-          {/* Vertical Line - Shifted to the left edge of the new padding */}
-          <div className="absolute left-6 w-1 bg-[var(--accent-color)]/20 h-full"></div> 
+        <div className="relative pl-8 md:pl-16"> 
+          {/* Vertical Line */}
+          <div className="absolute left-4 md:left-6 w-0.5 bg-accent h-full"></div> 
           
           {experienceData.map((item, index) => (
             <motion.div
@@ -102,36 +105,39 @@ const Experience = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: 0.1 + (index * 0.1) }}
-              className="mb-10 flex items-start"
+              className="mb-12 flex items-start"
             >
-                {/* Timeline Dot & Icon Container (Fixed position relative to line) */}
+                {/* Timeline Dot & Icon Container */}
                 <div className="flex-shrink-0 relative mr-6 -ml-10 md:-ml-12">
-                    {/* Inner Content for Icon and Dot */}
-                    <div className="relative z-10 p-2 rounded-full bg-[var(--card-bg)] border border-[var(--accent-color)] shadow-glow">
-                      <item.icon className="w-5 h-5 text-[var(--accent-color)]" />
+                    {/* Timeline Dot */}
+                    <div className="relative z-10 flex items-center justify-center w-10 h-10 rounded-full bg-primary-gradient text-white shadow-glow">
+                      <item.icon className="w-5 h-5" />
                     </div>
                 </div>
 
-                {/* Content Card (Full width next to the icon) */}
+                {/* Content Card */}
                 <div className="flex-grow">
-                  <div className="p-6 rounded-lg card transition-colors duration-300">
+                  <div className="glass-card card transition-colors duration-300 p-6">
                     
-                    <span className="text-sm font-semibold uppercase text-muted flex items-center">
+                    <div className="flex items-center text-sm font-semibold uppercase text-accent mb-2">
                         <Calendar className="w-3 h-3 mr-2" />
-                        {item.duration}
-                    </span>
+                        <span>{item.duration}</span>
+                    </div>
 
-                    <h3 className="mt-1 text-xl font-bold text-[var(--text-color)]">
+                    <h3 className="text-xl font-bold mb-1 text-primary">
                       {item.title}
                     </h3>
-                    <p className={`text-accent font-medium mb-3 ${item.type === 'education' ? 'text-[var(--color-node-light-green)]' : ''}`}>
+                    <p className={`font-medium mb-3 ${item.type === 'education' ? 'text-secondary-gradient' : 'text-accent'}`}>
                       {item.company}
                     </p>
                     
                     {item.details.length > 0 && (
-                      <ul className="list-disc pl-5 space-y-1 text-muted text-sm">
+                      <ul className="space-y-2">
                         {item.details.map((detail, idx) => (
-                          <li key={idx}>{detail}</li>
+                          <li key={idx} className="text-secondary flex items-start">
+                            <span className="inline-block mr-2 text-accent mt-1.5">•</span>
+                            {detail}
+                          </li>
                         ))}
                       </ul>
                     )}

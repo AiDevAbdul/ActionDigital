@@ -6,22 +6,44 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <footer className="py-12 border-t border-default bg-surface transition-colors duration-300">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        
-        {/* Logo/Domain */}
-        <Link href="/" className="flex items-center justify-center space-x-2 mb-4">
-            <span className="text-xl font-bold text-[var(--text-color)]">techAI.pk</span>
-        </Link>
-        
-        {/* Copyright and Credits */}
-        <p className="text-muted text-sm">
-          &copy; {new Date().getFullYear()} Abdul Wahab. All rights reserved.
-        </p>
-        
-        {/* Technical Stack Credits */}
-        <p className="text-muted text-xs mt-2">
-          Built with <span className="text-accent">Next.js</span>, <span className="text-accent">TypeScript</span>, <span className="text-accent">Tailwind CSS V4</span>, and <span className="text-accent">Framer Motion</span>.
-        </p>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          {/* Logo/Domain */}
+          <Link href="/" className="flex items-center space-x-2 mb-4 md:mb-0">
+            <span className="text-2xl font-bold bg-primary-gradient text-transparent bg-clip-text">
+              techAI.<span className="text-accent">pk</span>
+            </span>
+          </Link>
+          
+          {/* Navigation Links */}
+          <div className="flex space-x-6 mb-4 md:mb-0">
+            <Link href="/" className="text-secondary hover:text-accent transition-colors">
+              Home
+            </Link>
+            <Link href="/#about" className="text-secondary hover:text-accent transition-colors">
+              About
+            </Link>
+            <Link href="/#experience" className="text-secondary hover:text-accent transition-colors">
+              Experience
+            </Link>
+            <Link href="/#projects" className="text-secondary hover:text-accent transition-colors">
+              Projects
+            </Link>
+            <Link href="/blog" className="text-secondary hover:text-accent transition-colors">
+              Blog
+            </Link>
+          </div>
+          
+          {/* Copyright */}
+          <div className="text-center md:text-right">
+            <p className="text-secondary text-sm">
+              &copy; {new Date().getFullYear()} Abdul Wahab. All rights reserved.
+            </p>
+            <p className="text-secondary text-xs mt-1">
+              Crafted with Next.js, TypeScript & Tailwind CSS
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );

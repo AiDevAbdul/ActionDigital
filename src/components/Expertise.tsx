@@ -3,7 +3,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Brain, TrendingUp, BookOpen } from 'lucide-react'; // Icons for the three pillars
+import { Brain, TrendingUp, BookOpen } from 'lucide-react';
 
 // Define the data for the three expertise cards
 const expertiseData = [
@@ -38,7 +38,7 @@ const cardVariants = {
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="py-20 sm:py-32 bg-surface">
+    <section id="expertise" className="section">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -49,51 +49,56 @@ const Expertise = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-wider text-node-green">
+          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
             Core Competencies
           </p>
-          <h2 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h2 className="section-title text-primary">
             My Three Pillars of Expertise
           </h2>
+          <p className="section-subtitle text-secondary">
+            Leveraging cutting-edge technology to solve real-world challenges
+          </p>
         </motion.div>
 
         {/* Expertise Grid */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {expertiseData.map((item) => (
             <motion.div
               key={item.title}
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }} // Trigger when 40% of the card is visible
+              viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, delay: item.delay }}
-              className="group flex flex-col p-6 rounded-xl border shadow-xl hover:shadow-green-glow transition-all duration-500 ease-in-out"
+              className="card glass-card group hover:shadow-card transition-all duration-300"
             >
               {/* Icon */}
-              <div className="flex-shrink-0">
-                <item.icon className="h-10 w-10" />
+              <div className="flex-shrink-0 flex justify-center mb-6">
+                <div className="p-4 rounded-full bg-primary-gradient text-white">
+                  <item.icon className="h-10 w-10" />
+                </div>
               </div>
 
               {/* Title */}
-              <div className="mt-4">
-                <h3 className="text-2xl font-bold transition-colors duration-300 group-hover:text-node-green">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-3 text-primary group-hover:text-accent transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-node-text-muted">
+                <p className="text-secondary mb-6">
                   {item.description}
                 </p>
-              </div>
-
-              {/* Keywords/Tags */}
-              <div className="mt-6 flex flex-wrap gap-2">
-                {item.keywords.map((keyword) => (
-                  <span
-                    key={keyword}
-                    className="inline-flex items-center rounded-full bg-node-green/10 px-3 py-1 text-xs font-medium text-node-green transition-colors duration-300 group-hover:bg-node-green/20"
-                  >
-                    {keyword}
-                  </span>
-                ))}
+                
+                {/* Keywords/Tags */}
+                <div className="flex flex-wrap justify-center gap-2">
+                  {item.keywords.map((keyword) => (
+                    <span
+                      key={keyword}
+                      className="px-3 py-1 bg-primary-gradient text-white text-xs font-medium rounded-full"
+                    >
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

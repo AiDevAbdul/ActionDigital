@@ -3,7 +3,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { LineChart, Code, ArrowUpRight } from 'lucide-react'; 
+import { LineChart, Code, ArrowUpRight, ExternalLink } from 'lucide-react'; 
 import Link from 'next/link';
 
 const projectsData = [
@@ -41,7 +41,7 @@ const cardVariants = {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 sm:py-32 border-t border-node-green/10">
+    <section id="projects" className="section bg-surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -52,16 +52,19 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-wider text-node-green">
+          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
             Select Work & Case Studies
           </p>
-          <h2 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h2 className="section-title text-primary">
             Featured Projects & Impact
           </h2>
+          <p className="section-subtitle text-secondary">
+            Real-world solutions that deliver measurable results
+          </p>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project) => (
             <motion.div
               key={project.title}
@@ -70,38 +73,40 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: project.delay }}
-              className="flex flex-col rounded-xl p-6 border border-node-green/30 transform transition-all duration-500 hover:shadow-green-glow"
+              className="glass-card card group hover:shadow-card transition-all duration-300 flex flex-col"
             >
-              <div className="flex justify-between items-start">
+              <div className="flex justify-between items-start mb-6">
                 {/* Icon */}
-                <project.icon className="h-8 w-8" />
+                <div className="p-3 rounded-lg bg-primary-gradient text-white">
+                  <project.icon className="h-6 w-6" />
+                </div>
                 
                 {/* External Link Button */}
                 <Link 
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-node-green/10 transition-colors"
+                  className="p-2 rounded-full bg-primary-gradient text-white opacity-70 hover:opacity-100 transition-opacity"
                   aria-label={`View ${project.title}`}
                 >
-                  <ArrowUpRight className="h-5 w-5" />
+                  <ExternalLink className="h-4 w-4" />
                 </Link>
               </div>
 
               {/* Content */}
-              <h3 className="mt-4 text-2xl font-bold">
+              <h3 className="text-2xl font-bold mb-3 text-primary group-hover:text-accent transition-colors duration-300">
                 {project.title}
               </h3>
-              <p className="mt-2 flex-grow">
+              <p className="text-secondary mb-6 flex-grow">
                 {project.description}
               </p>
 
               {/* Technologies */}
-              <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-node-green/10">
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-default">
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="inline-flex items-center rounded-full bg-node-green/20 px-3 py-1 text-xs font-medium"
+                    className="px-2 py-1 bg-primary-gradient text-white text-xs font-medium rounded"
                   >
                     {t}
                   </span>
