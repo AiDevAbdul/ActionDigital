@@ -1,8 +1,8 @@
-// postcss.config.mjs
-
-export default {
+// postcss.config.mjs (MUST use.mjs extension)
+const config = {
   plugins: {
-    // This is the V4 engine plugin
-    '@tailwindcss/postcss': {},
+    // Explicitly reference the V4 PostCSS plugin
+    '@tailwindcss/postcss': {}, 
   },
 };
+export default config;
