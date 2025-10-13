@@ -1,8 +1,7 @@
-// postcss.config.mjs (MUST use.mjs extension)
-const config = {
+/** @type {import('postcss-load-config').Config} */
+export default {
   plugins: {
-    // Explicitly reference the V4 PostCSS plugin
-    '@tailwindcss/postcss': {}, 
+    '@tailwindcss/postcss': {},  // ✅ New package name for Tailwind v4
+    autoprefixer: {},
   },
 };
-export default config;
