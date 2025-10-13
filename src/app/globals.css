@@ -1,11 +1,9 @@
 /* src/app/globals.css */
 
+/* 1. Import Tailwind’s core */
 @import "tailwindcss";
 
-/*
-  V4 THEME DEFINITION: Using the @theme directive
-  This replaces the old tailwind.config.ts file
-*/
+/* 2. Define your theme */
 @theme {
   --color-node-dark: #1A1A1A;
   --color-node-green: #68A063;
@@ -13,22 +11,22 @@
   --color-node-text-light: #EAEAEA;
   --color-node-text-muted: #A0A0A0;
 
-  /* Configure custom shadow, available as shadow-green-glow */
+  /* Custom shadow */
   --shadow-green-glow: 0 0 15px rgba(104, 160, 99, 0.6);
 }
 
-/* BASE STYLES & UTILITIES */
+/* 3. Define dark theme overrides */
+@theme dark {
+  --color-node-dark: #0D0D0D;
+  --color-node-text-light: #F5F5F5;
+  --color-node-text-muted: #B0B0B0;
+}
 
-/* Ensure all base styles (like links) are placed in the @layer base to avoid overrides (V4 principle) */
-@layer base {
-  a {
-    /* @apply is still supported for layering custom CSS */
-    @apply text-node-green transition-colors duration-300;
-  }
-  a:hover {
-    @apply text-node-light-green;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
+/* 4. Global styles */
+html {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-[var(--color-node-dark)] text-[var(--color-node-text-light)] transition-colors duration-300;
 }

@@ -4,6 +4,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google'; 
 import './globals.css';
 import Header from '@/components/Header'; // <-- Import the new component
+import { ThemeProvider } from '@/components/ThemeProvider'; 
+import Footer from '@/components/Footer';
 
 // Configure the Inter font
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -19,15 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
-      <body className="bg-node-dark text-node-text-light font-sans">
-        
-        {/* Place the Header here */}
-        <Header />
-        
-        {/* The rest of the page content */}
-        {children}
-        
+    // Note: We remove the dark classes from <html> and <body> here, 
+    // as ThemeProvider will control the 'dark' class on <html> later.
+    <html lang="en" className="light">
+      <body className="font-sans"> 
+        <ThemeProvider> {/* <-- Wrap everything in the provider */}
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
