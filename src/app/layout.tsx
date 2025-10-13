@@ -21,8 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // Note: We remove the dark classes from <html> and <body> here, 
-    // as ThemeProvider will control the 'dark' class on <html> later.
+    // Note: We start with the light class, but ThemeProvider will control the 'dark' class on <html> later.
     <html lang="en" className="light">
       <body className="font-sans"> 
         <ThemeProvider> {/* <-- Wrap everything in the provider */}

@@ -41,7 +41,7 @@ const cardVariants = {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 sm:py-32 border-t border-node-green/10">
+    <section id="projects" className="py-20 sm:py-32 border-t border-node-green/10 dark:border-node-green/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -52,10 +52,10 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-wider text-node-green">
+          <p className="text-sm font-semibold uppercase tracking-wider text-node-green dark:text-node-green">
             Select Work & Case Studies
           </p>
-          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-node-text-light sm:text-5xl">
+          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-node-text-light dark:text-node-text-light sm:text-5xl">
             Featured Projects & Impact
           </h2>
         </motion.div>
@@ -70,18 +70,18 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: project.delay }}
-              className="flex flex-col rounded-xl p-6 bg-[#252525] border border-node-green/30 transform transition-all duration-500 hover:shadow-green-glow"
+              className="flex flex-col rounded-xl p-6 bg-[#252525] dark:bg-[#252525] border border-node-green/30 dark:border-node-green/30 transform transition-all duration-500 hover:shadow-green-glow"
             >
               <div className="flex justify-between items-start">
                 {/* Icon */}
-                <project.icon className="h-8 w-8 text-node-light-green" />
+                <project.icon className="h-8 w-8 text-node-light-green dark:text-node-light-green" />
                 
                 {/* External Link Button */}
                 <Link 
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full text-node-green hover:bg-node-green/10 transition-colors"
+                  className="p-2 rounded-full text-node-green dark:text-node-green hover:bg-node-green/10 transition-colors"
                   aria-label={`View ${project.title}`}
                 >
                   <ArrowUpRight className="h-5 w-5" />
@@ -89,19 +89,19 @@ const Projects = () => {
               </div>
 
               {/* Content */}
-              <h3 className="mt-4 text-2xl font-bold text-node-text-light">
+              <h3 className="mt-4 text-2xl font-bold text-node-text-light dark:text-node-text-light">
                 {project.title}
               </h3>
-              <p className="mt-2 flex-grow text-node-text-muted">
+              <p className="mt-2 flex-grow text-node-text-muted dark:text-node-text-muted">
                 {project.description}
               </p>
 
               {/* Technologies */}
-              <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-node-green/10">
+              <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-node-green/10 dark:border-node-green/10">
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="inline-flex items-center rounded-full bg-node-green/20 px-3 py-1 text-xs font-medium text-node-text-light/90"
+                    className="inline-flex items-center rounded-full bg-node-green/20 dark:bg-node-green/20 px-3 py-1 text-xs font-medium text-node-text-light/90 dark:text-node-text-light/90"
                   >
                     {t}
                   </span>

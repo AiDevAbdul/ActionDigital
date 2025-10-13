@@ -13,13 +13,13 @@ const BlogPage = () => {
         
         {/* Page Header (This looks correct based on your image) */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-node-green">
+          <p className="text-sm font-semibold uppercase tracking-wider text-node-green dark:text-node-green">
             Insights & Guides
           </p>
-          <h1 className="mt-2 text-5xl font-extrabold tracking-tight text-node-text-light sm:text-6xl">
+          <h1 className="mt-2 text-5xl font-extrabold tracking-tight text-node-text-light dark:text-node-text-light sm:text-6xl">
             Blog & Tutorials
           </h1>
-          <p className="mt-4 text-xl text-node-text-muted max-w-2xl mx-auto">
+          <p className="mt-4 text-xl text-node-text-muted dark:text-node-text-muted max-w-2xl mx-auto">
             My thoughts on the intersection of AI, technology, and career development.
           </p>
         </div>

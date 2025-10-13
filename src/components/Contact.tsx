@@ -15,7 +15,7 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 sm:py-32 border-t border-node-green/10">
+    <section id="contact" className="py-20 sm:py-32 border-t border-node-green/10 dark:border-node-green/10">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -26,10 +26,10 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-wider text-node-green">
+          <p className="text-sm font-semibold uppercase tracking-wider text-node-green dark:text-node-green">
             Connect with US
           </p>
-          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-node-text-light sm:text-5xl">
+          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-node-text-light dark:text-node-text-light sm:text-5xl">
             Get in Touch with techAI.pk
           </h2>
         </motion.div>
@@ -45,12 +45,12 @@ const Contact = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="p-4 rounded-lg bg-[#252525] border border-node-green/20 hover:border-node-green transition-all duration-300"
+                className="p-4 rounded-lg bg-[#252525] dark:bg-[#252525] border border-node-green/20 dark:border-node-green/20 hover:border-node-green transition-all duration-300"
               >
                 <Link href={item.href} target="_blank" rel="noopener noreferrer">
-                  <item.icon className="w-6 h-6 text-node-green mb-2" />
-                  <h3 className="text-lg font-bold text-node-text-light">{item.title}</h3>
-                  <p className="text-node-text-muted text-sm break-words">{item.value}</p>
+                  <item.icon className="w-6 h-6 text-node-green dark:text-node-green mb-2" />
+                  <h3 className="text-lg font-bold text-node-text-light dark:text-node-text-light">{item.title}</h3>
+                  <p className="text-node-text-muted dark:text-node-text-muted text-sm break-words">{item.value}</p>
                 </Link>
               </motion.div>
             ))}
@@ -62,25 +62,25 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="lg:w-2/3 bg-[#252525] p-8 rounded-xl border border-node-green/30"
+            className="lg:w-2/3 bg-[#252525] dark:bg-[#252525] p-8 rounded-xl border border-node-green/30 dark:border-node-green/30"
           >
             <form action="#" method="POST" className="space-y-6">
               <input 
                 type="text" 
                 placeholder="Your Name" 
-                className="w-full p-3 rounded-lg bg-node-dark border border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light" 
+                className="w-full p-3 rounded-lg bg-node-dark dark:bg-node-dark border border-node-text-muted/30 dark:border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light dark:text-node-text-light" 
                 required 
               />
               <input 
                 type="email" 
                 placeholder="Your Email" 
-                className="w-full p-3 rounded-lg bg-node-dark border border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light" 
+                className="w-full p-3 rounded-lg bg-node-dark dark:bg-node-dark border border-node-text-muted/30 dark:border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light dark:text-node-text-light" 
                 required 
               />
               <textarea 
                 placeholder="Your Message" 
                 rows={5} 
-                className="w-full p-3 rounded-lg bg-node-dark border border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light" 
+                className="w-full p-3 rounded-lg bg-node-dark dark:bg-node-dark border border-node-text-muted/30 dark:border-node-text-muted/30 focus:border-node-green focus:ring-1 focus:ring-node-green transition-colors text-node-text-light dark:text-node-text-light" 
                 required 
               />
               

@@ -49,33 +49,33 @@ const BlogPostPage = ({ params }: { params: { slug: string } }) => {
     <main className="pt-24 min-h-screen">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
         
-        <Link href="/blog" className="text-node-text-muted hover:text-node-green transition-colors mb-8 inline-block">
+        <Link href="/blog" className="text-node-text-muted dark:text-node-text-muted hover:text-node-green transition-colors mb-8 inline-block">
             &larr; Back to all articles
         </Link>
         
         {/* Post Header */}
-        <header className="mb-10 border-b border-node-green/20 pb-6">
-          <Icon className="h-10 w-10 text-node-green mb-3" />
-          <h1 className="text-4xl font-extrabold text-node-text-light mb-2">
+        <header className="mb-10 border-b border-node-green/20 dark:border-node-green/20 pb-6">
+          <Icon className="h-10 w-10 text-node-green dark:text-node-green mb-3" />
+          <h1 className="text-4xl font-extrabold text-node-text-light dark:text-node-text-light mb-2">
             {post.title}
           </h1>
-          <p className="text-lg text-node-text-muted">{post.excerpt}</p>
-          <p className="text-sm mt-3 text-node-text-muted">
+          <p className="text-lg text-node-text-muted dark:text-node-text-muted">{post.excerpt}</p>
+          <p className="text-sm mt-3 text-node-text-muted dark:text-node-text-muted">
             Published: {post.date}
           </p>
         </header>
         
         {/* Post Content */}
-        <div className="prose prose-invert max-w-none text-node-text-light">
+        <div className="prose prose-invert max-w-none text-node-text-light dark:text-node-text-light">
           <p className="text-lg">
             This is the detailed content for **{post.title}**. 
             In a production application, this content would be fetched from a database or parsed from a Markdown file 
             to create rich, structured articles. The implementation is ready for your detailed write-ups!
           </p>
-          <h2 className="text-2xl mt-8 text-node-green">Technical Tags</h2>
+          <h2 className="text-2xl mt-8 text-node-green dark:text-node-green">Technical Tags</h2>
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <span key={tag} className="inline-flex items-center rounded-full bg-node-green/20 px-3 py-1 text-sm font-medium text-node-text-light/90">
+              <span key={tag} className="inline-flex items-center rounded-full bg-node-green/20 dark:bg-node-green/20 px-3 py-1 text-sm font-medium text-node-text-light/90 dark:text-node-text-light/90">
                 {tag}
               </span>
             ))}
