@@ -54,7 +54,7 @@ const Header = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-600 hover:text-node-green transition-colors duration-200 text-lg font-medium dark:text-node-text-muted dark:hover:text-node-light-green"
+                className="text-node-text-muted hover:text-node-green transition-colors duration-200 text-lg font-medium"
               >
                 {link.name}
               </Link>
@@ -100,7 +100,7 @@ const Header = () => {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden absolute w-full z-40 overflow-hidden shadow-xl bg-white border-b border-gray-300 dark:bg-node-dark dark:border-node-green/30"
+            className="md:hidden absolute w-full z-40 overflow-hidden shadow-xl bg-node-dark border-b border-node-green/30"
           >
             <div className="flex flex-col p-4 space-y-3">
               {navLinks.map((link) => (
@@ -108,7 +108,7 @@ const Header = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="py-3 px-4 rounded-lg text-lg font-medium transition-colors duration-200 text-gray-800 hover:bg-gray-100 dark:text-node-text-light dark:hover:bg-node-green/10"
+                  className="py-3 px-4 rounded-lg text-lg font-medium transition-colors duration-200 text-node-text-light hover:bg-node-green/10"
                 >
                   {link.name}
                 </Link>

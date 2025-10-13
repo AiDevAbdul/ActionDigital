@@ -21,7 +21,7 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-node-text-light dark:text-node-text-light mb-4"
+          className="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-node-text-light mb-4"
         >
           Abdul Wahab
         </motion.h1>
@@ -31,7 +31,7 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-mono font-medium text-node-green dark:text-node-green mb-8"
+          className="text-3xl sm:text-4xl lg:text-5xl font-mono font-medium text-node-green mb-8"
         >
           AI Engineer | Digital Strategist | Skills Enabler
         </motion.h2>
@@ -41,7 +41,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.0 }}
-          className="text-lg sm:text-xl text-node-text-muted dark:text-node-text-muted max-w-3xl mx-auto leading-relaxed"
+          className="text-lg sm:text-xl text-node-text-muted max-w-3xl mx-auto leading-relaxed"
         >
           Innovative and growth-driven expert specializing in integrating Artificial Intelligence, digital strategy, and education to empower individuals and organizations in the digital economy.
         </motion.p>
@@ -61,7 +61,7 @@ const Hero = () => {
           </Link>
           <Link
             href="#experience"
-            className="flex items-center justify-center rounded-lg border border-node-green dark:border-node-green px-8 py-3 text-lg font-semibold text-node-green dark:text-node-green transition-colors duration-300 hover:bg-node-green/10"
+            className="flex items-center justify-center rounded-lg border border-node-green px-8 py-3 text-lg font-semibold text-node-green transition-colors duration-300 hover:bg-node-green/10"
           >
             <Users className="mr-2 h-5 w-5" /> Detailed Experience
           </Link>
@@ -73,7 +73,7 @@ const Hero = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: [10, 0, 10], opacity: 1 }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 2.0 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-node-green dark:text-node-green cursor-pointer"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-node-green cursor-pointer"
         onClick={() => {
             document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' });
         }}
