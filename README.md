@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# techAI.pk - Personal Portfolio Website
+
+This is a Next.js portfolio website for Abdul Wahab, an AI Engineer, Digital Marketing Strategist, and Skills Development Expert.
+
+## Project Overview
+
+This portfolio showcases expertise in:
+- AI Engineering
+- Digital Marketing Strategy  
+- Skills Development
+- Next.js, TypeScript, and Tailwind CSS
+- Database integration with Prisma
+
+## Features
+
+- Modern UI with dark/light theme support
+- Animated components using Framer Motion
+- Admin panel for managing projects
+- Responsive design
+- Blog section for content
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4 (with PostCSS)
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Database**: PostgreSQL (with Prisma ORM)
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd techai.pk
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables
+```bash
+cp .env.example .env.local
+```
+Then update the values in `.env.local` with your actual values.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Generate Prisma client
+```bash
+npx prisma generate
+```
 
-## Learn More
+5. Run the development server
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) to view the site in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create a `.env.local` file with the following variables:
 
-## Deploy on Vercel
+```bash
+# Database
+DATABASE_URL="postgresql://username:password@localhost:5432/techai_pk"
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Admin credentials
+ADMIN_EMAIL="admin@yourdomain.com"
+ADMIN_PASSWORD="your-secure-password"
+ADMIN_API_KEY="your-super-secret-admin-api-key"
+NEXT_PUBLIC_ADMIN_API_KEY="your-super-secret-admin-api-key"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# EmailJS configuration
+NEXT_PUBLIC_EMAILJS_SERVICE_ID="your-service-id"
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID="your-template-id"
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY="your-public-key"
+```
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run linter
+- `npm run lint:check` - Check for linting errors
+- `npm run lint:fix` - Fix linting errors automatically
+
+## Deployment
+
+This project is optimized for deployment on Vercel:
+
+### Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/techai.pk&env=DATABASE_URL,ADMIN_EMAIL,ADMIN_PASSWORD,ADMIN_API_KEY,NEXT_PUBLIC_ADMIN_API_KEY,NEXT_PUBLIC_EMAILJS_SERVICE_ID,NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,NEXT_PUBLIC_EMAILJS_PUBLIC_KEY&envDescription=Environment%20variables%20required%20for%20deployment)
+
+### Environment Variables for Vercel
+
+When deploying to Vercel, make sure to set the following environment variables in your project settings:
+
+- `DATABASE_URL` - Your PostgreSQL database URL
+- `ADMIN_EMAIL` - Admin email for login
+- `ADMIN_PASSWORD` - Admin password for login
+- `ADMIN_API_KEY` - Secret key for admin API access
+- `NEXT_PUBLIC_ADMIN_API_KEY` - Public key corresponding to admin API key
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID` - EmailJS service ID
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` - EmailJS template ID
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` - EmailJS public key
+
+## Admin Panel
+
+The admin panel is accessible at `/admin` but requires authentication. First, navigate to `/admin/login` to authenticate.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Abdul Wahab - [techAI.pk](https://techai.pk)

@@ -1,138 +1,142 @@
-// src/components/Contact.tsx
-
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Smartphone, Linkedin, Send } from 'lucide-react';
+import { Mail, Smartphone, Linkedin, Github, Facebook, Youtube, Send } from 'lucide-react';
 import Link from 'next/link';
+import emailjs from '@emailjs/browser';
 
-const contactInfo = [
-  { icon: Mail, title: 'Email Address', value: 'wahab.sh.pk@gmail.com', href: 'mailto:wahab.sh.pk@gmail.com' },
-  { icon: Smartphone, title: 'Phone/WhatsApp', value: '+92 348 9848136', href: 'tel:+923489848136' },
-  { icon: Linkedin, title: 'LinkedIn Profile', value: 'in/abdulpk', href: 'https://linkedin.com/in/abdulpk' },
+const socialLinks = [
+  { icon: Mail, href: 'mailto:wahab.sh.pk@gmail.com', label: 'Email' },
+  { icon: Smartphone, href: 'tel:+923489848136', label: 'Phone / WhatsApp' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/abdulpk', label: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/Abdul0006', label: 'GitHub' },
+  { icon: Facebook, href: 'https://facebook.com/wahab.sh.pk', label: 'Facebook' },
+  { icon: Youtube, href: 'https://youtube.com/AbdulWahabShangla', label: 'YouTube' },
 ];
 
-const Contact = () => {
-  return (
-    <section id="contact" className="section bg-surface">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Title */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Connect with Me
-          </p>
-          <h2 className="section-title text-primary">
-            Let's Work Together
-          </h2>
-          <p className="section-subtitle text-secondary">
-            Have a project in mind? Reach out and let's discuss how we can bring your ideas to life.
-          </p>
-        </motion.div>
+export default function Contact() {
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
 
-        <div className="flex flex-col lg:flex-row gap-12">
-          
-          {/* Contact Information (Left Column) */}
-          <div className="lg:w-1/3 space-y-6">
-            {contactInfo.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="glass-card card p-6 group hover:shadow-card transition-all duration-300"
-              >
-                <Link href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-start space-x-4">
-                  <div className="p-3 rounded-lg bg-primary-gradient text-white flex-shrink-0">
-                    <item.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-1">{item.title}</h3>
-                    <p className="text-secondary group-hover:text-accent transition-colors">{item.value}</p>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-          
-          {/* Contact Form (Right Column) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="lg:w-2/3"
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSending(true);
+    setStatus(null);
+    const form = e.currentTarget;
+
+    try {
+      const result = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      console.log('EmailJS result:', result.text);
+      setStatus('✅ Message sent successfully!');
+      form.reset();
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setStatus('❌ Failed to send message. Please try again later.');
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-surface text-center">
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mb-12"
+      >
+        <p className="text-sm font-semibold uppercase tracking-wider text-accent">
+          Connect With Me
+        </p>
+        <h2 className="text-3xl font-bold text-[var(--text-color)] mt-2">
+          Let’s Collaborate
+        </h2>
+        <p className="text-secondary max-w-2xl mx-auto mt-2">
+          I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+        </p>
+      </motion.div>
+
+      {/* --- Social Icons --- */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="flex justify-center flex-wrap gap-6 mb-12"
+      >
+        {socialLinks.map(({ icon: Icon, href, label }, i) => (
+          <Link
+            key={i}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-4 bg-[var(--card-bg)] rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            aria-label={label}
           >
-            <div className="glass-card card p-8">
-              <form action="#" method="POST" className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-secondary">Name</label>
-                    <input 
-                      id="name"
-                      type="text" 
-                      placeholder="Your Name" 
-                      className="input w-full" 
-                      required 
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-secondary">Email</label>
-                    <input 
-                      id="email"
-                      type="email" 
-                      placeholder="Your Email" 
-                      className="input w-full" 
-                      required 
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2 text-secondary">Subject</label>
-                  <input 
-                    id="subject"
-                    type="text" 
-                    placeholder="Subject" 
-                    className="input w-full" 
-                    required 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-secondary">Message</label>
-                  <textarea 
-                    id="message"
-                    placeholder="Your Message" 
-                    rows={5} 
-                    className="input w-full" 
-                    required 
-                  />
-                </div>
-                
-                <motion.button 
-                  type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2"
-                >
-                  <Send className="w-4 h-4" />
-                  Send Message
-                </motion.button>
-              </form>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+            <Icon className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
+          </Link>
+        ))}
+      </motion.div>
+
+      {/* --- Minimal Email Form --- */}
+      <motion.form
+        onSubmit={sendEmail}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="max-w-xl mx-auto bg-[var(--card-bg)] p-6 rounded-2xl shadow-lg space-y-4"
+      >
+        <input
+          name="user_name"
+          type="text"
+          placeholder="Your Name"
+          required
+          className="input w-full"
+        />
+        <input
+          name="user_email"
+          type="email"
+          placeholder="Your Email"
+          required
+          className="input w-full"
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows={4}
+          required
+          className="input w-full"
+        />
+        <motion.button
+          type="submit"
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          disabled={isSending}
+          className={`w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300
+            ${isSending
+              ? 'bg-gray-400 cursor-not-allowed text-gray-700'
+              : 'bg-accent text-white hover:bg-accent-dark shadow-md hover:shadow-lg'
+            }`}
+        >
+          <Send className="w-4 h-4" />
+          {isSending ? 'Sending...' : 'Send Message'}
+        </motion.button>
+
+        {status && (
+          <p
+            className={`text-sm mt-2 ${
+              status.startsWith('✅') ? 'text-green-500' : 'text-red-500'
+            }`}
+          >
+            {status}
+          </p>
+        )}
+      </motion.form>
     </section>
   );
-};
-
-export default Contact;
+}

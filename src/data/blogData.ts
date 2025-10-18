@@ -12,14 +12,14 @@ import {
 // 🔹 Centralized color styling for tags (light + dark harmony)
 export const tagStyles: Record<string, string> = {
   AI: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300',
-  NextJS: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
-  Tailwind: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300',
+  NextJS: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
+  Tailwind: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
   Default: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200',
 };
 
 
 // 🔹 Exported icons map for dynamic rendering
-export const iconMap: Record<string, React.ComponentType<any>> = {
+export const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   Code,
   Cpu,
   Zap,

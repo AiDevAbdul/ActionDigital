@@ -3,9 +3,10 @@
 
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Code, Menu, X, Moon, Sun } from 'lucide-react';
+import { Sparkles, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
+import AnimatedLogo from '@/components/AnimatedLogo'; // Import the new component
 
 type NavLink = {
   name: string;
@@ -32,12 +33,8 @@ const Header = () => {
         className="sticky top-0 z-50 w-full backdrop-blur-md bg-transparent border-b border-default transition-colors duration-300"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center space-x-2 group">
-            <span className="text-2xl text-secondary font-bold duration-300 ">
-              TechAI.pk
-            </span>
-          </Link>
-
+          <AnimatedLogo />
+          
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -113,5 +110,7 @@ const Header = () => {
     </>
   );
 };
+
+
 
 export default Header;

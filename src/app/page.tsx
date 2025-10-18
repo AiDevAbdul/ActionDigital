@@ -3,5 +3,9 @@
 import AnimatedHomePage from '@/components/AnimatedHomePage';
 
 export default function Home() {
-  return <AnimatedHomePage />;
+  return (
+    <>
+      <AnimatedHomePage />
+    </>
+  );
 }

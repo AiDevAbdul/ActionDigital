@@ -1,6 +1,7 @@
 // src/components/Footer.tsx (CORRECTED)
 
 import Link from 'next/link';
+import AnimatedLogo from './AnimatedLogo';
 
 // The Footer component does not need any props (like 'children')
 const Footer = () => {
@@ -8,12 +9,10 @@ const Footer = () => {
     <footer className="py-12 border-t border-default bg-surface transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Logo/Domain */}
-          <Link href="/" className="flex items-center space-x-2 mb-4 md:mb-0">
-            <span className="text-2xl font-bold bg-primary-gradient text-transparent bg-clip-text">
-              techAI.<span className="text-accent">pk</span>
-            </span>
-          </Link>
+          {/* Animated Logo */}
+          <div className="mb-4 md:mb-0">
+            <AnimatedLogo />
+          </div>
           
           {/* Navigation Links */}
           <div className="flex space-x-6 mb-4 md:mb-0">

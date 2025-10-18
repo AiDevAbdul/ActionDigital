@@ -6,6 +6,7 @@ import Expertise from '@/components/Expertise';
 import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function AnimatedHomePage() {
   return (
@@ -53,6 +54,8 @@ export default function AnimatedHomePage() {
       >
         <Contact />
       </motion.section>
+      
+      <WhatsAppButton />
     </main>
   );
 }

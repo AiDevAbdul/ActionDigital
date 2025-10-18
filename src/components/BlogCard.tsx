@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Post, iconMap, tagStyles } from '@/data/blogData';
+import { Post, iconMap } from '@/data/blogData';
 
 type BlogCardProps = {
   post: Post;
