@@ -15,10 +15,13 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/#about' },
-  { name: 'Experience', href: '/#experience' },
-  { name: 'Projects', href: '/#projects' },
+  { name: 'About', href: '/about' },
+  { name: 'Courses', href: '/courses' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Services', href: '/services' },
+  { name: 'Team', href: '/team' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const Header = () => {
@@ -41,6 +44,15 @@ const Header = () => {
                 key={link.name}
                 href={link.href}
                 className="text-secondary hover:text-accent transition-colors duration-200 text-lg font-medium relative group"
+                onClick={(e) => {
+                  if (link.href.startsWith('/#')) {
+                    e.preventDefault();
+                    const element = document.getElementById(link.href.substring(2));
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
@@ -88,7 +100,16 @@ const Header = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    setIsMenuOpen(false);
+                    if (link.href.startsWith('/#')) {
+                      e.preventDefault();
+                      const element = document.getElementById(link.href.substring(2));
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }}
                   className="py-3 px-4 rounded-lg text-lg font-medium transition-colors duration-200 text-secondary hover:text-accent hover:bg-default/20"
                 >
                   {link.name}
@@ -97,7 +118,14 @@ const Header = () => {
 
               <Link
                 href="/#contact"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  setIsMenuOpen(false);
+                  e.preventDefault();
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="btn flex items-center justify-center mt-2"
               >
                 <Sparkles className="mr-2 h-5 w-5" />

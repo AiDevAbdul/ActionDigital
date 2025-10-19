@@ -1,4 +1,4 @@
-// src/components/Programs.tsx
+// src/components/ProjectsSection.tsx
 
 'use client';
 
@@ -7,8 +7,8 @@ import { Code, Brain, Zap, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-// Define types for our programs
-type Program = {
+// Define types for our projects
+type Project = {
   id: string;
   title: string;
   description: string;
@@ -18,35 +18,35 @@ type Program = {
   delay: number;
 };
 
-// Animation properties for the program cards
+// Animation properties for the project cards
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: { opacity: 1, scale: 1 },
 };
 
-const Programs = () => {
-  const [programs, setPrograms] = useState<Program[]>([]);
+const ProjectsSection = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPrograms = async () => {
+    const fetchProjects = async () => {
       try {
-        const response = await fetch('/api/programs');
+        const response = await fetch('/api/projects');
         const data = await response.json();
         // Add delay property for animation
-        const programsWithDelay = data.map((program: Program, index: number) => ({
-          ...program,
+        const projectsWithDelay = data.map((project: Project, index: number) => ({
+          ...project,
           delay: 0.2 + (index * 0.1)
         }));
-        setPrograms(programsWithDelay);
+        setProjects(projectsWithDelay);
       } catch (error) {
-        console.error('Error fetching programs:', error);
+        console.error('Error fetching projects:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchPrograms();
+    fetchProjects();
   }, []);
 
   // Function to get icon component by name
@@ -56,55 +56,111 @@ const Programs = () => {
         return Code;
       case 'Brain':
         return Brain;
-      default:
+      case 'Zap':
         return Zap;
+      default:
+        return Code;
     }
   };
 
-  // Fallback program data to show if API call fails
-  const fallbackPrograms = [
+  // Fallback project data to show if API call fails
+  const fallbackProjects = [
     {
       id: '1',
-      title: 'Full-Stack Web Development Bootcamp',
-      description: "Comprehensive training program covering modern JavaScript frameworks, React, Next.js, Node.js, and database management. Students build real-world applications and deploy them to production environments.",
-      tech: ['React', 'Next.js', 'Node.js', 'MongoDB', 'UI/UX Design'],
+      title: 'AI-Driven Social Media Growth & Automation',
+      description: "Designed marketing strategies and automated workflows integrating n8n, ChatGPT, and marketing APIs to achieve measurable increases in social media reach and conversions.",
+      tech: ['ChatGPT', 'n8n', 'APIs', 'Digital Marketing'],
       link: '#',
-      icon: 'Code',
+      icon: 'LineChart',
       delay: 0.2,
     },
     {
       id: '2',
-      title: 'AI & Machine Learning Mastery',
-      description: "In-depth program covering Python, TensorFlow, neural networks, and practical applications of AI. Students work on projects including computer vision, natural language processing, and predictive analytics.",
-      tech: ['Python', 'TensorFlow', 'PyTorch', 'Neural Networks', 'Data Science'],
+      title: 'AI-Powered Learning Tools',
+      description: "Engineered AI-powered learning and operational tools for digital training programs at Action Digital Institute, enhancing both student engagement and administrative efficiency.",
+      tech: ['AI Integration', 'Digital Training', 'Project Supervision'],
       link: '#',
-      icon: 'Brain',
+      icon: 'Code',
       delay: 0.3,
     },
     {
       id: '3',
-      title: 'Digital Marketing & Analytics',
-      description: "Complete digital marketing program covering SEO, SMM, content strategy, email marketing, and analytics. Includes hands-on projects with real client campaigns and performance tracking.",
-      tech: ['SEO', 'Social Media', 'Content Strategy', 'Analytics', 'PPC'],
+      title: 'E-commerce Platform Development',
+      description: "Developed a comprehensive e-commerce solution with custom features for inventory management, payment processing, and customer analytics.",
+      tech: ['Next.js', 'Node.js', 'Stripe', 'MongoDB'],
       link: '#',
       icon: 'Zap',
       delay: 0.4,
+    },
+    {
+      id: '4',
+      title: 'Digital Marketing Campaign for Tech Startup',
+      description: "Executed a comprehensive digital marketing strategy including SEO, social media, and PPC campaigns that increased traffic by 250% and conversions by 150% in 6 months.",
+      tech: ['SEO', 'PPC', 'Social Media Marketing', 'Analytics'],
+      link: '#',
+      icon: 'Zap',
+      delay: 0.5,
+    },
+    {
+      id: '5',
+      title: 'Corporate Website Development',
+      description: "Designed and developed a responsive corporate website for a financial services company with integrated CRM and client portal functionality.",
+      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+      link: '#',
+      icon: 'Code',
+      delay: 0.6,
+    },
+    {
+      id: '6',
+      title: 'Documentary: Tech Innovation in Rural Areas',
+      description: "Produced and edited a documentary showcasing how technology is transforming rural communities, featuring interviews with local entrepreneurs and community leaders.",
+      tech: ['Video Production', 'Editing', 'Documentary', 'Cinematography'],
+      link: '#',
+      icon: 'Zap',
+      delay: 0.7,
+    },
+    {
+      id: '7',
+      title: 'Mobile App for Educational Content',
+      description: "Built a cross-platform mobile application for delivering educational content with offline capabilities, progress tracking, and gamification features.",
+      tech: ['React Native', 'Firebase', 'Redux', 'UI/UX Design'],
+      link: '#',
+      icon: 'Code',
+      delay: 0.8,
+    },
+    {
+      id: '8',
+      title: 'Influencer Marketing Campaign',
+      description: "Developed and managed an influencer marketing campaign that increased brand awareness and generated significant ROI through strategic partnerships.",
+      tech: ['Influencer Marketing', 'Content Creation', 'Brand Strategy', 'Analytics'],
+      link: '#',
+      icon: 'Zap',
+      delay: 0.9,
+    },
+    {
+      id: '9',
+      title: 'Corporate Identity & Branding',
+      description: "Created comprehensive branding materials for a tech startup including logo, brand guidelines, website design, and marketing collateral.",
+      tech: ['Branding', 'UI/UX Design', 'Logo Design', 'Marketing Materials'],
+      link: '#',
+      icon: 'Zap',
+      delay: 1.0,
     },
   ];
 
   if (loading) {
     return (
-      <section id="programs" className="section bg-surface">
+      <section id="projects" className="section bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-              Featured Programs
+              Featured Projects
             </p>
             <h2 className="section-title text-primary">
-              Our Top Training Programs
+              Our Recent Work
             </h2>
             <p className="section-subtitle text-secondary">
-              Career-focused education that delivers measurable results
+              Innovative solutions delivered to our valued clients
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -141,11 +197,11 @@ const Programs = () => {
     );
   }
 
-  // If no programs are fetched, show the fallback programs
-  const displayPrograms = programs.length > 0 ? programs : fallbackPrograms;
+  // If no projects are fetched, show the fallback projects
+  const displayProjects = projects.length > 0 ? projects : fallbackProjects;
 
   return (
-    <section id="programs" className="section bg-surface">
+    <section id="projects" className="section bg-surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -157,28 +213,28 @@ const Programs = () => {
           className="text-center mb-16"
         >
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Featured Programs
+            Featured Projects
           </p>
           <h2 className="section-title text-primary">
-            Our Top Training Programs
+            Our Recent Work
           </h2>
           <p className="section-subtitle text-secondary">
-            Career-focused education that delivers measurable results
+            Innovative solutions delivered to our valued clients
           </p>
         </motion.div>
 
-        {/* Programs Grid */}
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {displayPrograms.map((program) => {
-            const IconComponent = getIconComponent(program.icon);
+          {displayProjects.map((project) => {
+            const IconComponent = getIconComponent(project.icon);
             return (
               <motion.div
-                key={program.id || program.title}
+                key={project.id || project.title}
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: program.delay }}
+                transition={{ duration: 0.6, delay: project.delay }}
                 className="glass-card card group hover:shadow-card transition-all duration-300 flex flex-col"
               >
                 <div className="flex justify-between items-start mb-6">
@@ -188,13 +244,13 @@ const Programs = () => {
                   </div>
                   
                   {/* External Link Button */}
-                  {program.link && (
+                  {project.link && (
                     <Link 
-                      href={program.link} 
+                      href={project.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-primary-gradient text-white opacity-70 hover:opacity-100 transition-opacity"
-                      aria-label={`View ${program.title}`}
+                      aria-label={`View ${project.title}`}
                     >
                       <ExternalLink className="h-4 w-4" />
                     </Link>
@@ -203,15 +259,15 @@ const Programs = () => {
 
                 {/* Content */}
                 <h3 className="text-2xl font-bold mb-3 text-primary group-hover:text-accent transition-colors duration-300">
-                  {program.title}
+                  {project.title}
                 </h3>
                 <p className="text-secondary mb-6 flex-grow">
-                  {program.description}
+                  {project.description}
                 </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 pt-4 border-t border-default">
-                  {program.tech.map((t) => (
+                  {project.tech.map((t) => (
                     <span
                       key={t}
                       className="px-2 py-1 bg-primary-gradient text-white text-xs font-medium rounded"
@@ -229,4 +285,4 @@ const Programs = () => {
   );
 };
 
-export default Programs;
+export default ProjectsSection;

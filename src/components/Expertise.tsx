@@ -1,31 +1,31 @@
-// src/components/Expertise.tsx
+// src/components/Courses.tsx
 
 'use client';
 
 import { motion } from 'framer-motion';
-import { Brain, TrendingUp, BookOpen } from 'lucide-react';
+import { Code, Brain, Zap } from 'lucide-react';
 
-// Define the data for the three expertise cards
-const expertiseData = [
+// Define the data for the three course categories
+const courseData = [
   {
-    icon: Brain,
-    title: 'AI Engineering & Automation',
-    description: "Designing and implementing intelligent systems using ChatGPT, Python, and n8n. Focused on automating workflows and creating PyQt-based applications for efficiency.",
-    keywords: ['Python', 'ChatGPT', 'n8n', 'Automation', 'PyQt'],
+    icon: Code,
+    title: 'Web/App Development',
+    description: "Learn to build responsive websites and mobile applications using modern technologies like React, Next.js, and React Native. Master both frontend and backend development with our comprehensive curriculum.",
+    keywords: ['React', 'Next.js', 'React Native', 'Node.js', 'MongoDB'],
     delay: 0.2,
   },
   {
-    icon: TrendingUp,
-    title: 'Digital Marketing Strategy',
-    description: "Developing data-driven strategies for brand growth, content creation, and social media campaigns. Expertise in SEO, Ad Management, and e-commerce enablement for SMEs.",
-    keywords: ['Social Media', 'SEO', 'Ad Management', 'E-commerce', 'Brand Strategy'],
+    icon: Brain,
+    title: 'AI/ML Training Programs',
+    description: "Comprehensive training in Artificial Intelligence and Machine Learning. Learn to build intelligent systems using Python, TensorFlow, and PyTorch with real-world projects.",
+    keywords: ['Python', 'TensorFlow', 'PyTorch', 'Neural Networks', 'Data Science'],
     delay: 0.4,
   },
   {
-    icon: BookOpen,
-    title: 'Skills Development & Training',
-    description: "Capacity building through digital skills training, curriculum design, and mentorship. Empowering youth and professionals in AI and digital transformation technologies.",
-    keywords: ['Curriculum Design', 'Training of Trainers (TOT)', 'Digital Skills', 'Leadership'],
+    icon: Zap,
+    title: 'Digital Marketing',
+    description: "Master SEO, SMM, Content Marketing, and Analytics to grow your business in the digital landscape. Combine theory with practical applications for real results.",
+    keywords: ['SEO', 'Social Media', 'Content Strategy', 'Analytics', 'PPC'],
     delay: 0.6,
   },
 ];
@@ -36,9 +36,9 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const Expertise = () => {
+const Courses = () => {
   return (
-    <section id="expertise" className="section">
+    <section id="courses" className="section">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -50,19 +50,19 @@ const Expertise = () => {
           className="text-center mb-16"
         >
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Core Competencies
+            Core Programs
           </p>
           <h2 className="section-title text-primary">
-            My Three Pillars of Expertise
+            Our Three Core Learning Paths
           </h2>
           <p className="section-subtitle text-secondary">
-            Leveraging cutting-edge technology to solve real-world challenges
+            Comprehensive training programs designed to transform your career
           </p>
         </motion.div>
 
-        {/* Expertise Grid */}
+        {/* Course Grid */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {expertiseData.map((item) => (
+          {courseData.map((item) => (
             <motion.div
               key={item.title}
               variants={cardVariants}
@@ -108,4 +108,4 @@ const Expertise = () => {
   );
 };
 
-export default Expertise;
+export default Courses;

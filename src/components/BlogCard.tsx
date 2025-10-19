@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Post, iconMap } from '@/data/blogData';
+import { Post, iconMap, tagStyles } from '@/data/blogData';
 
 type BlogCardProps = {
   post: Post;
@@ -44,14 +44,18 @@ const BlogCard = ({ post, index }: BlogCardProps) => {
         </p>
 
         <div className="flex flex-wrap gap-2">
-          {post.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-1 bg-primary-gradient text-white text-xs font-medium rounded"
-            >
-              #{tag}
-            </span>
-          ))}
+          {post.tags.map((tag) => {
+            // Use the tag-specific styles or default styles if the tag isn't defined
+            const tagStyle = tagStyles[tag] || tagStyles['Default'];
+            return (
+              <span
+                key={tag}
+                className={`px-2 py-1 text-xs font-medium rounded ${tagStyle}`}
+              >
+                #{tag}
+              </span>
+            );
+          })}
         </div>
       </Link>
     </motion.div>

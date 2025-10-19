@@ -11,8 +11,8 @@ import AnimatedPageWrapper from '@/components/AnimatedPageWrapper';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Abdul Wahab | techAI.pk',
-  description: 'AI Engineer, Digital Marketing Strategist, and Skills Development Expert. Building intelligent solutions with Next.js, TypeScript, and AI.',
+  title: 'Action Digital Institute',
+  description: 'Leading institute for Web/App Development, AI/ML Training, and Digital Marketing. Transform your digital future with our cutting-edge programs.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

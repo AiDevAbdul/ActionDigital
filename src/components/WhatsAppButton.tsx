@@ -6,8 +6,8 @@ import { MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 const WhatsAppButton = () => {
-  const whatsappNumber = '+923489848136';
-  const whatsappMessage = 'Hello! I came from your website and would like to discuss...';
+  const whatsappNumber = '+15551234567';
+  const whatsappMessage = 'Hello! I came from Action Digital Institute website and would like to learn more about your courses and programs...';
 
   return (
     <motion.div
@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
         href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contact on WhatsApp"
+        aria-label="Contact Action Digital Institute on WhatsApp"
         className="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
       >
         <motion.div

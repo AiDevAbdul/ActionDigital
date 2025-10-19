@@ -7,12 +7,12 @@ import Link from 'next/link';
 import emailjs from '@emailjs/browser';
 
 const socialLinks = [
-  { icon: Mail, href: 'mailto:wahab.sh.pk@gmail.com', label: 'Email' },
-  { icon: Smartphone, href: 'tel:+923489848136', label: 'Phone / WhatsApp' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/abdulpk', label: 'LinkedIn' },
-  { icon: Github, href: 'https://github.com/Abdul0006', label: 'GitHub' },
-  { icon: Facebook, href: 'https://facebook.com/wahab.sh.pk', label: 'Facebook' },
-  { icon: Youtube, href: 'https://youtube.com/AbdulWahabShangla', label: 'YouTube' },
+  { icon: Mail, href: 'mailto:info@actiondigitalinstitute.com', label: 'Email' },
+  { icon: Smartphone, href: 'tel:+15551234567', label: 'Phone' },
+  { icon: Linkedin, href: 'https://linkedin.com/company/actiondigitalinstitute', label: 'LinkedIn' },
+  { icon: Facebook, href: 'https://facebook.com/actiondigitalinstitute', label: 'Facebook' },
+  { icon: Youtube, href: 'https://youtube.com/actiondigitalinstitute', label: 'YouTube' },
+  { icon: Github, href: 'https://github.com/actiondigitalinstitute', label: 'GitHub' },
 ];
 
 export default function Contact() {
@@ -52,13 +52,13 @@ export default function Contact() {
         className="mb-12"
       >
         <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-          Connect With Me
+          Get In Touch
         </p>
         <h2 className="text-3xl font-bold text-[var(--text-color)] mt-2">
-          Let’s Collaborate
+          Contact Action Digital Institute
         </h2>
         <p className="text-secondary max-w-2xl mx-auto mt-2">
-          I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          Have questions about our programs or services? Reach out to us and our team will get back to you as soon as possible.
         </p>
       </motion.div>
 
@@ -94,14 +94,14 @@ export default function Contact() {
         <input
           name="user_name"
           type="text"
-          placeholder="Your Name"
+          placeholder="Full Name"
           required
           className="input w-full"
         />
         <input
           name="user_email"
           type="email"
-          placeholder="Your Email"
+          placeholder="Email Address"
           required
           className="input w-full"
         />

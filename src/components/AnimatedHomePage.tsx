@@ -2,10 +2,15 @@
 
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
-import Expertise from '@/components/Expertise';
-import Projects from '@/components/Projects';
-import Experience from '@/components/Experience';
-import Contact from '@/components/Contact';
+import About from '@/components/About';
+import Courses from '@/components/Expertise';
+import Programs from '@/components/Projects';
+import Services from '@/components/Experience';
+import ProjectsSection from '@/components/ProjectsSection';
+import Testimonials from '@/components/Testimonials';
+import StudentSuccessStories from '@/components/StudentSuccessStories';
+import LatestBlogs from '@/components/LatestBlogs';
+import ContactSection from '@/components/ContactSection';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function AnimatedHomePage() {
@@ -25,7 +30,7 @@ export default function AnimatedHomePage() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7, delay: 0.2 }}
       >
-        <Expertise />
+        <About />
       </motion.section>
       
       <motion.section
@@ -34,7 +39,7 @@ export default function AnimatedHomePage() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        <Projects />
+        <Courses />
       </motion.section>
       
       <motion.section
@@ -43,7 +48,7 @@ export default function AnimatedHomePage() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7, delay: 0.4 }}
       >
-        <Experience />
+        <Programs />
       </motion.section>
       
       <motion.section
@@ -52,7 +57,52 @@ export default function AnimatedHomePage() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7, delay: 0.5 }}
       >
-        <Contact />
+        <ProjectsSection />
+      </motion.section>
+      
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, delay: 0.6 }}
+      >
+        <Services />
+      </motion.section>
+      
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, delay: 0.7 }}
+      >
+        <StudentSuccessStories />
+      </motion.section>
+      
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, delay: 0.8 }}
+      >
+        <Testimonials />
+      </motion.section>
+      
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, delay: 0.9 }}
+      >
+        <LatestBlogs />
+      </motion.section>
+      
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, delay: 1.0 }}
+      >
+        <ContactSection />
       </motion.section>
       
       <WhatsAppButton />

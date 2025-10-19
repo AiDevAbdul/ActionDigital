@@ -1,64 +1,58 @@
-// src/components/Experience.tsx
+// src/components/Services.tsx
 
 'use client';
 
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, GraduationCap } from 'lucide-react';
+import { Code, Brain, Zap, Wrench } from 'lucide-react';
 
-const experienceData = [
+const servicesData = [
   {
-    icon: Briefcase,
-    title: 'AI Engineer | IT Instructor | Supervisor',
+    icon: Code,
+    title: 'Custom Software Development',
     company: 'Action Digital Institute',
-    duration: 'April 2024 – Present',
+    duration: 'Full Cycle Development',
     details: [
-      "Designed and implemented AI-powered learning and automation tools for digital training programs.",
-      "Trained students and professionals in AI, automation, and digital transformation technologies.",
-      "Supervised technology-based projects and ensured alignment with institute goals and outcomes.",
+      "Full-stack application development for businesses of all sizes.",
+      "Enterprise-level solutions tailored to specific requirements.",
+      "API development and system integration services.",
     ],
-    type: 'work',
+    type: 'service',
   },
   {
-    icon: Briefcase,
-    title: 'Chief Operating Officer (COO)',
-    company: 'Ennovators Pakistan',
-    duration: 'January 2023 – April 2024',
+    icon: Brain,
+    title: 'AI/ML Implementation Services',
+    company: 'Action Digital Institute',
+    duration: 'Advanced Solutions',
     details: [
-      "Led operations for a growing IT firm offering graphic design, video editing, animation, and ad production.",
-      "Supervised creative and technical teams to deliver digital content for education and advertising sectors.",
-      "Implemented AI tools to enhance production efficiency and digital outreach.",
+      "Implement artificial intelligence and machine learning solutions for automation.",
+      "Predictive analytics and data insights for business intelligence.",
+      "Custom AI model development and deployment.",
     ],
-    type: 'work',
+    type: 'service',
   },
   {
-    icon: Briefcase,
-    title: 'Social Media Manager | Digital Marketing Consultant',
-    company: 'Freelance',
-    duration: 'June 2021 – Present',
+    icon: Zap,
+    title: 'Digital Marketing Solutions',
+    company: 'Action Digital Institute',
+    duration: 'Growth Strategy',
     details: [
-      "Managed and grew multiple social media accounts, achieving measurable increases in reach and conversions.",
-      "Designed marketing strategies and automated workflows using AI-driven tools.",
+      "Comprehensive SEO, SMM, and PPC campaigns.",
+      "Content marketing and social media management.",
+      "Analytics and reporting for data-driven decisions.",
     ],
-    type: 'work',
+    type: 'service',
   },
   {
-    icon: Briefcase,
-    title: 'Marketing & Training Officer',
-    company: 'Character Education Foundation',
-    duration: 'June 2022 – December 2022',
+    icon: Wrench,
+    title: 'IT Consulting & Support',
+    company: 'Action Digital Institute',
+    duration: 'Ongoing Support',
     details: [
-      "Organized digital skills and awareness training programs for youth and educators.",
-      "Assisted in branding, outreach, and digital communication strategies.",
+      "Technology strategy and implementation planning.",
+      "System architecture design and optimization.",
+      "24/7 technical support and maintenance services.",
     ],
-    type: 'work',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Master’s in Social Sciences',
-    company: 'Bacha Khan University, Charsadda',
-    duration: '2020–2022',
-    details: [],
-    type: 'education',
+    type: 'service',
   },
 ];
 
@@ -68,9 +62,9 @@ const itemVariants = {
   visible: { opacity: 1, x: 0 },
 };
 
-const Experience = () => {
+const Services = () => {
   return (
-    <section id="experience" className="section bg-surface">
+    <section id="services" className="section bg-surface">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -82,13 +76,13 @@ const Experience = () => {
           className="text-center mb-16"
         >
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Work Experience
+            Professional Services
           </p>
           <h2 className="section-title text-primary">
-            Professional Journey & Education
+            Services We Offer
           </h2>
           <p className="section-subtitle text-secondary">
-            A timeline of my professional growth and achievements
+            Comprehensive technology solutions for your business needs
           </p>
         </motion.div>
 
@@ -97,7 +91,7 @@ const Experience = () => {
           {/* Vertical Line */}
           <div className="absolute left-4 md:left-6 w-0.5 bg-accent h-full"></div> 
           
-          {experienceData.map((item, index) => (
+          {servicesData.map((item, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -120,8 +114,7 @@ const Experience = () => {
                   <div className="glass-card card transition-colors duration-300 p-6">
                     
                     <div className="flex items-center text-sm font-semibold uppercase text-accent mb-2">
-                        <Calendar className="w-3 h-3 mr-2" />
-                        <span>{item.duration}</span>
+                      <span>{item.duration}</span>
                     </div>
 
                     <h3 className="text-xl font-bold mb-1 text-primary">
@@ -151,4 +144,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Services;

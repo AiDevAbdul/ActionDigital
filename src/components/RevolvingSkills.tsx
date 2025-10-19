@@ -10,11 +10,13 @@ import {
   FileCode,
   Brain,
   Github,
-  Facebook,
   Linkedin,
-  Instagram,
   Youtube,
   Network,
+  Zap,
+  Smartphone,
+  Database,
+  BarChart3,
 } from 'lucide-react';
 
 const icons = [
@@ -26,32 +28,22 @@ const icons = [
   { Icon: Network, color: '#f43f5e' },
   { Icon: Globe, color: '#3b82f6' },
   { Icon: Github, color: '#111827' },
-  { Icon: Facebook, color: '#2563eb' },
-  { Icon: Linkedin, color: '#0a66c2' },
-  { Icon: Instagram, color: '#e1306c' },
-  { Icon: Youtube, color: '#ff0000' },
+  { Icon: Zap, color: '#f59e0b' },
+  { Icon: Smartphone, color: '#8b5cf6' },
+  { Icon: Database, color: '#0ea5e9' },
+  { Icon: BarChart3, color: '#8b5cf6' },
 ];
 
 export default function RevolvingSkills() {
   return (
     <div className="relative w-full h-full">
-      {/* Central profile image - perfectly centered with absolute positioning */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 w-48 h-48 rounded-full overflow-hidden ring-4 ring-[var(--color-accent)] shadow-[var(--shadow-accent)]">
-        <Image
-          src="/profile.jpg"
-          alt="Abdul Wahab"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
-
       {/* Container with revolving effect - positioned with the same center point */}
       <motion.div 
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full"
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 60, ease: 'linear' }}
       >
+      
         {/* Revolving icons with complex animation */}
         {icons.map(({ Icon, color }, index) => {
           const angle = (index / icons.length) * 2 * Math.PI;

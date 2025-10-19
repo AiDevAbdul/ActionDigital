@@ -15,7 +15,7 @@ const containerVariants = {
 
 export default function BlogPage() {
   return (
-    <main className="pt-24 min-h-screen transition-colors duration-500">
+    <main className="pt-24 min-h-screen bg-surface transition-colors duration-500">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         
         {/* Header Section */}
@@ -29,10 +29,10 @@ export default function BlogPage() {
             Insights & Guides
           </p>
           <h1 className="section-title text-primary">
-            Blog & Tutorials
+            Insights & Learning Resources
           </h1>
           <p className="section-subtitle text-secondary">
-            My thoughts on the intersection of AI, technology, and digital innovation.
+            Insights and tutorials on web development, AI/ML, digital marketing, and emerging technologies from Action Digital Institute.
           </p>
         </motion.div>
 

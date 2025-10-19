@@ -2,23 +2,23 @@
 
 /* ====== ENHANCED THEME TOKENS (for Tailwind utilities) ====== */
 @theme {
-  --color-primary: #22c55e;
-  --color-secondary: #16a34a;
-  --color-accent: #22c55e;
-  --color-primary-dark: #16a34a;
-  --color-secondary-dark: #22c55e;
-  --color-accent-dark: #4ade80;
+  --color-primary: #ef7e2e;
+  --color-secondary: #9f9b98;
+  --color-accent: #ef7e2e;
+  --color-primary-dark: #d96e22;
+  --color-secondary-dark: #8a8683;
+  --color-accent-dark: #f5a623;
   --color-neutral-dark: #0a0a0a;
   --color-neutral-medium: #111111;
   --color-neutral-light: #1a1a1a;
   --color-text-primary: #f0f0f0;
   --color-text-secondary: #a0a0a0;
-  --color-text-accent: #22c55e;
+  --color-text-accent: #ef7e2e;
   --radius-default: 16px;
   --radius-sm: 8px;
   --radius-lg: 24px;
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --shadow-glow: 0 0 20px rgba(34, 197, 94, 0.3);
+  --shadow-glow: 0 0 20px rgba(239, 126, 46, 0.3);
   --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.2);
   --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
@@ -30,13 +30,13 @@
   --surface-color: #f8f9fa;
   --text-primary: #1a1a1a;
   --text-secondary: #555555;
-  --text-accent: #16a34a;
+  --text-accent: #ef7e2e;
   --border-color: #e2e8f0;
   --card-bg: rgba(255, 255, 255, 0.8);
   --glass-bg: rgba(255, 255, 255, 0.1);
-  --accent-color: #16a34a;
-  --primary-gradient: linear-gradient(135deg, #16a34a, #22c55e);
-  --secondary-gradient: linear-gradient(135deg, #4ade80, #22c55e);
+  --accent-color: #ef7e2e;
+  --primary-gradient: linear-gradient(135deg, #ef7e2e, #f5a623);
+  --secondary-gradient: linear-gradient(135deg, #f5a623, #ef7e2e);
   --glass-border: rgba(255, 255, 255, 0.18);
 }
 
@@ -46,13 +46,13 @@
   --surface-color: #0f0f0f;
   --text-primary: #f0f0f0;
   --text-secondary: #a0a0a0;
-  --text-accent: #22c55e;
+  --text-accent: #ef7e2e;
   --border-color: #222222;
   --card-bg: rgba(17, 17, 17, 0.8);
   --glass-bg: rgba(15, 15, 17, 0.1);
-  --accent-color: #22c55e;
-  --primary-gradient: linear-gradient(135deg, #16a34a, #22c55e);
-  --secondary-gradient: linear-gradient(135deg, #4ade80, #22c55e);
+  --accent-color: #ef7e2e;
+  --primary-gradient: linear-gradient(135deg, #ef7e2e, #f5a623);
+  --secondary-gradient: linear-gradient(135deg, #f5a623, #ef7e2e);
   --glass-border: rgba(255, 255, 255, 0.08);
 }
 
@@ -209,22 +209,22 @@ html, body {
 /* Applying the text shadow animation */
 .animated-logo-text-shadow-wrapper .group span span {
   /* Default glow color, can be overridden for individual parts if needed */
-  --glow-color: #34d399; /* emerald-400 */
+  --glow-color: #ef7e2e; /* Action Digital orange */
   text-shadow: 0 0 var(--text-glow-spread) var(--glow-color);
   animation: text-glow-pulse 3s infinite ease-in-out;
 }
 
 .dark .animated-logo-text-shadow-wrapper .group span span {
-  --glow-color: #6ee7b7; /* emerald-300 */
+  --glow-color: #f5a623; /* Action Digital orange for dark mode */
 }
 
 /* Optional: Make the .pk part have a more prominent glow if desired */
 .animated-logo-text-shadow-wrapper .group span span:last-child { /* Targets .pk */
-  --glow-color: #065f46; /* A slightly darker emerald for base, brighter on pulse */
+  --glow-color: #d96e22; /* A slightly darker orange for base, brighter on pulse */
 }
 
 .dark .animated-logo-text-shadow-wrapper .group span span:last-child {
-  --glow-color: #34d399; /* Darker emerald for dark mode .pk */
+  --glow-color: #f5a623; /* Darker orange for dark mode .pk */
 }
 
 

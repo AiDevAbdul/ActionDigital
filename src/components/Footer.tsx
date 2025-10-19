@@ -22,21 +22,21 @@ const Footer = () => {
             <Link href="/#about" className="text-secondary hover:text-accent transition-colors">
               About
             </Link>
-            <Link href="/#experience" className="text-secondary hover:text-accent transition-colors">
-              Experience
+            <Link href="/#courses" className="text-secondary hover:text-accent transition-colors">
+              Courses
             </Link>
-            <Link href="/#projects" className="text-secondary hover:text-accent transition-colors">
-              Projects
+            <Link href="/#services" className="text-secondary hover:text-accent transition-colors">
+              Services
             </Link>
-            <Link href="/blog" className="text-secondary hover:text-accent transition-colors">
-              Blog
+            <Link href="/#contact" className="text-secondary hover:text-accent transition-colors">
+              Contact
             </Link>
           </div>
           
           {/* Copyright */}
           <div className="text-center md:text-right">
             <p className="text-secondary text-sm">
-              &copy; {new Date().getFullYear()} Abdul Wahab. All rights reserved.
+              &copy; {new Date().getFullYear()} Action Digital Institute. All rights reserved.
             </p>
             <p className="text-secondary text-xs mt-1">
               Crafted with Next.js, TypeScript & Tailwind CSS

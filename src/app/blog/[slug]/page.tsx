@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!post) return { title: 'Post Not Found' };
 
   return {
-    title: `${post.title} | techAI.pk`,
+    title: `${post.title} | Action Digital Institute`,
     description: post.excerpt,
   };
 }

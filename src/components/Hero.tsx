@@ -27,7 +27,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
         >
-          <span className="text-primary">Abdul Wahab</span>
+          <span className="text-primary">Action Digital Institute</span>
           <motion.span
             className="block w-full h-1 bg-primary-gradient mt-2"
             initial={{ width: 0 }}
@@ -44,15 +44,15 @@ const Hero = () => {
           className="text-lg sm:text-xl lg:text-2xl font-medium text-secondary flex flex-wrap justify-center md:justify-start gap-x-2 gap-y-1 mt-4"
         >
           <span className="flex items-center gap-1">
-            <Cpu className="text-accent" size={18} /> AI Engineer
+            <Code className="text-accent" size={18} /> Web/App Development
           </span>
           <span className="hidden sm:inline">|</span>
           <span className="flex items-center gap-1">
-            <Code className="text-accent" size={18} /> Digital Strategist
+            <Bot className="text-accent" size={18} /> AI/ML Training
           </span>
           <span className="hidden sm:inline">|</span>
           <span className="flex items-center gap-1">
-            <Bot className="text-accent" size={18} /> Skills Enabler
+            <Zap className="text-accent" size={18} /> Digital Marketing
           </span>
         </motion.h2>
 
@@ -61,11 +61,10 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.0 }}
-          className="text-sm sm:text-base text-secondary max-w-[280px] mx-auto md:mx-0 mt-4 leading-relaxed"
+          className="text-sm sm:text-base text-secondary max-w-[320px] mx-auto md:mx-0 mt-4 leading-relaxed"
         >
-          Innovative and growth-driven expert specializing in integrating Artificial Intelligence,
-          digital strategy, and education to empower individuals and organizations in the digital
-          economy.
+          Leading institute for cutting-edge technology education in Web/App Development, AI/ML, and Digital Marketing.
+          Transform your digital future with our comprehensive programs.
         </motion.p>
 
         {/* === CTAs (with extra spacing to prevent overlap) === */}
@@ -75,9 +74,9 @@ const Hero = () => {
           transition={{ type: 'spring', stiffness: 100, delay: 1.2 }}
           className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-6 mb-16"
         >
-          <Link href="#projects" className="btn flex items-center justify-center group text-sm py-2 px-4">
+          <Link href="#courses" className="btn flex items-center justify-center group text-sm py-2 px-4">
             <Zap className="mr-2 h-4 w-4" />
-            View My Work
+            Explore Courses
             <motion.span
               className="ml-2"
               animate={{ x: [0, 5, 0] }}
@@ -88,11 +87,11 @@ const Hero = () => {
           </Link>
 
           <Link
-            href="#experience"
+            href="#contact"
             className="btn btn-secondary flex items-center justify-center group text-sm py-2 px-4"
           >
             <Users className="mr-2 h-4 w-4" />
-            Let Us Collaborate
+            Contact Us
           </Link>
         </motion.div>
       </div>
@@ -111,7 +110,7 @@ const Hero = () => {
         transition={{ duration: 1.5, repeat: Infinity, delay: 2.0 }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 text-accent cursor-pointer z-30"
         onClick={() => {
-          document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' });
+          document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
         }}
       >
         <ChevronsDown className="h-6 w-6" />
