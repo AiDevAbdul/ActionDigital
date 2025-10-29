@@ -42,7 +42,6 @@ const StudentSuccessStories = () => {
     {
       id: '3',
       name: 'Ayesha Bibi',
-      title: 'YouTube Content Creator',
       title: 'YouTube Content Creator & Manager',
       story: "As a woman entrepreneur, I needed skills that could help me work from home. The YouTube Channel Management and Video Editing program at ADI was exactly what I was looking for.",
       result: "Built a successful YouTube channel with 100K+ subscribers and $1,800+ monthly income. Now managing channels for other clients as well.",
