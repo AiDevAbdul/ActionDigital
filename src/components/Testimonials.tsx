@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Star, Users, Handshake, Quote } from 'lucide-react';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 // Define mock testimonials outside the component to prevent re-creation on every render
 const mockTestimonials = [
@@ -161,6 +161,8 @@ const mockTestimonials = [
 type Testimonial = typeof mockTestimonials[number];
 
 const Testimonials = () => {
+  const [activeTab, setActiveTab] = useState('client-reviews');
+
   // Use useMemo to prevent unnecessary recalculations
   const { clientReviews, partners, collaborators } = useMemo(() => {
     const clientReviews = mockTestimonials.filter(item => item.type === 'testimonial');
@@ -214,27 +216,42 @@ const Testimonials = () => {
         <div className="flex justify-center mb-10">
           <div className="inline-flex rounded-lg border border-default p-1 bg-surface">
             <button 
-              className="px-4 py-2 text-sm font-medium rounded-md bg-primary-gradient text-white"
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                activeTab === 'client-reviews' 
+                  ? 'bg-primary-gradient text-white' 
+                  : 'text-secondary hover:text-primary'
+              }`}
               onClick={(e) => {
                 e.preventDefault();
+                setActiveTab('client-reviews');
                 document.getElementById('client-reviews')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
               Client Reviews
             </button>
             <button 
-              className="px-4 py-2 text-sm font-medium rounded-md text-secondary hover:text-primary"
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                activeTab === 'partners' 
+                  ? 'bg-primary-gradient text-white' 
+                  : 'text-secondary hover:text-primary'
+              }`}
               onClick={(e) => {
                 e.preventDefault();
+                setActiveTab('partners');
                 document.getElementById('partners')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
               Partners
             </button>
             <button 
-              className="px-4 py-2 text-sm font-medium rounded-md text-secondary hover:text-primary"
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                activeTab === 'collaborators' 
+                  ? 'bg-primary-gradient text-white' 
+                  : 'text-secondary hover:text-primary'
+              }`}
               onClick={(e) => {
                 e.preventDefault();
+                setActiveTab('collaborators');
                 document.getElementById('collaborators')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >

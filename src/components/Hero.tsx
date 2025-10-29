@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ChevronsDown, Users, Zap, Code, Cpu, Bot } from 'lucide-react';
+import { ChevronsDown, Users, Zap, Code, Cpu, Bot, Target, Award } from 'lucide-react';
 import RevolvingSkills from './RevolvingSkills';
 
 const Hero = () => {
@@ -11,15 +11,23 @@ const Hero = () => {
       id="home"
       className="relative flex flex-col md:flex-row items-center justify-center min-h-[100dvh] overflow-hidden text-center px-4 pt-20 pb-16"
     >
-      {/* === Animated background blobs === */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent rounded-full mix-blend-soft-light blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary-gradient rounded-full mix-blend-soft-light blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-60 h-60 bg-secondary-gradient rounded-full mix-blend-soft-light blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-      </div>
+
 
       {/* === Left side content === */}
       <div className="z-10 flex flex-col items-center md:items-start justify-center px-2 py-4 text-center md:text-left mb-6 md:mb-0 md:mr-2">
+        {/* === Tagline === */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="flex items-center mb-4"
+        >
+          <div className="flex items-center px-3 py-1.5 bg-primary-gradient rounded-full text-white text-sm font-medium">
+            <Award className="mr-2 h-4 w-4" />
+            Empowering Digital Transformation
+          </div>
+        </motion.div>
+
         {/* === Headline === */}
         <motion.h1
           initial={{ y: 40, opacity: 0 }}
@@ -44,7 +52,7 @@ const Hero = () => {
           className="text-lg sm:text-xl lg:text-2xl font-medium text-secondary flex flex-wrap justify-center md:justify-start gap-x-2 gap-y-1 mt-4"
         >
           <span className="flex items-center gap-1">
-            <Code className="text-accent" size={18} /> Web/App Development
+            <Target className="text-accent" size={18} /> Bridging the Digital Skills Gap
           </span>
           <span className="hidden sm:inline">|</span>
           <span className="flex items-center gap-1">
@@ -61,20 +69,40 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.0 }}
-          className="text-sm sm:text-base text-secondary max-w-[320px] mx-auto md:mx-0 mt-4 leading-relaxed"
+          className="text-sm sm:text-base text-secondary max-w-[400px] mx-auto md:mx-0 mt-4 leading-relaxed"
         >
-          Leading institute for cutting-edge technology education in Web/App Development, AI/ML, and Digital Marketing.
-          Transform your digital future with our comprehensive programs.
+          Empowering individuals & businesses inclusively, especially women entrepreneurs, through transformative IT & AI skills. Transcending barriers to poverty and contributing meaningfully to communities and the economy.
         </motion.p>
+
+        {/* === Stats Section === */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.2 }}
+          className="flex flex-wrap justify-center md:justify-start gap-6 mt-6"
+        >
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary">10+</div>
+            <div className="text-xs text-secondary">Digital Skills</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary">1500+</div>
+            <div className="text-xs text-secondary">Trained Students</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary">95%</div>
+            <div className="text-xs text-secondary">Satisfaction Rate</div>
+          </div>
+        </motion.div>
 
         {/* === CTAs (with extra spacing to prevent overlap) === */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 1.2 }}
-          className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-6 mb-16"
+          transition={{ type: 'spring', stiffness: 100, delay: 1.4 }}
+          className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-8 mb-16"
         >
-          <Link href="#courses" className="btn flex items-center justify-center group text-sm py-2 px-4">
+          <Link href="#courses" className="btn flex items-center justify-center group text-sm py-3 px-6">
             <Zap className="mr-2 h-4 w-4" />
             Explore Courses
             <motion.span
@@ -88,7 +116,7 @@ const Hero = () => {
 
           <Link
             href="#contact"
-            className="btn btn-secondary flex items-center justify-center group text-sm py-2 px-4"
+            className="btn btn-secondary flex items-center justify-center group text-sm py-3 px-6"
           >
             <Users className="mr-2 h-4 w-4" />
             Contact Us
@@ -98,7 +126,7 @@ const Hero = () => {
 
       {/* === Right side - Revolving Skills Component === */}
       <div className="z-10 flex items-center justify-center p-2 md:ml-2">
-        <div className="relative w-[320px] h-[320px]"> {/* Reduced size and adjusted spacing */}
+        <div className="relative w-[350px] h-[350px]"> {/* Increased size for better visibility */}
           <RevolvingSkills />
         </div>
       </div>
@@ -107,7 +135,7 @@ const Hero = () => {
       <motion.div
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: [10, 0, 10], opacity: 1 }}
-        transition={{ duration: 1.5, repeat: Infinity, delay: 2.0 }}
+        transition={{ duration: 1.5, repeat: Infinity, delay: 2.2 }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 text-accent cursor-pointer z-30"
         onClick={() => {
           document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });

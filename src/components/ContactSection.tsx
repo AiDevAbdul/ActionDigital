@@ -86,8 +86,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-primary mb-1">Email</h4>
-                  <p className="text-secondary">contact@techai.pk</p>
-                  <p className="text-secondary">admissions@techai.pk</p>
+                  <p className="text-secondary">MD_ADI@OUTLOOK.COM</p>
+                  <p className="text-secondary">PM_ADI@OUTLOOK.COM</p>
                 </div>
               </div>
               
@@ -97,8 +97,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-primary mb-1">Phone</h4>
-                  <p className="text-secondary">+92 300 1234567</p>
-                  <p className="text-secondary">+92 300 7654321</p>
+                  <p className="text-secondary">0092 321 9198 214</p>
+                  <p className="text-secondary">0092 91 2040 163</p>
                 </div>
               </div>
               
@@ -108,8 +108,9 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-primary mb-1">Address</h4>
-                  <p className="text-secondary">Action Digital Institute</p>
-                  <p className="text-secondary">Karachi, Pakistan</p>
+                  <p className="text-secondary">House 98F, Zaryab Colony</p>
+                  <p className="text-secondary">Faqirabad No 2, Peshawar</p>
+                  <p className="text-secondary">Khyber Pakhtunkhwa, Pakistan</p>
                 </div>
               </div>
               

@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
       </head>
-      <body className={`${inter.className} bg-surface text-primary`}>
+      <body className={`${inter.className} text-primary`}>
         <ThemeProvider>
           <Header />
           <AnimatedPageWrapper>

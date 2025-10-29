@@ -39,13 +39,13 @@ const About = () => {
           >
             <h3 className="text-3xl font-bold text-primary mb-6">Our Story</h3>
             <p className="text-secondary mb-4">
-              Founded with a vision to bridge the digital skills gap, Action Digital Institute was established to empower individuals and businesses with cutting-edge technology knowledge. Our founder, Abdul Wahab, recognized the growing need for practical, industry-relevant training in AI, web development, and digital marketing.
+              Founded with a vision to bridge the digital skills gap, Action Digital Institute (ADI) was established to empower individuals and businesses with cutting-edge technology knowledge. We are committed to providing inclusive, comprehensive and transformative IT skills training to individuals, empowering them to overcome poverty, initiate and excel in business ventures, and contribute meaningfully to the society.
             </p>
             <p className="text-secondary mb-4">
-              Starting as a small training initiative, we've grown into a comprehensive digital learning platform serving thousands of students worldwide. Our approach combines theoretical knowledge with practical application, ensuring our students are job-ready upon completion of their programs.
+              Our innovative programs aim to cultivate inclusive business leadership, fostering a diverse and thriving entrepreneurial ecosystem that drives sustainable socio-economic development. Through strategic technical guidance and leveraging social media & cutting-edge marketing techniques, we accelerate economic growth for startups, small, and medium businesses nationwide.
             </p>
             <p className="text-secondary">
-              Today, we continue to evolve and expand our curriculum to stay ahead of technological advancements, ensuring our students receive the most relevant and up-to-date training in the digital domain.
+              We have successfully provided training in 10+ essential digital skills to our students, complemented by a 1-month incubation support program where students work on ADI clients' marketing projects practically and earn money from their marketing services during the incubation period.
             </p>
           </motion.div>
           
@@ -61,7 +61,7 @@ const About = () => {
             </div>
             <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
             <p className="text-secondary">
-              To democratize access to cutting-edge digital education and empower individuals to build successful careers in technology. We're committed to providing high-quality, practical training that bridges the gap between academic knowledge and industry requirements.
+              Our mission is to provide inclusive, comprehensive and transformative IT skills training to individuals, empowering them to overcome poverty, initiate and excel in business ventures, and contribute meaningfully to the society. We aim to cultivate inclusive business leadership, fostering a diverse and thriving entrepreneurial ecosystem that drives sustainable socio-economic development. To empower startups, small, and medium businesses nationwide, we provide strategic technical guidance and leverage social media & cutting-edge marketing techniques to accelerate economic growth in the country.
             </p>
           </motion.div>
         </div>
@@ -79,7 +79,7 @@ const About = () => {
             <h3 className="text-3xl font-bold text-primary">Our Vision</h3>
           </div>
           <p className="text-secondary text-lg">
-            To be the leading global institute for digital transformation education, fostering innovation and creating technology leaders who shape the future of digital industries. We envision a world where quality digital education is accessible to all, regardless of their geographic or economic circumstances.
+            Empower individuals & businesses inclusively especially women entrepreneurs through transformative IT & AI skills, transcending barriers to poverty, contribute meaningfully to communities, economy and emerge as visionary business leaders of the digital age.
           </p>
         </motion.div>
 
@@ -95,23 +95,23 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="glass-card card p-6 text-center">
               <Award className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-primary mb-3">Excellence</h4>
-              <p className="text-secondary">We strive for the highest standards in everything we do.</p>
+              <h4 className="text-xl font-bold text-primary mb-3">Client-Centric</h4>
+              <p className="text-secondary">Prioritizing the needs and goals of our clients to deliver tailored solutions that drive results and create value.</p>
             </div>
             <div className="glass-card card p-6 text-center">
               <Users className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-primary mb-3">Collaboration</h4>
-              <p className="text-secondary">We believe in the power of teamwork and community.</p>
+              <h4 className="text-xl font-bold text-primary mb-3">Innovation</h4>
+              <p className="text-secondary">Staying ahead of industry trends and continuously updating our training programs and marketing strategies.</p>
             </div>
             <div className="glass-card card p-6 text-center">
               <Heart className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-primary mb-3">Integrity</h4>
-              <p className="text-secondary">We maintain honesty and ethical practices.</p>
+              <h4 className="text-xl font-bold text-primary mb-3">Experienced Team</h4>
+              <p className="text-secondary">Our team of experts ensures the highest quality of service delivery with extensive experience and expertise.</p>
             </div>
             <div className="glass-card card p-6 text-center">
               <Target className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-primary mb-3">Innovation</h4>
-              <p className="text-secondary">We embrace creativity and new solutions.</p>
+              <h4 className="text-xl font-bold text-primary mb-3">Collaborative Partnerships</h4>
+              <p className="text-secondary">Collaborating with industry leaders, educational institutions, and community organizations to amplify our impact.</p>
             </div>
           </div>
         </motion.div>
@@ -126,7 +126,11 @@ const About = () => {
         >
           <h3 className="text-3xl font-bold text-primary mb-6">Leadership Team</h3>
           <p className="text-secondary max-w-3xl mx-auto mb-10">
-            Our leadership team brings together decades of expertise in technology, education, and business. We're passionate about equipping the next generation of digital professionals with the skills needed to succeed in an ever-evolving technological landscape.
+            <strong>Contact Person:</strong> Jehangir Khan - Managing Director<br/>
+            Cell: 0092 321 9198 214<br/>
+            Phone & Fax: 0092 91 2040 163<br/>
+            Email: MD_ADI@OUTLOOK.COM, PM_ADI@OUTLOOK.COM<br/>
+            Address: House 98F, Zaryab Colony, Faqirabad No 2, Peshawar, Khyber Pakhtunkhwa, Pakistan
           </p>
         </motion.div>
       </div>

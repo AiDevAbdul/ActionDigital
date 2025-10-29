@@ -3,54 +3,85 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Brain, Zap, Wrench } from 'lucide-react';
+import { Code, Brain, Zap, Palette, Video, Globe, MessageCircle } from 'lucide-react';
 
 const servicesData = [
   {
     icon: Code,
-    title: 'Custom Software Development',
+    title: 'Software Solutions',
     company: 'Action Digital Institute',
-    duration: 'Full Cycle Development',
+    duration: 'Development & Design',
     details: [
-      "Full-stack application development for businesses of all sizes.",
-      "Enterprise-level solutions tailored to specific requirements.",
-      "API development and system integration services.",
-    ],
-    type: 'service',
-  },
-  {
-    icon: Brain,
-    title: 'AI/ML Implementation Services',
-    company: 'Action Digital Institute',
-    duration: 'Advanced Solutions',
-    details: [
-      "Implement artificial intelligence and machine learning solutions for automation.",
-      "Predictive analytics and data insights for business intelligence.",
-      "Custom AI model development and deployment.",
+      "Web Design and Development - Complete web solutions tailored to business needs.",
+      "AI/Python Programming - Training and implementation of AI solutions.",
+      "Software Development - Custom software solutions for businesses.",
+      "Mobile Application Development - Building iOS and Android applications.",
     ],
     type: 'service',
   },
   {
     icon: Zap,
-    title: 'Digital Marketing Solutions',
+    title: 'Digital Marketing & Advertising',
     company: 'Action Digital Institute',
     duration: 'Growth Strategy',
     details: [
-      "Comprehensive SEO, SMM, and PPC campaigns.",
-      "Content marketing and social media management.",
-      "Analytics and reporting for data-driven decisions.",
+      "Digital Marketing Strategy - Comprehensive strategies for online growth.",
+      "Search Engine Optimization (SEO) - Improve your website's visibility.",
+      "Social Media Management - Managing social media presence effectively.",
+      "Pay-Per-Click (PPC) Advertising - Targeted advertising campaigns.",
+      "Email Marketing - Engaging with your audience through email.",
+      "Content Marketing - Creating valuable content for your audience.",
     ],
     type: 'service',
   },
   {
-    icon: Wrench,
-    title: 'IT Consulting & Support',
+    icon: Palette,
+    title: 'Creative Services',
     company: 'Action Digital Institute',
-    duration: 'Ongoing Support',
+    duration: 'Design & Production',
     details: [
-      "Technology strategy and implementation planning.",
-      "System architecture design and optimization.",
-      "24/7 technical support and maintenance services.",
+      "3D Animation - Creating stunning 3D animations for various purposes.",
+      "Video Editing - Professional video editing services.",
+      "Graphic Designing - Creating visual assets for marketing and branding.",
+      "Audio Editing & Voice Over - Professional audio services including voice-overs.",
+    ],
+    type: 'service',
+  },
+  {
+    icon: Globe,
+    title: 'Physical Marketing',
+    company: 'Action Digital Institute',
+    duration: 'Traditional Outreach',
+    details: [
+      "Hoarding & SMDs - Large-scale outdoor advertising solutions.",
+      "Newspaper Advertisements - Marketing through print media.",
+      "Steamers & Banners - Mobile and static display advertising.",
+      "Promotional Materials - Brochures, flyers, and other promotional items.",
+    ],
+    type: 'service',
+  },
+  {
+    icon: Brain,
+    title: 'AI Training Services',
+    company: 'Action Digital Institute',
+    duration: 'Skill Development',
+    details: [
+      "AI Content Creation - Training on generating appropriate AI prompts for marketing.",
+      "Data Analysis Tools - Using AI tools for business intelligence.",
+      "Data-Driven Decision Making - Leveraging AI for strategic business decisions.",
+    ],
+    type: 'service',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Social Media & E-Commerce',
+    company: 'Action Digital Institute',
+    duration: 'Online Business',
+    details: [
+      "Social Media Management - Managing brand presence on social platforms.",
+      "E-Commerce Solutions - Setting up and managing online stores.",
+      "YouTube Channel Management - Creating and managing profitable YouTube channels.",
+      "Freelancing Training - Helping clients sell skills and services online.",
     ],
     type: 'service',
   },
@@ -82,7 +113,7 @@ const Services = () => {
             Services We Offer
           </h2>
           <p className="section-subtitle text-secondary">
-            Comprehensive technology solutions for your business needs
+            Comprehensive technology and marketing solutions for your business needs
           </p>
         </motion.div>
 

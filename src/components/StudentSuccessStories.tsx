@@ -3,7 +3,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star, GraduationCap, Briefcase, Award } from 'lucide-react';
+import { Star, GraduationCap, Briefcase, Award, ShoppingBag, Users } from 'lucide-react';
 import { useState } from 'react';
 
 type SuccessStory = {
@@ -21,61 +21,62 @@ const StudentSuccessStories = () => {
   const [successStories] = useState<SuccessStory[]>([
     {
       id: '1',
-      name: 'Ahmed Khan',
-      title: 'Senior AI Engineer',
-      story: "Before joining Action Digital Institute, I had a basic understanding of Python but no real experience in AI development. The AI/ML program completely transformed my career path.",
-      result: "Now working as a Senior AI Engineer at a leading tech company with a 300% salary increase. Developed an NLP solution that's used by millions of users.",
-      program: 'AI/ML Mastery Program',
+      name: 'Sadia Khan',
+      title: 'E-commerce Entrepreneur',
+      story: "I had no experience in online business, but after completing the E-commerce and Digital Marketing program at ADI, I learned how to start and run an online store effectively.",
+      result: "Successfully launched my own online clothing store earning $3,000+ monthly. The skills helped me transcend barriers to poverty and build a sustainable business from home.",
+      program: 'E-Commerce & Digital Marketing',
       rating: 5,
       delay: 0.2,
     },
     {
       id: '2',
-      name: 'Fatima Ali',
-      title: 'Digital Marketing Director',
-      story: "As a marketing professional, I wanted to transition into digital marketing. The digital marketing program gave me the practical skills and confidence I needed.",
-      result: "Successfully transitioned to a leadership role as Digital Marketing Director. Managed campaigns worth $2M+ annually with a 40% improvement in ROI.",
-      program: 'Digital Marketing Mastery',
+      name: 'Ali Raza',
+      title: 'Freelancer & Digital Marketer',
+      story: "As a graduate student, I wanted to earn while learning. ADI's freelancing and social media management program taught me practical skills to generate online income.",
+      result: "Now working as a full-time freelancer earning $2,500+ monthly. Helped 15+ local businesses improve their online presence through digital marketing services.",
+      program: 'Freelancing & Social Media Management',
       rating: 5,
       delay: 0.3,
     },
     {
       id: '3',
-      name: 'Omar Hassan',
-      title: 'Full-Stack Developer',
-      story: "I was a traditional web designer looking to expand my skills. The Full-Stack Development program taught me modern technologies and best practices.",
-      result: "Now employed as a Full-Stack Developer with a tech startup. Built applications used by over 100,000 users and promoted twice in the past 18 months.",
-      program: 'Full-Stack Web Development',
+      name: 'Ayesha Bibi',
+      title: 'YouTube Content Creator',
+      title: 'YouTube Content Creator & Manager',
+      story: "As a woman entrepreneur, I needed skills that could help me work from home. The YouTube Channel Management and Video Editing program at ADI was exactly what I was looking for.",
+      result: "Built a successful YouTube channel with 100K+ subscribers and $1,800+ monthly income. Now managing channels for other clients as well.",
+      program: 'YouTube Channel Management & Video Editing',
       rating: 5,
       delay: 0.4,
     },
     {
       id: '4',
-      name: 'Zara Ahmed',
-      title: 'Entrepreneur',
-      story: "I wanted to build my own tech startup but lacked the technical skills. The comprehensive program taught me everything from development to digital marketing.",
-      result: "Successfully launched my own SaaS startup that now serves 500+ clients. Raised $500K in seed funding based on the MVP I built during the course.",
-      program: 'Complete Tech Entrepreneurship',
+      name: 'Kamran Ahmed',
+      title: 'AI/Python Developer',
+      story: "I was working a low-paying job and wanted to transition into the tech industry. The AI/Python Programming course at ADI provided the skills I needed to make a change.",
+      result: "Now working as an AI developer with a 200% salary increase. I've helped several startups implement AI solutions for their business challenges.",
+      program: 'AI/Python Programming',
       rating: 5,
       delay: 0.5,
     },
     {
       id: '5',
-      name: 'Yusuf Mir',
-      title: 'Data Science Lead',
-      story: "With a background in statistics, I wanted to transition to data science. The program connected my theoretical knowledge with practical applications.",
-      result: "Now leading a team of 8 data scientists in a Fortune 500 company. Implemented ML models that improved operational efficiency by 25%.",
-      program: 'Data Science & Analytics',
+      name: 'Farah Javed',
+      title: 'Graphic Designer & 3D Animator',
+      story: "As a creative person, I wanted to turn my passion for design into a career. ADI's 3D Animation and Graphic Designing program equipped me with industry-relevant skills.",
+      result: "Now running my own design business from home, creating visual content for clients globally. My animations have been featured in multiple local brands' campaigns.",
+      program: '3D Animation & Graphic Designing',
       rating: 5,
       delay: 0.6,
     },
     {
       id: '6',
-      name: 'Ayesha Khan',
-      title: 'Project Manager',
-      story: "I was already in tech but wanted to understand modern development practices to be a better project manager. The program filled crucial gaps in my knowledge.",
-      result: "Promoted to Senior Project Manager overseeing high-impact projects involving AI and web development. Successfully managed 15+ projects with 98% on-time delivery.",
-      program: 'Agile Development Practices',
+      name: 'Hassan Ali',
+      title: 'Web & App Developer',
+      story: "I wanted to learn web development to start my own tech business. ADI's Web Development program provided comprehensive training with practical projects and mentorship.",
+      result: "Successfully launched 3 web applications that serve over 10,000 users. Also developed mobile apps for local businesses, generating significant revenue streams.",
+      program: 'Web & Mobile App Development',
       rating: 5,
       delay: 0.7,
     },
@@ -118,7 +119,7 @@ const StudentSuccessStories = () => {
             Our Students' Journeys
           </h2>
           <p className="section-subtitle text-secondary">
-            Real results from our training programs
+            Real results from our 10+ essential digital skills training programs with incubation support
           </p>
         </motion.div>
 
@@ -132,23 +133,23 @@ const StudentSuccessStories = () => {
         >
           <div className="glass-card card p-6">
             <GraduationCap className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">2500+</h3>
+            <h3 className="text-3xl font-bold text-primary">1500+</h3>
             <p className="text-secondary">Students Trained</p>
           </div>
           <div className="glass-card card p-6">
             <Briefcase className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">92%</h3>
+            <h3 className="text-3xl font-bold text-primary">85%</h3>
             <p className="text-secondary">Employment Rate</p>
           </div>
           <div className="glass-card card p-6">
-            <Award className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">$50M+</h3>
-            <p className="text-secondary">Combined Salary Increase</p>
+            <ShoppingBag className="w-10 h-10 text-accent mx-auto mb-4" />
+            <h3 className="text-3xl font-bold text-primary">78%</h3>
+            <p className="text-secondary">Business Startup Success</p>
           </div>
           <div className="glass-card card p-6">
-            <Star className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">4.9/5</h3>
-            <p className="text-secondary">Average Rating</p>
+            <Users className="w-10 h-10 text-accent mx-auto mb-4" />
+            <h3 className="text-3xl font-bold text-primary">90%</h3>
+            <p className="text-secondary">Women Entrepreneurs</p>
           </div>
         </motion.div>
 
@@ -205,7 +206,7 @@ const StudentSuccessStories = () => {
         >
           <h3 className="text-2xl font-bold text-primary mb-4">Ready to Start Your Success Story?</h3>
           <p className="text-secondary max-w-2xl mx-auto mb-8">
-            Join thousands of students who have transformed their careers with our comprehensive training programs. Whether you're looking to advance in your current career or make a complete switch, we have a program for you.
+            Join hundreds of students who have transformed their lives with our comprehensive training programs and 1-month incubation support. We empower individuals and businesses, especially women entrepreneurs, through transformative IT & AI skills that transcend barriers to poverty and help emerge as visionary business leaders of the digital age.
           </p>
           <a 
             href="/#contact" 
