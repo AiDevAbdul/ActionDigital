@@ -1,4 +1,4 @@
-# techAI.pk - Personal Portfolio Website
+# ActionDigitalinstitute - Personal Portfolio Website
 
 This is a Next.js portfolio website for Abdul Wahab, an AI Engineer, Digital Marketing Strategist, and Skills Development Expert.
 
@@ -41,7 +41,7 @@ This portfolio showcases expertise in:
 1. Clone the repository
 ```bash
 git clone <repository-url>
-cd techai.pk
+cd ActionDigitalinstitute
 ```
 
 2. Install dependencies
@@ -73,7 +73,7 @@ Create a `.env.local` file with the following variables:
 
 ```bash
 # Database
-DATABASE_URL="postgresql://username:password@localhost:5432/techai_pk"
+DATABASE_URL="postgresql://username:password@localhost:5432/actiondigitalinstitute"
 
 # Admin credentials
 ADMIN_EMAIL="admin@yourdomain.com"
@@ -102,7 +102,7 @@ This project is optimized for deployment on Vercel:
 
 ### Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/techai.pk&env=DATABASE_URL,ADMIN_EMAIL,ADMIN_PASSWORD,ADMIN_API_KEY,NEXT_PUBLIC_ADMIN_API_KEY,NEXT_PUBLIC_EMAILJS_SERVICE_ID,NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,NEXT_PUBLIC_EMAILJS_PUBLIC_KEY&envDescription=Environment%20variables%20required%20for%20deployment)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/ActionDigitalinstitute&env=DATABASE_URL,ADMIN_EMAIL,ADMIN_PASSWORD,ADMIN_API_KEY,NEXT_PUBLIC_ADMIN_API_KEY,NEXT_PUBLIC_EMAILJS_SERVICE_ID,NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,NEXT_PUBLIC_EMAILJS_PUBLIC_KEY&envDescription=Environment%20variables%20required%20for%20deployment)
 
 ### Environment Variables for Vercel
 
@@ -136,4 +136,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Abdul Wahab - [techAI.pk](https://techai.pk)
+Abdul Wahab - [ActionDigitalinstitute](https://ActionDigitalinstitute)

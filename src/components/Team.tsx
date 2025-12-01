@@ -35,7 +35,7 @@ const Team = () => {
       location: 'Peshawar, Pakistan',
       socialLinks: {
         linkedin: '#',
-        email: 'mailto:jehangir@techai.pk'
+        email: 'mailto:jehangir@ActionDigitalinstitute'
       },
       delay: 0.1
     },
@@ -50,7 +50,7 @@ const Team = () => {
       socialLinks: {
         linkedin: '#',
         github: '#',
-        email: 'mailto:abdul@techai.pk'
+        email: 'mailto:abdul@ActionDigitalinstitute'
       },
       delay: 0.2
     },
@@ -65,7 +65,7 @@ const Team = () => {
       socialLinks: {
         linkedin: '#',
         github: '#',
-        email: 'mailto:jan@techai.pk'
+        email: 'mailto:jan@ActionDigitalinstitute'
       },
       delay: 0.3
     },
@@ -80,7 +80,7 @@ const Team = () => {
       socialLinks: {
         linkedin: '#',
         twitter: '#',
-        email: 'mailto:hameed@techai.pk'
+        email: 'mailto:hameed@ActionDigitalinstitute'
       },
       delay: 0.4
     },
@@ -95,7 +95,7 @@ const Team = () => {
       socialLinks: {
         linkedin: '#',
         twitter: '#',
-        email: 'mailto:amir@techai.pk'
+        email: 'mailto:amir@ActionDigitalinstitute'
       },
       delay: 0.5
     }

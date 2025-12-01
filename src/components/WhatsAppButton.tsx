@@ -6,7 +6,7 @@ import { MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 const WhatsAppButton = () => {
-  const whatsappNumber = '+15551234567';
+  const whatsappNumber = '+923189532843';
   const whatsappMessage = 'Hello! I came from Action Digital Institute website and would like to learn more about your courses and programs...';
 
   return (

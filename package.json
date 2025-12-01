@@ -1,7 +1,7 @@
 {
-  "name": "tech-ai-portfolio",
+  "name": "action-digital-institute-portfolio",
   "version": "0.1.0",
-  "description": "Personal portfolio website for Abdul Wahab, an AI Engineer and Digital Marketing Strategist",
+  "description": "Personal portfolio website for Abdul Wahab, an AI Engineer and Digital Marketing Strategist at Action Digital Institute",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -13,11 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/techai.pk.git"
+    "url": "https://github.com/your-username/ActionDigitalinstitute.git"
   },
   "keywords": [
     "nextjs",
     "portfolio",
+    "action-digital-institute",
     "ai-engineering",
     "digital-marketing",
     "typescript",

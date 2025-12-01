@@ -72,7 +72,7 @@ const StudentSuccessStories = () => {
   return (
     <section id="success-stories" className="section bg-surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -145,17 +145,17 @@ const StudentSuccessStories = () => {
                   {renderStars(story.rating)}
                 </div>
               </div>
-              
+
               <div className="mb-4">
                 <h4 className="font-bold text-primary mb-2">Journey:</h4>
                 <p className="text-secondary">{story.story}</p>
               </div>
-              
+
               <div className="mb-4">
                 <h4 className="font-bold text-primary mb-2">Results:</h4>
                 <p className="text-secondary">{story.result}</p>
               </div>
-              
+
               <div className="mt-auto pt-4 border-t border-default">
                 <div className="flex items-center text-accent">
                   <Award className="w-4 h-4 mr-2" />
@@ -178,13 +178,24 @@ const StudentSuccessStories = () => {
           <p className="text-secondary max-w-2xl mx-auto mb-8">
             Join hundreds of students who have transformed their lives with our comprehensive training programs and 1-month incubation support. We empower individuals and businesses, especially women entrepreneurs, through transformative IT & AI skills that transcend barriers to poverty and help emerge as visionary business leaders of the digital age.
           </p>
-          <a 
-            href="/#contact" 
-            className="btn inline-flex items-center"
-          >
-            <GraduationCap className="mr-2 h-5 w-5" />
-            Enroll Today
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="/#contact"
+              className="btn inline-flex items-center"
+            >
+              <GraduationCap className="mr-2 h-5 w-5" />
+              Enroll Today
+            </a>
+
+            <a
+              href="https://wa.me/923189532843"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary inline-flex items-center"
+            >
+              Contact via WhatsApp
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

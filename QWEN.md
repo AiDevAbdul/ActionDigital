@@ -1,4 +1,4 @@
-# Project Context: techAI.pk
+# Project Context: ActionDigitalinstitute
 
 ## Project Overview
 This is a Next.js portfolio website for Abdul Wahab, an AI Engineer, Digital Marketing Strategist, and Skills Development Expert. The site showcases expertise in AI engineering, digital marketing strategy, and skills development while demonstrating modern web development practices.
@@ -16,7 +16,7 @@ The project uses:
 
 ## Directory Structure
 ```
-techAI.pk/
+ActionDigitalinstitute/
 ├── .env.example          # Environment variables template
 ├── .gitignore
 ├── eslint.config.mjs
@@ -94,7 +94,7 @@ The project uses a PostgreSQL database with the following models:
 ### Development
 ```bash
 # Navigate to the project directory
-cd techAI.pk
+cd ActionDigitalinstitute
 
 # Install dependencies
 npm install
