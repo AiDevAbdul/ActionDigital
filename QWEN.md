@@ -1,11 +1,11 @@
 # Project Context: techAI.pk
 
 ## Project Overview
-This is a Next.js 15.5.4 application designed as a personal portfolio website for Abdul Wahab, an AI Engineer, Digital Marketing Strategist, and Skills Development Expert. The site is built with TypeScript, React, and incorporates modern UI/UX features with dark/light theme support, animations, and responsive design.
+This is a Next.js portfolio website for Abdul Wahab, an AI Engineer, Digital Marketing Strategist, and Skills Development Expert. The site showcases expertise in AI engineering, digital marketing strategy, and skills development while demonstrating modern web development practices.
 
 The project uses:
-- Next.js 15 (with Turbopack)
-- React 19.1.0
+- Next.js 14 (with App Router)
+- React 18
 - TypeScript
 - Tailwind CSS for styling
 - Prisma ORM for database operations
@@ -13,71 +13,103 @@ The project uses:
 - Lucide React icons
 - EmailJS for contact forms
 - Context API for state management
-- Geist font from Vercel
 
 ## Directory Structure
 ```
-techai.pk/
-├── .env.local          # Environment variables
+techAI.pk/
+├── .env.example          # Environment variables template
 ├── .gitignore
-├── next.config.ts      # Next.js configuration
-├── package.json        # Dependencies and scripts
-├── tsconfig.json       # TypeScript configuration
+├── eslint.config.mjs
+├── LICENSE
+├── next.config.js        # Next.js configuration
+├── package.json          # Dependencies and scripts
+├── postcss.config.mjs    # PostCSS configuration
+├── tsconfig.json         # TypeScript configuration
+├── prisma/               # Prisma database schema
+├── public/               # Static assets
 ├── src/
-│   ├── app/            # Next.js App Router pages
-│   │   ├── admin/      # Admin panel pages
-│   │   ├── api/        # API routes
-│   │   ├── blog/       # Blog-related pages
+│   ├── app/              # Next.js App Router pages
+│   │   ├── about/        # About page
+│   │   ├── admin/        # Admin panel pages
+│   │   ├── api/          # API routes
+│   │   ├── blog/         # Blog-related pages
+│   │   ├── contact/      # Contact page
+│   │   ├── courses/      # Courses section
+│   │   ├── projects/     # Projects section
+│   │   ├── services/     # Services section
+│   │   ├── team/         # Team section
 │   │   ├── favicon.ico
-│   │   ├── globals.css # Global styles
-│   │   ├── layout.tsx  # Root layout
-│   │   └── page.tsx    # Home page
-│   ├── components/     # React components
-│   │   ├── admin/      # Admin components
-│   │   ├── blog/       # Blog components
-│   │   ├── Header.tsx  # Site header
-│   │   ├── Footer.tsx  # Site footer
-│   │   ├── Hero.tsx    # Hero section
-│   │   ├── Projects.tsx # Projects section
-│   │   ├── Experience.tsx # Experience section
-│   │   ├── Contact.tsx # Contact form
-│   │   ├── Expertise.tsx # Expertise section
-│   │   ├── RevolvingSkills.tsx # Skills visualization
+│   │   ├── globals.css   # Global styles
+│   │   ├── layout.tsx    # Root layout
+│   │   └── page.tsx      # Home page
+│   ├── components/       # React components
+│   │   ├── admin/        # Admin components
+│   │   ├── blog/         # Blog components
+│   │   ├── About.tsx     # About section
+│   │   ├── AnimatedHomePage.tsx # Animated homepage
+│   │   ├── AnimatedLogo.tsx # Animated logo component
 │   │   ├── AnimatedPageWrapper.tsx # Animation wrapper
-│   │   └── ...         # Other UI components
-│   ├── context/        # React Context providers
-│   │   └── ThemeProvider.tsx # Theme management context
-│   ├── data/           # Static data files
-│   │   └── blogData.ts # Blog-related data
-│   └── lib/            # Utility functions/libraries
-│       └── db.ts       # Prisma database client
+│   │   ├── BlogCard.tsx  # Blog card component
+│   │   ├── Contact.tsx   # Contact form
+│   │   ├── ContactSection.tsx # Contact section
+│   │   ├── Courses.tsx   # Courses section
+│   │   ├── CoursesPage.tsx # Courses page
+│   │   ├── CoursesSection.tsx # Courses section
+│   │   ├── Footer.tsx    # Site footer
+│   │   ├── Header.tsx    # Site header
+│   │   ├── Hero.tsx      # Hero section
+│   │   ├── LatestBlogs.tsx # Latest blogs component
+│   │   ├── ProjectsSection.tsx # Projects section
+│   │   ├── RevolvingSkills.tsx # Skills visualization
+│   │   ├── Services.tsx  # Services section
+│   │   ├── StudentSuccessStories.tsx # Success stories
+│   │   ├── Team.tsx      # Team section
+│   │   ├── Testimonials.tsx # Testimonials section
+│   │   ├── ThemeToggle.tsx # Theme toggle component
+│   │   └── WhatsAppButton.tsx # WhatsApp button
+│   ├── context/          # React Context providers
+│   ├── data/             # Static data files
+│   └── lib/              # Utility functions/libraries
+│       └── db.ts         # Prisma database client
 ```
 
 ## Key Features
 - **Dark/Light Theme**: Dynamic theme switching with localStorage persistence
 - **Animations**: Smooth transitions and animated components using Framer Motion
 - **Responsive Design**: Mobile-first responsive layout
+- **Admin Panel**: Backend management functionality with authentication
 - **Blog Section**: Content management for blog posts
 - **Contact Form**: EmailJS integration for contact submissions
-- **Admin Panel**: Backend management functionality
+- **Projects Showcase**: Project display with tech stack and links
+- **Courses Section**: Educational content display
 - **SEO Optimized**: Proper metadata and structured data
+
+## Prisma Schema
+The project uses a PostgreSQL database with the following models:
+- Project: Contains project information (title, description, tech stack, link, icon)
+- User: Contains user information (email, password, name) for admin authentication
 
 ## Building and Running
 
 ### Development
 ```bash
 # Navigate to the project directory
-cd techai.pk
+cd techAI.pk
 
 # Install dependencies
 npm install
 
+# Set up environment variables
+cp .env.example .env.local
+# Update .env.local with your actual values
+
+# Generate Prisma client
+npx prisma generate
+
 # Run the development server
 npm run dev
-# or with bun
-bun dev
 ```
-The development server runs with Turbopack enabled on http://localhost:3000.
+The development server runs on http://localhost:3000.
 
 ### Production Build
 ```bash
@@ -92,6 +124,11 @@ npm run start
 ```bash
 # Run ESLint to check for code issues
 npm run lint
+# or
+npm run lint:check
+
+# Automatically fix linting errors
+npm run lint:fix
 ```
 
 ## Development Conventions
@@ -104,7 +141,7 @@ npm run lint
 - Context providers manage state in `src/context/`
 
 ### Styling
-- Tailwind CSS is used for styling with custom configuration in `tailwind.config.js`
+- Tailwind CSS is used for styling with custom configuration in `postcss.config.mjs`
 - Global styles are defined in `src/app/globals.css`
 - CSS variables and custom classes follow the BEM methodology
 
@@ -126,9 +163,18 @@ npm run lint
 ## API Routes
 The project includes API routes in `src/app/api/` for:
 - Contact form submissions
+- Admin authentication
+- Project management
 - Blog data management
-- Admin functionality
 - Any other server-side operations
 
 ## Environment Variables
-Environment variables are managed through `.env.local` file with sensitive data stored in the version control system's secrets.
+Environment variables are managed through `.env.local` file with sensitive data:
+- DATABASE_URL: PostgreSQL database connection string
+- ADMIN_EMAIL: Admin email for login
+- ADMIN_PASSWORD: Admin password for login
+- ADMIN_API_KEY: Secret key for admin API access
+- NEXT_PUBLIC_ADMIN_API_KEY: Public key corresponding to admin API key
+- NEXT_PUBLIC_EMAILJS_SERVICE_ID: EmailJS service ID
+- NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: EmailJS template ID
+- NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: EmailJS public key

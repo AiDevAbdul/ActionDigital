@@ -115,24 +115,6 @@ const About = () => {
             </div>
           </div>
         </motion.div>
-
-        {/* Team Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center"
-        >
-          <h3 className="text-3xl font-bold text-primary mb-6">Leadership Team</h3>
-          <p className="text-secondary max-w-3xl mx-auto mb-10">
-            <strong>Contact Person:</strong> Jehangir Khan - Managing Director<br/>
-            Cell: 0092 321 9198 214<br/>
-            Phone & Fax: 0092 91 2040 163<br/>
-            Email: MD_ADI@OUTLOOK.COM, PM_ADI@OUTLOOK.COM<br/>
-            Address: House 98F, Zaryab Colony, Faqirabad No 2, Peshawar, Khyber Pakhtunkhwa, Pakistan
-          </p>
-        </motion.div>
       </div>
     </section>
   );

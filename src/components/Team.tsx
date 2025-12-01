@@ -32,10 +32,10 @@ const Team = () => {
       bio: 'Visionary leader and founder of Action Digital Institute. With decades of experience in digital transformation, he guides our strategic direction and ensures our commitment to excellence.',
       skills: ['Digital Strategy', 'Business Leadership', 'Innovation', 'AI Implementation', 'EdTech'],
       experience: '15+ Years',
-      location: 'Karachi, Pakistan',
+      location: 'Peshawar, Pakistan',
       socialLinks: {
         linkedin: '#',
-        email: 'mailto:je@techai.pk'
+        email: 'mailto:jehangir@techai.pk'
       },
       delay: 0.1
     },
@@ -46,7 +46,7 @@ const Team = () => {
       bio: 'Specialist in AI implementation, machine learning, and innovative tech solutions. Combines technical expertise with strategic business insight.',
       skills: ['AI/ML', 'Python', 'JavaScript', 'TensorFlow', 'Next.js'],
       experience: '8+ Years',
-      location: 'Karachi, Pakistan',
+      location: 'Peshawar, Pakistan',
       socialLinks: {
         linkedin: '#',
         github: '#',
@@ -56,46 +56,46 @@ const Team = () => {
     },
     {
       id: '3',
-      name: 'Sarah Johnson',
-      role: 'Lead Developer',
-      bio: 'Full-stack developer with expertise in modern web technologies and cloud solutions. Passionate about creating scalable applications.',
-      skills: ['React', 'Node.js', 'TypeScript', 'AWS', 'Docker'],
-      experience: '6+ Years',
-      location: 'New York, USA',
+      name: 'Jan Sher Khan',
+      role: 'Event Manager & Coordinator',
+      bio: 'Experienced event manager skilled in organizing and executing successful corporate events, workshops, and seminars. Ensures seamless coordination and exceptional attendee experiences.',
+      skills: ['Event Planning', 'Coordination', 'Communication', 'Logistics', 'Customer Service'],
+      experience: '3+ Years',
+      location: 'Peshawar, Pakistan',
       socialLinks: {
         linkedin: '#',
         github: '#',
-        email: 'mailto:sarah@techai.pk'
+        email: 'mailto:jan@techai.pk'
       },
       delay: 0.3
     },
     {
       id: '4',
-      name: 'Michael Chen',
-      role: 'Marketing Strategist',
-      bio: 'Digital marketing expert with focus on data-driven strategies and customer engagement. Brings innovative approaches to brand growth.',
-      skills: ['SEO/SEM', 'Analytics', 'Content Strategy', 'Social Media', 'PPC'],
-      experience: '7+ Years',
-      location: 'San Francisco, USA',
+      name: 'Hameed Khan',
+      role: 'Public Relationship Manager',
+      bio: 'Experienced professional in public relations and communications. Skilled in building strong relationships with clients, media, and stakeholders to enhance brand reputation.',
+      skills: ['Public Relations', 'Communication', 'Media Relations', 'Crisis Management', 'Brand Management'],
+      experience: '10+ Years',
+      location: 'Peshawar, Pakistan',
       socialLinks: {
         linkedin: '#',
         twitter: '#',
-        email: 'mailto:michael@techai.pk'
+        email: 'mailto:hameed@techai.pk'
       },
       delay: 0.4
     },
     {
       id: '5',
-      name: 'Emma Thompson',
-      role: 'UX/UI Designer',
-      bio: 'Creative designer focused on user-centered interfaces and experiences. Combines aesthetic sensibility with usability best practices.',
-      skills: ['Figma', 'UI/UX', 'Prototyping', 'User Research', 'Visual Design'],
-      experience: '5+ Years',
-      location: 'London, UK',
+      name: 'Amir Sohail',
+      role: 'Content Strategist & Creator',
+      bio: 'Creative content strategist with a passion for storytelling. Develops engaging content strategies that align with brand goals and resonate with target audiences.',
+      skills: ['Content Strategy','Video Editing', 'Social Media', 'Digital Marketing'],
+      experience: '10+ Years',
+      location: 'Swat, Pakistan',
       socialLinks: {
         linkedin: '#',
         twitter: '#',
-        email: 'mailto:emma@techai.pk'
+        email: 'mailto:amir@techai.pk'
       },
       delay: 0.5
     }

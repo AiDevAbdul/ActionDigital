@@ -65,11 +65,11 @@ const Programs = () => {
   const fallbackPrograms = [
     {
       id: '1',
-      title: 'Full-Stack Web Development Bootcamp',
-      description: "Comprehensive training program covering modern JavaScript frameworks, React, Next.js, Node.js, and database management. Students build real-world applications and deploy them to production environments.",
-      tech: ['React', 'Next.js', 'Node.js', 'MongoDB', 'UI/UX Design'],
+      title: 'AI Masterclass Program',
+      description: "Effective Use of AI tools for business growth and personal productivity. Hands-on projects include automating workflows, content creation, and data analysis using AI technologies.",
+      tech: ['AI', 'Prompting', 'Automation', 'Content Creation', 'Data Analysis'],
       link: '#',
-      icon: 'Code',
+      icon: 'Brain',
       delay: 0.2,
     },
     {

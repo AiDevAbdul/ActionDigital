@@ -3,7 +3,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star, GraduationCap, Briefcase, Award, ShoppingBag, Users } from 'lucide-react';
+import { Star, GraduationCap, Briefcase, Award, Users, BriefcaseBusiness } from 'lucide-react';
 import { useState } from 'react';
 
 type SuccessStory = {
@@ -21,63 +21,33 @@ const StudentSuccessStories = () => {
   const [successStories] = useState<SuccessStory[]>([
     {
       id: '1',
-      name: 'Sadia Khan',
-      title: 'E-commerce Entrepreneur',
-      story: "I had no experience in online business, but after completing the E-commerce and Digital Marketing program at ADI, I learned how to start and run an online store effectively.",
-      result: "Successfully launched my own online clothing store earning $3,000+ monthly. The skills helped me transcend barriers to poverty and build a sustainable business from home.",
-      program: 'E-Commerce & Digital Marketing',
+      name: 'Taimur Khan',
+      title: 'Freelancer & Digital Marketer',
+      story: "Before joining ADI, I tried many online courses, but none of them gave real results. I started as a complete beginner with no experience and wanted to support myself as a student. When I joined Action Digital Institute, everything changed. I learned practical skills in Digital Marketing, Social Media Management, YouTube Automation, and Graphic Design — with real guidance and hands-on training.",
+      result: "Within one year, I started getting real clients and earning online. Today, I’m working with 13 clients and making handsome income per month. ADI helped me gain skills, confidence, and a successful freelancing career.",
+      program: 'Social Media Management & Marketing',
       rating: 5,
       delay: 0.2,
     },
     {
       id: '2',
-      name: 'Ali Raza',
+      name: 'Fawad Khan Afridi',
       title: 'Freelancer & Digital Marketer',
-      story: "As a graduate student, I wanted to earn while learning. ADI's freelancing and social media management program taught me practical skills to generate online income.",
-      result: "Now working as a full-time freelancer earning $2,500+ monthly. Helped 15+ local businesses improve their online presence through digital marketing services.",
-      program: 'Freelancing & Social Media Management',
+      story: "At a time when I had no job and no clear path, I decided to learn a skill that could change my situation. I joined the Digital Marketing program at Action Agency, guided by Wahab Sir and Jehangir Sir, whose support gave me confidence. \n Within just a few days of starting the course, I secured my first client and began managing social media for his shop. Even with limited experience, I trusted Allah and put in my best effort — and that first opportunity became the start of my professional journey.",
+      result: "Today, Alhamdulillah, I work with 15+ clients and manage digital marketing campaigns for multiple businesses. This skill has given me stability, direction, and a growing freelance career.",
+      program: 'Social Media Management & Marketing',
       rating: 5,
       delay: 0.3,
     },
     {
       id: '3',
-      name: 'Ayesha Bibi',
-      title: 'YouTube Content Creator & Manager',
-      story: "As a woman entrepreneur, I needed skills that could help me work from home. The YouTube Channel Management and Video Editing program at ADI was exactly what I was looking for.",
-      result: "Built a successful YouTube channel with 100K+ subscribers and $1,800+ monthly income. Now managing channels for other clients as well.",
-      program: 'YouTube Channel Management & Video Editing',
+      name: 'Adil Ghafoor',
+      title: 'Social Media Manager | Graphics Designer',
+      story: "With a passion for creativity and digital growth, I joined the Social Media Management & Marketing program at ADI. There, I learned how to plan, manage, and grow brands online — from creating engaging content to running successful marketing campaigns and offering services worldwide through freelancing platforms.",
+      result: "Today, I work as a freelance and onsite Social Media Manager, collaborating with international and local clients. The program not only boosted my skills but also gave me the confidence to build a strong online presence and grow as a successful digital professional.",
+      program: 'Social Media Management & Marketing',
       rating: 5,
       delay: 0.4,
-    },
-    {
-      id: '4',
-      name: 'Kamran Ahmed',
-      title: 'AI/Python Developer',
-      story: "I was working a low-paying job and wanted to transition into the tech industry. The AI/Python Programming course at ADI provided the skills I needed to make a change.",
-      result: "Now working as an AI developer with a 200% salary increase. I've helped several startups implement AI solutions for their business challenges.",
-      program: 'AI/Python Programming',
-      rating: 5,
-      delay: 0.5,
-    },
-    {
-      id: '5',
-      name: 'Farah Javed',
-      title: 'Graphic Designer & 3D Animator',
-      story: "As a creative person, I wanted to turn my passion for design into a career. ADI's 3D Animation and Graphic Designing program equipped me with industry-relevant skills.",
-      result: "Now running my own design business from home, creating visual content for clients globally. My animations have been featured in multiple local brands' campaigns.",
-      program: '3D Animation & Graphic Designing',
-      rating: 5,
-      delay: 0.6,
-    },
-    {
-      id: '6',
-      name: 'Hassan Ali',
-      title: 'Web & App Developer',
-      story: "I wanted to learn web development to start my own tech business. ADI's Web Development program provided comprehensive training with practical projects and mentorship.",
-      result: "Successfully launched 3 web applications that serve over 10,000 users. Also developed mobile apps for local businesses, generating significant revenue streams.",
-      program: 'Web & Mobile App Development',
-      rating: 5,
-      delay: 0.7,
     },
   ]);
 
@@ -131,25 +101,26 @@ const StudentSuccessStories = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-20"
         >
           <div className="glass-card card p-6">
-            <GraduationCap className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">1500+</h3>
+            <Users className="w-10 h-10 text-accent mx-auto mb-4" />
+            <h3 className="text-3xl font-bold text-primary">1000+</h3>
             <p className="text-secondary">Students Trained</p>
           </div>
           <div className="glass-card card p-6">
             <Briefcase className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">85%</h3>
-            <p className="text-secondary">Employment Rate</p>
+            <h3 className="text-3xl font-bold text-primary">95%</h3>
+            <p className="text-secondary">Satisfaction Rate</p>
           </div>
           <div className="glass-card card p-6">
-            <ShoppingBag className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">78%</h3>
-            <p className="text-secondary">Business Startup Success</p>
+            <GraduationCap className="w-10 h-10 text-accent mx-auto mb-4" />
+            <h3 className="text-3xl font-bold text-primary">10+</h3>
+            <p className="text-secondary">Skills</p>
           </div>
           <div className="glass-card card p-6">
-            <Users className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">90%</h3>
-            <p className="text-secondary">Women Entrepreneurs</p>
+            <BriefcaseBusiness className="w-10 h-10 text-accent mx-auto mb-4" />
+            <h3 className="text-3xl font-bold text-primary">50+</h3>
+            <p className="text-secondary">Startups</p>
           </div>
+
         </motion.div>
 
         {/* Success Stories Grid */}

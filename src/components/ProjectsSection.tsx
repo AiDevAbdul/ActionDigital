@@ -67,20 +67,20 @@ const ProjectsSection = () => {
   const fallbackProjects = [
     {
       id: '1',
-      title: 'AI-Driven Social Media Growth & Automation',
-      description: "Designed marketing strategies and automated workflows integrating n8n, ChatGPT, and marketing APIs to achieve measurable increases in social media reach and conversions.",
-      tech: ['ChatGPT', 'n8n', 'APIs', 'Digital Marketing'],
+      title: 'Website Design & Development',
+      description: "Designed and developed responsive websites for a local business, enhancing their online presence and customer engagement.",
+      tech: ['website', 'wordpress', 'html', 'tailwindcss'],
       link: '#',
-      icon: 'LineChart',
+      icon: 'Website',
       delay: 0.2,
     },
     {
       id: '2',
-      title: 'AI-Powered Learning Tools',
-      description: "Engineered AI-powered learning and operational tools for digital training programs at Action Digital Institute, enhancing both student engagement and administrative efficiency.",
-      tech: ['AI Integration', 'Digital Training', 'Project Supervision'],
+      title: 'AI-Powered Chatbot',
+      description: "Automated customer support using an AI-powered chatbot integrated into the client's website, improving response times and customer satisfaction.",
+      tech: ['AI Integration', 'Chatbot', 'customer support', 'automation'],
       link: '#',
-      icon: 'Code',
+      icon: 'Chatbot',
       delay: 0.3,
     },
     {

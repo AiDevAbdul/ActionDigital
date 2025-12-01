@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Courses from '@/components/Expertise';
-import Programs from '@/components/Projects';
-import Services from '@/components/Experience';
+import Courses from '@/components/Courses';
+import Programs from '@/components/CoursesSection';
+import Services from '@/components/Services';
 import ProjectsSection from '@/components/ProjectsSection';
 import Testimonials from '@/components/Testimonials';
 import StudentSuccessStories from '@/components/StudentSuccessStories';
