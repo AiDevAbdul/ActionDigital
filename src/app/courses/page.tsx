@@ -9,60 +9,54 @@ const CoursesPage = () => {
       title: 'Digital Literacy & AI Tools',
       description: 'Master essential digital skills and cutting-edge AI tools to thrive in the modern digital landscape.',
       duration: '16 Days',
-      level: 'Beginner to Intermediate',
-      modules: 16,
+      modules: 4,
       rating: 4.9,
-      students: 1250,
+      students: 50,
     },
     {
       id: 'python-programming',
       title: 'Python Programming',
       description: 'Learn Python from basics to advanced concepts with hands-on projects and real-world applications.',
       duration: '8 Weeks',
-      level: 'Beginner to Intermediate',
       modules: 12,
       rating: 4.8,
-      students: 980,
+      students: 100,
     },
     {
       id: 'ai-driven-development',
       title: 'AI Driven Development',
       description: 'Build intelligent applications using modern AI tools, machine learning, and automation techniques.',
       duration: '10 Weeks',
-      level: 'Intermediate to Advanced',
       modules: 14,
       rating: 4.7,
-      students: 750,
+      students: 20,
     },
     {
       id: 'social-media-management',
       title: 'Social Media Management',
       description: 'Master the art of managing social media accounts, creating engaging content, and growing your audience.',
       duration: '6 Weeks',
-      level: 'Beginner to Intermediate',
       modules: 10,
       rating: 4.6,
-      students: 1100,
+      students: 1000,
     },
     {
       id: 'social-media-marketing',
       title: 'Social Media Marketing',
       description: 'Learn effective strategies to promote brands, products, and services across various social platforms.',
       duration: '6 Weeks',
-      level: 'Intermediate',
       modules: 11,
       rating: 4.5,
-      students: 850,
+      students: 300,
     },
     {
       id: 'artificial-intelligence',
       title: 'Artificial Intelligence',
       description: 'Deep dive into AI concepts, neural networks, and practical applications of artificial intelligence.',
       duration: '12 Weeks',
-      level: 'Advanced',
       modules: 18,
       rating: 4.9,
-      students: 620,
+      students: 150,
     }
   ];
 
@@ -85,7 +79,6 @@ const CoursesPage = () => {
                 title={course.title}
                 description={course.description}
                 duration={course.duration}
-                level={course.level}
                 modules={course.modules}
                 rating={course.rating}
                 students={course.students}

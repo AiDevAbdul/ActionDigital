@@ -1,10 +1,156 @@
+'use client';
+
 import React from 'react';
 import AnimatedPageWrapper from '@/components/AnimatedPageWrapper';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Users, Clock, Star, CheckCircle, Calendar, FileText, Award } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, Clock, Star, CheckCircle, Calendar, FileText, Award, Download } from 'lucide-react';
+import { jsPDF } from 'jspdf';
 
 const DigitalLiteracyCoursePage = () => {
-  // Course structure as per the provided content
+  const downloadPDF = () => {
+    try {
+      const pdf = new jsPDF();
+      const pageWidth = pdf.internal.pageSize.getWidth();
+
+      // Set the title
+      pdf.setFontSize(22);
+      pdf.setTextColor(239, 126, 46); // Orange color matching primary theme
+      pdf.text('16-Day Digital Literacy & AI Tools Course', pageWidth / 2, 20, { align: 'center' });
+
+      // Add subtitle
+      pdf.setFontSize(16);
+      pdf.setTextColor(0, 0, 0);
+      pdf.text('Master essential digital skills and cutting-edge AI tools', pageWidth / 2, 30, { align: 'center' });
+
+      // Add course overview
+      pdf.setFontSize(14);
+      pdf.text('Course Overview', 20, 45);
+
+      const overviewText = 'This comprehensive 16-day course is designed to equip you with essential digital literacy skills and proficiency in modern AI tools that are transforming industries worldwide. Our curriculum combines foundational digital skills with cutting-edge AI applications to prepare you for the future.';
+      const overviewLines = pdf.splitTextToSize(overviewText, pageWidth - 40);
+      pdf.text(overviewLines, 20, 50);
+
+      // Add course structure details
+      let yPos = 65;
+      pdf.text('Course Structure: This course spans four weeks (Monday to Thursday), providing intensive training in foundational digital skills, graphic/video design using Canva, and cutting-edge AI content creation.', 20, yPos);
+
+      // Add what you'll learn
+      yPos += 15;
+      pdf.text('What You\'ll Learn:', 20, yPos);
+
+      const learningPoints = [
+        'Essential digital literacy skills including file management, web navigation, and software usage',
+        'AI tools for productivity, content creation, data analysis, and automation',
+        'Digital communication and collaboration tools for remote work and team projects',
+        'Online safety, privacy protection, and digital citizenship best practices',
+        'Introduction to Freelancing and Future-Proof Skills',
+        'Self Learning Free Platforms and Resources'
+      ];
+
+      yPos += 10;
+      learningPoints.forEach(point => {
+        if (yPos > 280) { // If near bottom of page, add new page
+          pdf.addPage();
+          yPos = 20;
+        }
+        pdf.text(`• ${point}`, 25, yPos);
+        yPos += 8;
+      });
+
+      // Add who should attend
+      if (yPos > 280) {
+        pdf.addPage();
+        yPos = 20;
+      }
+      pdf.text('Who Should Attend:', 20, yPos + 10);
+
+      const attendeePoints = [
+        'Professionals looking to enhance their digital skills and stay competitive',
+        'Students preparing for a digital future in their careers',
+        'Entrepreneurs leveraging AI tools to grow their businesses',
+        'Anyone seeking to improve their digital literacy for personal growth'
+      ];
+
+      yPos += 20;
+      attendeePoints.forEach(point => {
+        if (yPos > 280) { // If near bottom of page, add new page
+          pdf.addPage();
+          yPos = 20;
+        }
+        pdf.text(`• ${point}`, 25, yPos);
+        yPos += 8;
+      });
+
+      // Add modules
+      if (yPos > 280) {
+        pdf.addPage();
+        yPos = 20;
+      }
+      pdf.text('Course Modules:', 20, yPos + 10);
+
+      const modules = [
+        '1. Typing Fundamentals',
+        '2. MS Word: Basic Documents & Email Setup',
+        '3. MS Word: CV and Cover Letter Writing',
+        '4. MS Excel: Introduction to Spreadsheets',
+        '5. MS Excel: Data Analysis Basics',
+        '6. Canva Graphics Designing (Basic)',
+        '7. Canva Graphics: Advanced Design & Branding',
+        '8. Canva Video Editing & Simple Motion',
+        '9. MS PowerPoint: Presentation Polishing',
+        '10. Introduction to AI & The Prompt Mindset',
+        '11. Prompt Engineering 101: Structure',
+        '12. AI for Research & Long-Form Writing',
+        '13. AI for Learning, Practice & Languages',
+        '14. Image Generation AI Tools (Basic & Advanced)',
+        '15. AI Multimedia Creation (Audio & Video)',
+        '16. Content Strategy, Personal Branding & Final Review'
+      ];
+
+      yPos += 20;
+      modules.forEach(module => {
+        if (yPos > 280) { // If near bottom of page, add new page
+          pdf.addPage();
+          yPos = 20;
+        }
+        pdf.text(module, 25, yPos);
+        yPos += 8;
+      });
+
+      // Add course details
+      if (yPos > 280) {
+        pdf.addPage();
+        yPos = 20;
+      }
+      pdf.text('Course Details:', 20, yPos + 10);
+
+      const details = [
+        'Duration: 16 Days',
+        'Schedule: 4 Weeks',
+        'Format: Online/Interactive',
+        'Certificate: Available',
+        'Rating: 4.9 (1250+ reviews)'
+      ];
+
+      yPos += 20;
+      details.forEach(detail => {
+        if (yPos > 280) { // If near bottom of page, add new page
+          pdf.addPage();
+          yPos = 20;
+        }
+        pdf.text(detail, 25, yPos);
+        yPos += 8;
+      });
+
+      // Save the PDF
+      pdf.save('digital-literacy-course-outline.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
+  };
+
+  // Detailed course structure from the provided content
   const weeks = [
     {
       number: 1,
@@ -188,6 +334,14 @@ const DigitalLiteracyCoursePage = () => {
               >
                 ← Back to All Courses
               </Link>
+
+              <button
+                onClick={downloadPDF}
+                className="flex items-center gap-2 bg-primary-gradient text-white font-semibold py-2 px-4 rounded-full hover:shadow-glow transition-all"
+              >
+                <Download size={18} />
+                Download PDF
+              </button>
             </div>
 
             <div className="text-center mb-12">
@@ -302,7 +456,7 @@ const DigitalLiteracyCoursePage = () => {
                         />
                       ))}
                     </div>
-                    <span className="ml-2 text-secondary">4.9 (1250 reviews)</span>
+                    <span className="ml-2 text-secondary">4.9 (05 reviews)</span>
                   </div>
                 </div>
 
