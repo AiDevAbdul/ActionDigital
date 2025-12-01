@@ -1,13 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Users, Clock, Star, Calendar, MessageCircle } from 'lucide-react';
+import { ArrowRight, Users, Clock, Star, Calendar, MessageCircle } from 'lucide-react';
 
 interface CourseCardProps {
   id: string;
   title: string;
   description: string;
   duration: string;
-  level: string;
   modules: number;
   rating: number;
   students: number;
@@ -18,7 +17,6 @@ const CourseCard = ({
   title,
   description,
   duration,
-  level,
   modules,
   rating,
   students,
@@ -30,9 +28,6 @@ const CourseCard = ({
           <div>
             <h3 className="text-xl font-bold text-primary mb-2">{title}</h3>
             <p className="text-secondary text-sm">{description}</p>
-          </div>
-          <div className="bg-primary-gradient text-white rounded-full w-12 h-12 flex items-center justify-center">
-            <BookOpen size={20} />
           </div>
         </div>
 
@@ -86,7 +81,7 @@ const CourseCard = ({
               className="flex-1 flex items-center justify-center bg-primary-gradient text-white text-sm font-semibold py-2 px-4 rounded-full hover:shadow-glow transition-all"
             >
               <MessageCircle className="mr-1" size={16} />
-              WhatsApp
+              Contact
             </a>
 
             <button className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-semibold py-2 px-4 rounded-full hover:shadow-glow transition-all">
