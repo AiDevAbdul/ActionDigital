@@ -324,192 +324,192 @@ const DigitalLiteracyCoursePage = () => {
 
   return (
     <AnimatedPageWrapper>
-      <section className="section py-12 min-h-screen">
-        <div className="container mx-auto px-2">
+      <section className="section py-8 md:py-12 min-h-screen">
+        <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex justify-between items-center mb-6 md:mb-8">
               <Link
                 href="/courses"
-                className="flex items-center text-accent font-semibold hover:text-primary transition-colors"
+                className="flex items-center text-accent font-medium hover:text-primary transition-colors text-sm md:text-base"
               >
                 ← Back to All Courses
               </Link>
 
               <button
                 onClick={downloadPDF}
-                className="flex items-center gap-2 bg-primary-gradient text-white font-semibold py-2 px-4 rounded-full hover:shadow-glow transition-all"
+                className="flex items-center gap-1 md:gap-2 bg-primary-gradient text-white font-medium py-2 px-3 md:px-4 rounded-full hover:shadow-glow transition-all text-sm"
               >
-                <Download size={18} />
-                Download PDF
+                <Download size={16} />
+                <span className="hidden sm:inline">PDF</span>
               </button>
             </div>
 
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">16-Day Digital Literacy & AI Tools Course</h1>
-              <p className="text-xl text-secondary max-w-3xl mx-auto">
+            <div className="text-center mb-8 md:mb-12 px-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 md:mb-4">16-Day Digital Literacy & AI Tools Course</h1>
+              <p className="text-lg md:text-xl text-secondary max-w-3xl mx-auto px-4">
                 Master essential digital skills and cutting-edge AI tools to thrive in the modern digital landscape
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 md:mb-12">
               <div className="lg:col-span-2">
-                <div className="glass-card card h-full bg-card border border-default p-6 md:p-8">
-                  <h2 className="text-2xl font-bold text-primary mb-6">Course Overview</h2>
-                  <p className="text-secondary mb-6">
+                <div className="glass-card card h-full bg-card border border-default p-5 md:p-6 lg:p-8">
+                  <h2 className="text-xl md:text-2xl font-bold text-primary mb-4">Course Overview</h2>
+                  <p className="text-secondary mb-4 md:mb-6">
                     This comprehensive 16-day course is designed to equip you with essential digital literacy skills
                     and proficiency in modern AI tools that are transforming industries worldwide. Our curriculum
                     combines foundational digital skills with cutting-edge AI applications to prepare you for the future.
                   </p>
 
-                  <p className="text-secondary mb-4">
+                  <p className="text-secondary mb-4 text-sm md:text-base">
                     <span className="font-semibold">Course Structure:</span> This course spans four weeks (Monday to Thursday),
                     providing intensive training in foundational digital skills, graphic/video design using Canva,
                     and cutting-edge AI content creation.
                   </p>
 
-                  <h3 className="text-xl font-bold text-primary mb-4">What You'll Learn</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <h3 className="text-lg md:text-xl font-bold text-primary mb-3 md:mb-4">What You'll Learn</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-6">
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">Essential digital literacy skills including file management, web navigation, and software usage</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">Essential digital literacy skills including file management, web navigation, and software usage</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">AI tools for productivity, content creation, data analysis, and automation</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">AI tools for productivity, content creation, data analysis, and automation</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">Digital communication and collaboration tools for remote work and team projects</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">Digital communication and collaboration tools for remote work and team projects</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">Online safety, privacy protection, and digital citizenship best practices</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">Online safety, privacy protection, and digital citizenship best practices</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">Introduction to Freelancing and Future-Proof Skills</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">Introduction to Freelancing and Future-Proof Skills</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">Self Learning Free Platforms and Resources</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">Self Learning Free Platforms and Resources</span>
                     </li>
                   </ul>
 
-                  <h3 className="text-xl font-bold text-primary mb-4">Who Should Attend</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <h3 className="text-lg md:text-xl font-bold text-primary mb-3 md:mb-4">Who Should Attend</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">Professionals looking to enhance their digital skills and stay competitive</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">Professionals looking to enhance their digital skills and stay competitive</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">Students preparing for a digital future in their careers</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">Students preparing for a digital future in their careers</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">Entrepreneurs leveraging AI tools to grow their businesses</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">Entrepreneurs leveraging AI tools to grow their businesses</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={20} />
-                      <span className="text-secondary">Anyone seeking to improve their digital literacy for personal growth</span>
+                      <CheckCircle className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                      <span className="text-secondary text-sm md:text-base">Anyone seeking to improve their digital literacy for personal growth</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              <div className="glass-card card bg-card border border-default p-6 md:p-8 h-full">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-primary-gradient rounded-xl w-32 h-32 flex items-center justify-center">
-                    <span className="text-white text-3xl font-bold">DL</span>
+              <div className="glass-card card bg-card border border-default p-5 md:p-6 lg:p-8 h-full">
+                <div className="flex justify-center mb-4 md:mb-6">
+                  <div className="bg-primary-gradient rounded-xl w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
+                    <span className="text-white text-2xl md:text-3xl font-bold">DL</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-card p-4 rounded-lg border border-default">
-                    <h3 className="font-semibold text-accent">Duration</h3>
-                    <p className="text-primary">16 Days</p>
+                <div className="grid grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
+                  <div className="bg-card p-3 rounded-lg border border-default">
+                    <h3 className="font-semibold text-accent text-xs md:text-sm">Duration</h3>
+                    <p className="text-primary text-sm md:text-base">16 Days</p>
                   </div>
-                  <div className="bg-card p-4 rounded-lg border border-default">
-                    <h3 className="font-semibold text-accent">Schedule</h3>
-                    <p className="text-primary">4 Weeks</p>
+                  <div className="bg-card p-3 rounded-lg border border-default">
+                    <h3 className="font-semibold text-accent text-xs md:text-sm">Schedule</h3>
+                    <p className="text-primary text-sm md:text-base">4 Weeks</p>
                   </div>
-                  <div className="bg-card p-4 rounded-lg border border-default">
-                    <h3 className="font-semibold text-accent">Format</h3>
-                    <p className="text-primary">Online/Interactive</p>
+                  <div className="bg-card p-3 rounded-lg border border-default">
+                    <h3 className="font-semibold text-accent text-xs md:text-sm">Format</h3>
+                    <p className="text-primary text-sm md:text-base">Online/Interactive</p>
                   </div>
-                  <div className="bg-card p-4 rounded-lg border border-default">
-                    <h3 className="font-semibold text-accent">Certificate</h3>
-                    <p className="text-primary">Available</p>
+                  <div className="bg-card p-3 rounded-lg border border-default">
+                    <h3 className="font-semibold text-accent text-xs md:text-sm">Certificate</h3>
+                    <p className="text-primary text-sm md:text-base">Available</p>
                   </div>
                 </div>
 
-                <div className="mb-6">
-                  <h3 className="text-lg font-bold text-primary mb-2">Course Rating</h3>
-                  <div className="flex items-center">
-                    <div className="flex">
+                <div className="mb-4 md:mb-6">
+                  <h3 className="text-sm md:text-lg font-bold text-primary mb-2">Course Rating</h3>
+                  <div className="flex items-center flex-wrap">
+                    <div className="flex flex-wrap">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
                           className={i < 4.9 ? "text-yellow-500" : "text-secondary"}
                           fill={i < 4.9 ? "currentColor" : "none"}
-                          size={20}
+                          size={16}
                         />
                       ))}
                     </div>
-                    <span className="ml-2 text-secondary">4.9 (05 reviews)</span>
+                    <span className="ml-2 text-secondary text-xs md:text-sm">4.9 (05 reviews)</span>
                   </div>
                 </div>
 
-                <a href="https://wa.me/923189532843" target="_blank" rel="noopener noreferrer" className="w-full bg-primary-gradient text-white font-semibold py-3 px-6 rounded-full hover:shadow-glow transition-all mb-4 inline-block text-center">
+                <a href="https://wa.me/923189532843" target="_blank" rel="noopener noreferrer" className="w-full bg-primary-gradient text-white font-medium py-2.5 px-4 rounded-full hover:shadow-glow transition-all mb-3 inline-block text-center text-sm">
                   Contact Us
                 </a>
 
-                <button className="w-full btn btn-secondary">
+                <button className="w-full btn btn-secondary text-sm py-2.5">
                   Download Syllabus
                 </button>
               </div>
             </div>
 
-            <div className="glass-card card bg-card border border-default p-6 md:p-8 mb-12">
-              <h2 className="text-2xl font-bold text-primary mb-6 text-center">Course Structure</h2>
-              <div className="space-y-8">
+            <div className="glass-card card bg-card border border-default p-5 md:p-6 lg:p-8 mb-8 md:mb-12">
+              <h2 className="text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6 text-center">Course Structure</h2>
+              <div className="space-y-6 md:space-y-8">
                 {weeks.map((week) => (
-                  <div key={week.number} className="border border-default rounded-xl p-6 bg-card">
-                    <h3 className="text-xl font-bold text-primary mb-4 flex items-center">
-                      <Calendar className="mr-2 text-accent" size={20} />
+                  <div key={week.number} className="border border-default rounded-lg md:rounded-xl p-4 md:p-6 bg-card">
+                    <h3 className="text-lg md:text-xl font-bold text-primary mb-3 flex items-center">
+                      <Calendar className="mr-2 text-accent" size={16} />
                       Week {week.number}: {week.title}
                     </h3>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
                       {week.days.map((day, index) => (
-                        <div key={index} className="p-4 bg-surface border border-default rounded-lg">
-                          <div className="flex items-center mb-2">
-                            <span className="font-bold text-accent mr-2">{day.day}:</span>
-                            <span className="font-semibold text-primary">{day.title}</span>
+                        <div key={index} className="p-3 md:p-4 bg-surface border border-default rounded-lg">
+                          <div className="flex items-center mb-1.5">
+                            <span className="font-bold text-accent mr-2 text-sm">{day.day}:</span>
+                            <span className="font-semibold text-primary text-sm md:text-base">{day.title}</span>
                           </div>
-                          <div className="mb-2">
-                            <span className="text-sm font-medium text-secondary">Core Topics:</span>
-                            <p className="text-sm text-secondary">{day.topics}</p>
+                          <div className="mb-1.5">
+                            <span className="text-xs md:text-sm font-medium text-secondary">Core Topics:</span>
+                            <p className="text-xs md:text-sm text-secondary">{day.topics}</p>
                           </div>
                           <div>
-                            <span className="text-sm font-medium text-secondary">Daily Homework:</span>
-                            <p className="text-sm text-secondary">{day.homework}</p>
+                            <span className="text-xs md:text-sm font-medium text-secondary">Daily Homework:</span>
+                            <p className="text-xs md:text-sm text-secondary">{day.homework}</p>
                           </div>
                         </div>
                       ))}
                     </div>
 
-                    <div className="p-4 bg-surface border border-default rounded-lg">
-                      <h4 className="font-bold text-primary mb-2">{week.project.title}</h4>
-                      <p className="text-sm text-secondary mb-1"><span className="font-medium">Goal:</span> {week.project.goal}</p>
-                      <p className="text-sm text-secondary mb-2"><span className="font-medium">Task:</span> {week.project.task}</p>
-                      <div className="mt-2">
-                        <span className="font-medium text-secondary">Components:</span>
+                    <div className="p-3 md:p-4 bg-surface border border-default rounded-lg">
+                      <h4 className="font-bold text-primary mb-1.5 text-sm md:text-base">{week.project.title}</h4>
+                      <p className="text-xs md:text-sm text-secondary mb-1"><span className="font-medium">Goal:</span> {week.project.goal}</p>
+                      <p className="text-xs md:text-sm text-secondary mb-1.5"><span className="font-medium">Task:</span> {week.project.task}</p>
+                      <div className="mt-1.5">
+                        <span className="font-medium text-secondary text-xs md:text-sm">Components:</span>
                         <ul className="mt-1 space-y-1">
                           {week.project.components.map((component, idx) => (
-                            <li key={idx} className="flex items-start">
+                            <li key={idx} className="flex items-start text-xs md:text-sm">
                               <span className="text-accent mr-2">•</span>
-                              <span className="text-sm text-secondary">{component}</span>
+                              <span className="text-secondary">{component}</span>
                             </li>
                           ))}
                         </ul>
@@ -520,25 +520,25 @@ const DigitalLiteracyCoursePage = () => {
               </div>
             </div>
 
-            <div className="glass-card card bg-card border border-default p-6 md:p-8 mb-12">
-              <h2 className="text-2xl font-bold text-primary mb-6 text-center">Additional Topics</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="glass-card card bg-card border border-default p-5 md:p-6 lg:p-8 mb-8 md:mb-12">
+              <h2 className="text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6 text-center">Additional Topics</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                 {additionalTopics.map((topic, index) => (
-                  <div key={index} className="flex items-start p-3 bg-card rounded-lg border border-default">
-                    <Award className="text-accent mr-3 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-secondary">{topic}</span>
+                  <div key={index} className="flex items-start p-2 md:p-3 bg-card rounded-lg border border-default">
+                    <Award className="text-accent mr-2 mt-1 flex-shrink-0" size={16} />
+                    <span className="text-secondary text-sm md:text-base">{topic}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-primary-gradient rounded-2xl shadow-xl p-8 text-white text-center">
-              <h2 className="text-2xl font-bold mb-4">Enroll in the Course</h2>
-              <p className="mb-6 max-w-2xl mx-auto">
+            <div className="bg-primary-gradient rounded-xl md:rounded-2xl shadow-xl p-6 md:p-8 text-white text-center">
+              <h2 className="text-xl md:text-2xl font-bold mb-3">Enroll in the Course</h2>
+              <p className="mb-4 md:mb-6 max-w-2xl mx-auto text-sm md:text-base">
                 Join thousands of learners who have transformed their digital skills with our comprehensive course program.
                 Start your journey to digital fluency today.
               </p>
-              <a href="https://wa.me/923189532843" target="_blank" rel="noopener noreferrer" className="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-card transition-colors inline-block">
+              <a href="https://wa.me/923189532843" target="_blank" rel="noopener noreferrer" className="bg-white text-accent font-medium py-2.5 px-6 md:px-8 rounded-full hover:bg-card transition-colors inline-block text-sm">
                 Contact via WhatsApp
               </a>
             </div>

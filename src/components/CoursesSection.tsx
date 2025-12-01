@@ -38,7 +38,7 @@ const CoursesSection = () => {
   ];
 
   return (
-    <section className="section" id="courses">
+    <section id="courses" className="section">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
