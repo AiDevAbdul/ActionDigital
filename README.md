@@ -1,6 +1,6 @@
-# ActionDigitalinstitute - Personal Portfolio Website
+# Action Digital Institute - Portfolio & Learning Management System
 
-This is a Next.js portfolio website for Abdul Wahab, an AI Engineer, Digital Marketing Strategist, and Skills Development Expert.
+This is a Next.js portfolio and Learning Management System (LMS) for Action Digital Institute, showcasing AI Engineering, Digital Marketing, and Skills Development services.
 
 ## Project Overview
 
@@ -14,17 +14,21 @@ This portfolio showcases expertise in:
 ## Features
 
 - Modern UI with dark/light theme support
-- Animated components using Framer Motion
+- Motion shim for SSR-compatible animations
 - Admin panel for managing projects
+- Full Learning Management System (LMS) with courses, modules, and lessons
+- Student dashboard with progress tracking
+- Certificate generation
+- Stripe payment integration
 - Responsive design
 - Blog section for content
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4 (with PostCSS)
-- **Animations**: Framer Motion
+- **Animations**: Framer Motion (via motion shim)
 - **Icons**: Lucide React
 - **Database**: PostgreSQL (with Prisma ORM)
 - **Deployment**: Vercel
@@ -78,8 +82,14 @@ DATABASE_URL="postgresql://username:password@localhost:5432/actiondigitalinstitu
 # Admin credentials
 ADMIN_EMAIL="admin@yourdomain.com"
 ADMIN_PASSWORD="your-secure-password"
-ADMIN_API_KEY="your-super-secret-admin-api-key"
-NEXT_PUBLIC_ADMIN_API_KEY="your-super-secret-admin-api-key"
+ADMIN_JWT_SECRET="your-strong-random-secret"
+
+# Payments (Stripe)
+STRIPE_SECRET_KEY="sk_test_..."
+STRIPE_WEBHOOK_SECRET="whsec_..."
+
+# Webhooks
+Set the `STRIPE_WEBHOOK_SECRET` value and configure Stripe to call `https://your-domain/api/payments/stripe/webhook` for `payment_intent.succeeded`.
 
 # EmailJS configuration
 NEXT_PUBLIC_EMAILJS_SERVICE_ID="your-service-id"
@@ -95,6 +105,8 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY="your-public-key"
 - `npm run lint` - Run linter
 - `npm run lint:check` - Check for linting errors
 - `npm run lint:fix` - Fix linting errors automatically
+- `npm run typecheck` - Run TypeScript type checks
+- `npm run test` - Run unit tests (Vitest)
 
 ## Deployment
 
@@ -111,8 +123,7 @@ When deploying to Vercel, make sure to set the following environment variables i
 - `DATABASE_URL` - Your PostgreSQL database URL
 - `ADMIN_EMAIL` - Admin email for login
 - `ADMIN_PASSWORD` - Admin password for login
-- `ADMIN_API_KEY` - Secret key for admin API access
-- `NEXT_PUBLIC_ADMIN_API_KEY` - Public key corresponding to admin API key
+- `ADMIN_JWT_SECRET` - Secret used to sign admin session tokens
 - `NEXT_PUBLIC_EMAILJS_SERVICE_ID` - EmailJS service ID
 - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` - EmailJS template ID
 - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` - EmailJS public key
