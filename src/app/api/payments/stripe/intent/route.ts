@@ -2,14 +2,14 @@
 import { NextRequest } from 'next/server';
 import Stripe from 'stripe';
 
-const stripeSecret = process.env.STRIPE_SECRET_KEY;
-if (!stripeSecret) {
-  throw new Error('Missing STRIPE_SECRET_KEY');
-}
-
-const stripe = new Stripe(stripeSecret, { apiVersion: '2024-12-17' });
-
 export async function POST(request: NextRequest) {
+  const stripeSecret = process.env.STRIPE_SECRET_KEY;
+  if (!stripeSecret) {
+    return Response.json({ error: 'Stripe not configured' }, { status: 500 });
+  }
+
+  const stripe = new Stripe(stripeSecret, { apiVersion: '2026-02-25.clover' });
+
   const { userId, amountCents, currency, courseId } = await request.json();
   if (!userId || !amountCents || !currency) {
     return Response.json({ error: 'Missing payment intent data' }, { status: 400 });

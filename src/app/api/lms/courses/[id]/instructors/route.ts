@@ -16,16 +16,17 @@ const requireAdmin = async (request: NextRequest) => {
   return Boolean(payload);
 };
 
-export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
+export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!(await requireAdmin(request))) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {
+    const { id } = await params;
     const payload = assignSchema.parse(await request.json());
     const record = await db.courseInstructor.create({
       data: {
-        courseId: params.id,
+        courseId: id,
         userId: payload.userId,
       },
     });
@@ -39,16 +40,17 @@ export async function POST(request: NextRequest, { params }: { params: { id: str
   }
 }
 
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!(await requireAdmin(request))) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {
+    const { id } = await params;
     const payload = assignSchema.parse(await request.json());
     await db.courseInstructor.deleteMany({
       where: {
-        courseId: params.id,
+        courseId: id,
         userId: payload.userId,
       },
     });

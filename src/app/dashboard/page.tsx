@@ -118,6 +118,8 @@ export default function DashboardPage() {
   const [loadingStripe, setLoadingStripe] = useState(false);
   const [paymentListError, setPaymentListError] = useState('');
   const [paymentSuccess, setPaymentSuccess] = useState('');
+  const [certificateError, setCertificateError] = useState('');
+  const [certificateSuccess, setCertificateSuccess] = useState('');
 
   const tabs = useMemo(() => roleTabs[role], [role]);
 

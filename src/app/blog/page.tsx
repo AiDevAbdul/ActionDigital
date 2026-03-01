@@ -1,18 +1,8 @@
-// 'use client';
+'use client';
 
 import { motion } from '@/lib/motion-shim';
 import { posts } from '@/data/blogData';
 import BlogCard from '@/components/BlogCard';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Blog',
-  description:
-    'Read insights, guides, and learning resources from Action Digital Institute.',
-  alternates: {
-    canonical: '/blog',
-  },
-};
 
 const containerVariants = {
   hidden: { opacity: 0, y: 40 },

@@ -58,23 +58,30 @@ const createMotionComponent = (Component: ElementType = 'div') => {
 
 const elementCache = new Map<string | symbol, React.ComponentType<any>>();
 
-const motion = new Proxy(createMotionComponent('div'), {
-  get: (_, key) => {
-    if (key === 'create') {
-      return createMotionComponent;
-    }
-    if (typeof key === 'string') {
-      if (!elementCache.has(key)) {
-        elementCache.set(key, createMotionComponent(key));
+// Create a proxy that acts as both a function and an object with element properties
+const createMotionProxy = () => {
+  const baseComponent = createMotionComponent('div');
+
+  return new Proxy(baseComponent, {
+    get: (target, key) => {
+      if (key === 'create') {
+        return createMotionComponent;
       }
-      return elementCache.get(key);
-    }
-    return undefined;
-  },
-  apply: (_, __, args) => {
-    return createMotionComponent(args[0]);
-  },
-});
+      if (typeof key === 'string') {
+        if (!elementCache.has(key)) {
+          elementCache.set(key, createMotionComponent(key as ElementType));
+        }
+        return elementCache.get(key);
+      }
+      return (target as any)[key];
+    },
+    apply: (_, __, args) => {
+      return createMotionComponent(args[0] as ElementType);
+    },
+  });
+};
+
+const motion = createMotionProxy() as any;
 
 type AnimatePresenceProps = {
   children: React.ReactNode;

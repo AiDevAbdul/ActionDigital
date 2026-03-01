@@ -40,10 +40,11 @@ const requireAdmin = async (request: NextRequest) => {
   return Boolean(payload);
 };
 
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const project = await db.project.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
 
     if (!project) {
@@ -57,17 +58,18 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
   }
 }
 
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!(await requireAdmin(request))) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {
+    const { id } = await params;
     const payload = projectSchema.parse(await request.json());
     const { title, description, tech, link, icon } = payload;
 
     const project = await db.project.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         title,
         description,
@@ -87,14 +89,15 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
   }
 }
 
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!(await requireAdmin(request))) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {
+    const { id } = await params;
     await db.project.delete({
-      where: { id: params.id },
+      where: { id },
     });
 
     return Response.json({ message: 'Project deleted successfully' });

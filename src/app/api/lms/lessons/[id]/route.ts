@@ -23,10 +23,11 @@ const requireAdmin = async (request: NextRequest) => {
   return Boolean(payload);
 };
 
-export async function GET(_: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(_: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const lesson = await db.lesson.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
 
     if (!lesson) {
@@ -40,15 +41,16 @@ export async function GET(_: NextRequest, { params }: { params: { id: string } }
   }
 }
 
-export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!(await requireAdmin(request))) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {
+    const { id } = await params;
     const payload = updateSchema.parse(await request.json());
     const lesson = await db.lesson.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         ...payload,
         releaseAt: payload.releaseAt ? new Date(payload.releaseAt) : undefined,
@@ -64,13 +66,14 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
   }
 }
 
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!(await requireAdmin(request))) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {
-    await db.lesson.delete({ where: { id: params.id } });
+    const { id } = await params;
+    await db.lesson.delete({ where: { id } });
     return Response.json({ success: true });
   } catch (error) {
     console.error('Error deleting lesson:', error);

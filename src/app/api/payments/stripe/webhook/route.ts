@@ -3,14 +3,16 @@ import { NextRequest } from 'next/server';
 import Stripe from 'stripe';
 import db from '@/lib/db';
 
-const stripeSecret = process.env.STRIPE_SECRET_KEY;
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
-if (!stripeSecret) throw new Error('Missing STRIPE_SECRET_KEY');
-if (!webhookSecret) throw new Error('Missing STRIPE_WEBHOOK_SECRET');
-
-const stripe = new Stripe(stripeSecret, { apiVersion: '2024-12-17' });
-
 export async function POST(request: NextRequest) {
+  const stripeSecret = process.env.STRIPE_SECRET_KEY;
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  if (!stripeSecret || !webhookSecret) {
+    return Response.json({ error: 'Stripe not configured' }, { status: 500 });
+  }
+
+  const stripe = new Stripe(stripeSecret, { apiVersion: '2026-02-25.clover' });
+
   const signature = request.headers.get('stripe-signature');
   const payload = await request.text();
   if (!signature) {
