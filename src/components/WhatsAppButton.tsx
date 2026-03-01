@@ -1,7 +1,7 @@
 // src/components/WhatsAppButton.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import { MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 

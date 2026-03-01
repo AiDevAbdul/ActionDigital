@@ -1,7 +1,7 @@
 // src/components/LatestBlogs.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import { posts } from '@/data/blogData';
 import BlogCard from '@/components/BlogCard';
 

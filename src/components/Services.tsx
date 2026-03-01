@@ -2,7 +2,7 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import { Code, Brain, Zap, Palette, Video, Globe, MessageCircle } from 'lucide-react';
 
 const servicesData = [

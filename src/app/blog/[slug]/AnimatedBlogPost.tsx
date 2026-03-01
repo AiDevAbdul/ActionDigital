@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import { Post } from '@/data/blogData';
 import BlogPostContent from '@/components/blog/BlogPostContent';
 

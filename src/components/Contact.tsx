@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import { Mail, Smartphone, Linkedin, Github, Facebook, Youtube, Send } from 'lucide-react';
 import Link from 'next/link';
 import emailjs from '@emailjs/browser';

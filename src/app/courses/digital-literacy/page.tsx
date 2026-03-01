@@ -1,5 +1,7 @@
 'use client';
 
+/* eslint-disable react/no-unescaped-entities */
+
 import React from 'react';
 import AnimatedPageWrapper from '@/components/AnimatedPageWrapper';
 import Link from 'next/link';

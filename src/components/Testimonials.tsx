@@ -1,6 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+/* eslint-disable react/no-unescaped-entities */
+
+import { motion } from '@/lib/motion-shim';
 import { Star, Users, Handshake, Quote } from 'lucide-react';
 import { useMemo, useState } from 'react';
 

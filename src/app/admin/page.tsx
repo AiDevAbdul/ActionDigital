@@ -20,6 +20,7 @@ export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<'list' | 'add'>('list');
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   // Load projects on component mount
   useEffect(() => {
@@ -28,11 +29,20 @@ export default function AdminDashboard() {
 
   const fetchProjects = async () => {
     try {
+      setError('');
       const response = await fetch('/api/projects');
+      if (!response.ok) {
+        throw new Error('Failed to load projects');
+      }
       const data = await response.json();
+      if (!Array.isArray(data)) {
+        throw new Error('Invalid projects payload');
+      }
       setProjects(data);
     } catch (error) {
       console.error('Error fetching projects:', error);
+      setProjects([]);
+      setError((error as Error)?.message || 'Failed to load projects');
     } finally {
       setLoading(false);
     }
@@ -64,11 +74,18 @@ export default function AdminDashboard() {
       </div>
 
       {activeTab === 'list' ? (
-        <ProjectList 
-          projects={projects} 
-          setProjects={setProjects}
-          refreshProjects={fetchProjects}
-        />
+        <>
+          {error ? (
+            <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg">
+              {error}
+            </div>
+          ) : null}
+          <ProjectList 
+            projects={projects} 
+            setProjects={setProjects}
+            refreshProjects={fetchProjects}
+          />
+        </>
       ) : (
         <ProjectForm 
           onSubmit={fetchProjects} 

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import Image from 'next/image'; // Import the Image component for optimized images
 
 export default function AnimatedLogo() {

@@ -2,7 +2,10 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
+/* eslint-disable react/no-unescaped-entities */
+
+import Link from 'next/link';
+import { motion } from '@/lib/motion-shim';
 import { Star, GraduationCap, Briefcase, Award, Users, BriefcaseBusiness } from 'lucide-react';
 import { useState } from 'react';
 
@@ -179,13 +182,13 @@ const StudentSuccessStories = () => {
             Join hundreds of students who have transformed their lives with our comprehensive training programs and 1-month incubation support. We empower individuals and businesses, especially women entrepreneurs, through transformative IT & AI skills that transcend barriers to poverty and help emerge as visionary business leaders of the digital age.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
+            <Link
               href="/#contact"
               className="btn inline-flex items-center"
             >
               <GraduationCap className="mr-2 h-5 w-5" />
               Enroll Today
-            </a>
+            </Link>
 
             <a
               href="https://wa.me/923189532843"

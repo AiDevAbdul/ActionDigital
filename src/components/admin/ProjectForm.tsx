@@ -73,26 +73,18 @@ export default function ProjectForm({ onSubmit, mode, initialData }: ProjectForm
     setError('');
 
     try {
-      const token = localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken');
-      
-      if (!token) {
-        throw new Error('Not authenticated');
-      }
-
       const response = mode === 'create' 
         ? await fetch('/api/projects', {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
           })
         : await fetch(`/api/projects/${initialData!.id}`, {
             method: 'PUT',
             headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
           });

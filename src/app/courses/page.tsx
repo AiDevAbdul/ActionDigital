@@ -1,6 +1,17 @@
 import React from 'react';
 import AnimatedPageWrapper from '@/components/AnimatedPageWrapper';
 import CourseCard from '@/components/CourseCard';
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/site';
+
+export const metadata: Metadata = {
+  title: 'Courses',
+  description:
+    'Browse Action Digital Institute courses in AI, web development, and digital marketing with hands-on modules.',
+  alternates: {
+    canonical: '/courses',
+  },
+};
 
 const CoursesPage = () => {
   const allCourses = [
@@ -66,8 +77,31 @@ const CoursesPage = () => {
     }
   ];
 
+  const coursesJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: allCourses.map((course, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Course',
+        name: course.title,
+        description: course.description,
+        provider: {
+          '@type': 'Organization',
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+      },
+    })),
+  };
+
   return (
     <AnimatedPageWrapper>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(coursesJsonLd) }}
+      />
       <section className="min-h-screen section py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -75,6 +109,22 @@ const CoursesPage = () => {
             <p className="section-subtitle text-secondary max-w-3xl mx-auto">
               Explore our comprehensive course offerings designed to enhance your digital skills and prepare you for the future.
             </p>
+            <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+              <a
+                href="https://actiondigital.pk/contact"
+                className="btn flex items-center justify-center"
+              >
+                Talk to Admissions
+              </a>
+              <a
+                href="https://wa.me/923189532843"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary flex items-center justify-center"
+              >
+                WhatsApp Inquiry
+              </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -95,12 +145,10 @@ const CoursesPage = () => {
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
             <a
-              href="https://wa.me/923189532843"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://actiondigital.pk/contact"
               className="btn flex items-center"
             >
-              Contact via WhatsApp
+              Apply or Request Info
             </a>
           </div>
         </div>

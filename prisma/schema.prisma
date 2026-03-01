@@ -27,4 +27,190 @@ model User {
   name        String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  role        UserRole @default(STUDENT)
+
+  coursesAuthored   CourseInstructor[]
+  enrollments       Enrollment[]
+  lessonProgress    LessonProgress[]
+  certificates      Certificate[]
+  payments          Payment[]
+}
+
+enum UserRole {
+  ADMIN
+  INSTRUCTOR
+  STUDENT
+}
+
+enum CourseStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum AccessType {
+  FREE
+  PAID
+  SUBSCRIPTION
+}
+
+enum LessonType {
+  VIDEO
+  TEXT
+  PDF
+  QUIZ
+  ASSIGNMENT
+}
+
+enum EnrollmentStatus {
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentProvider {
+  STRIPE
+  LOCAL
+}
+
+model Course {
+  id          String       @id @default(cuid())
+  title       String
+  slug        String       @unique
+  description String
+  status      CourseStatus @default(DRAFT)
+  accessType  AccessType   @default(FREE)
+  priceCents  Int?         // required for PAID courses
+  currency    String?      @default("USD")
+  thumbnail   String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  modules      Module[]
+  instructors  CourseInstructor[]
+  enrollments  Enrollment[]
+  coupons      Coupon[]
+  payments     Payment[]
+  certificates Certificate[]
+}
+
+model CourseInstructor {
+  id        String   @id @default(cuid())
+  courseId  String
+  userId    String
+  createdAt DateTime @default(now())
+
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([courseId, userId])
+  @@index([userId])
+}
+
+model Module {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  position    Int
+  courseId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  course  Course  @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessons Lesson[]
+
+  @@unique([courseId, position])
+}
+
+model Lesson {
+  id          String     @id @default(cuid())
+  title       String
+  type        LessonType @default(TEXT)
+  content     String?    // markdown or HTML for TEXT
+  videoUrl    String?    // YouTube URL for VIDEO
+  pdfUrl      String?    // PDF URL for PDF
+  position    Int
+  moduleId    String
+  releaseAt   DateTime?  // optional drip scheduling
+  isFree      Boolean    @default(false) // free preview
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  module   Module           @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  progress LessonProgress[]
+
+  @@unique([moduleId, position])
+}
+
+model Enrollment {
+  id         String           @id @default(cuid())
+  userId     String
+  courseId   String
+  status     EnrollmentStatus @default(ACTIVE)
+  enrolledAt DateTime         @default(now())
+  completedAt DateTime?
+
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course  Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([courseId])
+}
+
+model LessonProgress {
+  id         String   @id @default(cuid())
+  userId     String
+  lessonId   String
+  completed  Boolean  @default(false)
+  progress   Float    @default(0) // 0..1
+  updatedAt  DateTime @updatedAt
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+}
+
+model Certificate {
+  id         String   @id @default(cuid())
+  userId     String
+  courseId   String
+  issuedAt   DateTime @default(now())
+  html       String   // stored HTML certificate snapshot
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model Payment {
+  id         String          @id @default(cuid())
+  userId     String
+  courseId   String?
+  amountCents Int
+  currency   String          @default("USD")
+  provider   PaymentProvider
+  providerRef String?        // Stripe payment_intent id or local ref
+  createdAt  DateTime        @default(now())
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course? @relation(fields: [courseId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([courseId])
+}
+
+model Coupon {
+  id         String   @id @default(cuid())
+  code       String   @unique
+  courseId   String?
+  percentOff Int?
+  amountOffCents Int?
+  maxRedemptions Int?
+  redeemedCount Int @default(0)
+  expiresAt  DateTime?
+  createdAt  DateTime @default(now())
+
+  course Course? @relation(fields: [courseId], references: [id], onDelete: SetNull)
 }

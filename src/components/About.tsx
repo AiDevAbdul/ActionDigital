@@ -2,7 +2,9 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
+/* eslint-disable react/no-unescaped-entities */
+
+import { motion } from '@/lib/motion-shim';
 import { Target, Heart, Award, Users } from 'lucide-react';
 
 const About = () => {

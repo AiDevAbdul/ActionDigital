@@ -36,17 +36,8 @@ export default function ProjectList({ projects, refreshProjects }: ProjectListPr
     setError('');
 
     try {
-      const token = localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken');
-      
-      if (!token) {
-        throw new Error('Not authenticated');
-      }
-
       const response = await fetch(`/api/projects/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
+        method: 'DELETE'
       });
 
       if (!response.ok) {

@@ -2,7 +2,9 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
+/* eslint-disable react/no-unescaped-entities */
+
+import { motion } from '@/lib/motion-shim';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
 

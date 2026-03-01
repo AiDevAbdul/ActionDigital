@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import { ChevronsDown, Users, Zap, Code, Cpu, Bot, Target, Award } from 'lucide-react';
 import RevolvingSkills from './RevolvingSkills';
 

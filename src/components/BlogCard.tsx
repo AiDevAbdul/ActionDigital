@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import { Post, iconMap, tagStyles } from '@/data/blogData';
 
 type BlogCardProps = {

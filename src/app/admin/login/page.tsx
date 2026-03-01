@@ -18,17 +18,18 @@ export default function AdminLogin() {
     setError('');
 
     try {
-      // In a real implementation, you would make an API call to authenticate
-      // For this demo, we'll use a simple approach with a hardcoded admin key
-      // Check if the provided credentials match the expected admin credentials
-      if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
-        // Store the admin token in session storage (or localStorage)
-        // For this demo, we'll use the API key as the "token"
-        sessionStorage.setItem('adminToken', process.env.ADMIN_API_KEY || '');
-        router.push('/admin');
-      } else {
-        setError('Invalid email or password');
+      const response = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data?.error || 'Invalid email or password');
       }
+
+      router.push('/admin');
     } catch (err: unknown) {
       console.error('Login error:', err);
       setError((err as Error)?.message || 'An error occurred during login');
@@ -86,7 +87,7 @@ export default function AdminLogin() {
         </form>
 
         <div className="mt-6 text-center text-sm text-secondary">
-          <p>Note: For demo purposes, use the admin credentials set in environment variables</p>
+          <p>Use your admin credentials to access the dashboard.</p>
         </div>
       </div>
     </div>

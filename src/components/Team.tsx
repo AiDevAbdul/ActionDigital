@@ -2,7 +2,7 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import { Users, Brain, Code, Zap, Mail, MapPin, Calendar } from 'lucide-react';
 import { useState } from 'react';
 

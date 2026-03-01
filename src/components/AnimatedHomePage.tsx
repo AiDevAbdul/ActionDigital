@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
@@ -11,89 +8,46 @@ import LatestBlogs from '@/components/LatestBlogs';
 import ContactSection from '@/components/ContactSection';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CoursesSection from '@/components/CoursesSection';
+import MotionSection from '@/components/MotionSection';
 
 export default function AnimatedHomePage() {
   return (
     <main className="overflow-hidden">
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
+      <MotionSection type="fade">
         <Hero />
-      </motion.section>
+      </MotionSection>
 
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-      >
+      <MotionSection delay={0.2}>
         <About />
-      </motion.section>
+      </MotionSection>
 
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-      >
+      <MotionSection delay={0.3}>
         <CoursesSection />
-      </motion.section>
+      </MotionSection>
 
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, delay: 0.4 }}
-      >
+      <MotionSection delay={0.4}>
         <ProjectsSection />
-      </motion.section>
+      </MotionSection>
 
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, delay: 0.5 }}
-      >
+      <MotionSection delay={0.5}>
         <Services />
-      </motion.section>
+      </MotionSection>
 
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, delay: 0.6 }}
-      >
+      <MotionSection delay={0.6}>
         <StudentSuccessStories />
-      </motion.section>
+      </MotionSection>
 
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, delay: 0.7 }}
-      >
+      <MotionSection delay={0.7}>
         <Testimonials />
-      </motion.section>
+      </MotionSection>
 
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, delay: 0.8 }}
-      >
+      <MotionSection delay={0.8}>
         <LatestBlogs />
-      </motion.section>
+      </MotionSection>
 
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, delay: 0.9 }}
-      >
+      <MotionSection delay={0.9}>
         <ContactSection />
-      </motion.section>
+      </MotionSection>
 
       <WhatsAppButton />
     </main>

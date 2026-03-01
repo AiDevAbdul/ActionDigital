@@ -2,7 +2,7 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-shim';
 import { Code, Brain, Zap, ExternalLink } from 'lucide-react'; 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -32,7 +32,13 @@ const ProjectsSection = () => {
     const fetchProjects = async () => {
       try {
         const response = await fetch('/api/projects');
+        if (!response.ok) {
+          throw new Error('Failed to load projects');
+        }
         const data = await response.json();
+        if (!Array.isArray(data)) {
+          throw new Error('Invalid projects payload');
+        }
         // Add delay property for animation
         const projectsWithDelay = data.map((project: Project, index: number) => ({
           ...project,
