@@ -73,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </AnimatedPageWrapper>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
