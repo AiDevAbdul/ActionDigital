@@ -1,11 +1,11 @@
 'use client';
 
-/* eslint-disable react/no-unescaped-entities */
+ 
 
 import React from 'react';
 import AnimatedPageWrapper from '@/components/AnimatedPageWrapper';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Users, Clock, Star, CheckCircle, Calendar, FileText, Award, Download } from 'lucide-react';
+import { Star, CheckCircle, Award, Download, Calendar } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 
 const DigitalLiteracyCoursePage = () => {

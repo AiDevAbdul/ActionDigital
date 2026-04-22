@@ -44,7 +44,8 @@ const stripMotionProps = (props: Record<string, unknown> | undefined) => {
 };
 
 const createMotionComponent = (Component: ElementType = 'div') => {
-  const MotionComponent = forwardRef<HTMLElement, ComponentPropsWithoutRef<any>>((props, ref) => {
+  type MotionProps = ComponentPropsWithoutRef<typeof Component> & Record<string, unknown>;
+  const MotionComponent = forwardRef<HTMLElement, MotionProps>((props, ref) => {
     const sanitizedProps = stripMotionProps(props);
     return React.createElement(Component, { ...sanitizedProps, ref });
   });
@@ -56,32 +57,23 @@ const createMotionComponent = (Component: ElementType = 'div') => {
   return MotionComponent;
 };
 
-const elementCache = new Map<string | symbol, React.ComponentType<any>>();
+const elementCache = new Map<string, React.ComponentType<Record<string, unknown>>>();
 
-// Create a proxy that acts as both a function and an object with element properties
-const createMotionProxy = () => {
-  const baseComponent = createMotionComponent('div');
-
-  return new Proxy(baseComponent, {
-    get: (target, key) => {
-      if (key === 'create') {
-        return createMotionComponent;
-      }
+// Create motion object with element properties
+const motion = new Proxy(
+  {},
+  {
+    get: (_target, key: string | symbol) => {
       if (typeof key === 'string') {
         if (!elementCache.has(key)) {
           elementCache.set(key, createMotionComponent(key as ElementType));
         }
         return elementCache.get(key);
       }
-      return (target as any)[key];
+      return undefined;
     },
-    apply: (_, __, args) => {
-      return createMotionComponent(args[0] as ElementType);
-    },
-  });
-};
-
-const motion = createMotionProxy() as any;
+  }
+) as Record<string, React.ComponentType<Record<string, unknown>>>;
 
 type AnimatePresenceProps = {
   children: React.ReactNode;

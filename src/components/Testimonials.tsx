@@ -1,6 +1,6 @@
 'use client';
 
-/* eslint-disable react/no-unescaped-entities */
+ 
 
 import { motion } from '@/lib/motion-shim';
 import { Star, Users, Handshake, Quote } from 'lucide-react';
@@ -159,8 +159,6 @@ const mockTestimonials = [
     delay: 1.6,
   },
 ];
-
-type Testimonial = typeof mockTestimonials[number];
 
 const Testimonials = () => {
   const [activeTab, setActiveTab] = useState('client-reviews');

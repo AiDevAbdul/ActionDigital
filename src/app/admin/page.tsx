@@ -19,7 +19,7 @@ interface Project {
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<'list' | 'add'>('list');
   const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [_loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   // Load projects on component mount

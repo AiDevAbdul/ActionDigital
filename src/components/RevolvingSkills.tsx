@@ -9,8 +9,6 @@ import {
   FileCode,
   Brain,
   Github,
-  Linkedin,
-  Youtube,
   Network,
   Zap,
   Smartphone,

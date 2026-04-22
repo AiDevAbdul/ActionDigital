@@ -9,7 +9,7 @@ type AdminTokenPayload = {
 const COOKIE_NAME = 'adi_admin';
 
 const base64UrlEncode = (bytes: Uint8Array) => {
-  let base64 = '';
+  let base64: string;
   if (typeof Buffer !== 'undefined') {
     base64 = Buffer.from(bytes).toString('base64');
   } else {

@@ -3,7 +3,7 @@
 'use client';
 
 import { motion } from '@/lib/motion-shim';
-import { Users, Brain, Code, Zap, Mail, MapPin, Calendar } from 'lucide-react';
+import { Users, Brain, Code, Zap, Mail, MapPin } from 'lucide-react';
 import { useState } from 'react';
 
 type TeamMember = {
@@ -24,7 +24,7 @@ type TeamMember = {
 };
 
 const Team = () => {
-  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([
+  const [teamMembers, _setTeamMembers] = useState<TeamMember[]>([
     {
       id: '1',
       name: 'Jehangir Khan',
