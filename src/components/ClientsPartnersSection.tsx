@@ -97,11 +97,12 @@ const PartnersSection = () => {
         </motion.div>
 
         {/* Partners Carousel - Continuous Sliding Animation */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden w-full">
           <motion.div
-            animate={{ x: ['0%', '-100%'] }}
-            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-            className="flex gap-8"
+            initial={{ x: 0 }}
+            animate={{ x: -1000 }}
+            transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+            className="flex gap-8 w-max"
           >
             {/* First set of logos */}
             {displayPartners.map((partner) => (
