@@ -7,7 +7,6 @@ interface CourseCardProps {
   title: string;
   description: string;
   duration: string;
-  level: string;
   modules: number;
   rating: number;
   students: number;
@@ -18,7 +17,6 @@ const CourseCard = ({
   title,
   description,
   duration,
-  level,
   modules,
   rating,
   students,

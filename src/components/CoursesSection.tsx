@@ -67,7 +67,6 @@ const CoursesSection = () => {
                 title={course.title}
                 description={course.description}
                 duration={course.duration}
-                level={course.level}
                 modules={course.modules}
                 rating={course.rating}
                 students={course.students}
