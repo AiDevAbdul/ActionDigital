@@ -43,12 +43,15 @@ const PartnersSection = () => {
   }, []);
 
   const fallbackPartners: Partner[] = [
-    { id: '1', name: 'Partner 1', logo: 'https://via.placeholder.com/120?text=Partner+1' },
-    { id: '2', name: 'Partner 2', logo: 'https://via.placeholder.com/120?text=Partner+2' },
-    { id: '3', name: 'Partner 3', logo: 'https://via.placeholder.com/120?text=Partner+3' },
-    { id: '4', name: 'Partner 4', logo: 'https://via.placeholder.com/120?text=Partner+4' },
-    { id: '5', name: 'Partner 5', logo: 'https://via.placeholder.com/120?text=Partner+5' },
-    { id: '6', name: 'Partner 6', logo: 'https://via.placeholder.com/120?text=Partner+6' },
+    { id: '1', name: 'Bilal Cosmetics', logo: '/logos/bilalcosmetics.png' },
+    { id: '2', name: 'BOK', logo: '/logos/bok.png' },
+    { id: '3', name: 'CECOS', logo: '/logos/cecos.png' },
+    { id: '4', name: 'Dynamic Builder', logo: '/logos/dynamicbuilder.png' },
+    { id: '5', name: 'GGIP', logo: '/logos/ggip.png' },
+    { id: '6', name: 'Hope87', logo: '/logos/hope87.png' },
+    { id: '7', name: 'MeTech', logo: '/logos/metech.png' },
+    { id: '8', name: 'Sana', logo: '/logos/sana.png' },
+    { id: '9', name: 'TDAP', logo: '/logos/tdap.png' },
   ];
 
   const displayPartners = partners.length > 0 ? partners : fallbackPartners;
@@ -93,50 +96,46 @@ const PartnersSection = () => {
           </p>
         </motion.div>
 
-        {/* Partners Grid with floating animation */}
-        <div className="space-y-8">
-          {/* First Row - Left to Right */}
+        {/* Partners Carousel - Continuous Sliding Animation */}
+        <div className="relative overflow-hidden">
           <motion.div
-            animate={{ x: [0, 20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="flex gap-6 justify-start overflow-hidden"
+            animate={{ x: ['0%', '-100%'] }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            className="flex gap-8"
           >
-            {displayPartners.slice(0, 3).map((partner) => (
+            {/* First set of logos */}
+            {displayPartners.map((partner) => (
               <motion.div
-                key={partner.id}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="flex-shrink-0 glass-card card p-8 flex items-center justify-center min-h-32 w-40 cursor-pointer"
+                key={`${partner.id}-1`}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="flex-shrink-0 glass-card card p-8 flex items-center justify-center min-h-32 w-48 cursor-pointer"
               >
-                <div className="relative w-24 h-24">
+                <div className="relative w-28 h-28">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
                     fill
                     className="object-contain"
+                    priority={false}
                   />
                 </div>
               </motion.div>
             ))}
-          </motion.div>
 
-          {/* Second Row - Right to Left */}
-          <motion.div
-            animate={{ x: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-            className="flex gap-6 justify-end overflow-hidden"
-          >
-            {displayPartners.slice(3, 6).map((partner) => (
+            {/* Duplicate set for seamless loop */}
+            {displayPartners.map((partner) => (
               <motion.div
-                key={partner.id}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="flex-shrink-0 glass-card card p-8 flex items-center justify-center min-h-32 w-40 cursor-pointer"
+                key={`${partner.id}-2`}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="flex-shrink-0 glass-card card p-8 flex items-center justify-center min-h-32 w-48 cursor-pointer"
               >
-                <div className="relative w-24 h-24">
+                <div className="relative w-28 h-28">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
                     fill
                     className="object-contain"
+                    priority={false}
                   />
                 </div>
               </motion.div>
