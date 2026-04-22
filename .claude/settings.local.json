@@ -11,7 +11,9 @@
       "Bash(git push:*)",
       "mcp__ide__getDiagnostics",
       "Bash(npm view:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(npm ci:*)",
+      "Bash(rm:*)"
     ]
   }
 }
