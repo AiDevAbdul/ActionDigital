@@ -214,3 +214,22 @@ model Coupon {
 
   course Course? @relation(fields: [courseId], references: [id], onDelete: SetNull)
 }
+
+model Partner {
+  id        String   @id @default(cuid())
+  name      String
+  logo      String   // emoji or image URL
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ClientFeedback {
+  id        String   @id @default(cuid())
+  name      String
+  company   String
+  feedback  String
+  rating    Int      @default(5)
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

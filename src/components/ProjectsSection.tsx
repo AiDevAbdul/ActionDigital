@@ -205,11 +205,13 @@ const ProjectsSection = () => {
 
   // If no projects are fetched, show the fallback projects
   const displayProjects = projects.length > 0 ? projects : fallbackProjects;
+  // Show only first 3 projects (one row)
+  const visibleProjects = displayProjects.slice(0, 3);
 
   return (
     <section id="projects" className="section bg-surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -231,7 +233,7 @@ const ProjectsSection = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {displayProjects.map((project) => {
+          {visibleProjects.map((project) => {
             const IconComponent = getIconComponent(project.icon);
             return (
               <motion.div
@@ -248,12 +250,12 @@ const ProjectsSection = () => {
                   <div className="p-3 rounded-lg bg-primary-gradient text-white">
                     <IconComponent className="h-6 w-6" />
                   </div>
-                  
+
                   {/* External Link Button */}
                   {project.link && (
-                    <Link 
-                      href={project.link} 
-                      target="_blank" 
+                    <Link
+                      href={project.link}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-primary-gradient text-white opacity-70 hover:opacity-100 transition-opacity"
                       aria-label={`View ${project.title}`}
@@ -286,6 +288,22 @@ const ProjectsSection = () => {
             );
           })}
         </div>
+
+        {/* View All Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex justify-center mt-12"
+        >
+          <Link
+            href="/projects"
+            className="px-8 py-3 bg-primary-gradient text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105"
+          >
+            View All Projects
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

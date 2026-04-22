@@ -2,7 +2,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import ProjectsSection from '@/components/ProjectsSection';
-import Testimonials from '@/components/Testimonials';
+import { PartnersSection, ClientFeedbackSection } from '@/components/ClientsPartnersSection';
 import StudentSuccessStories from '@/components/StudentSuccessStories';
 import LatestBlogs from '@/components/LatestBlogs';
 import ContactSection from '@/components/ContactSection';
@@ -30,22 +30,26 @@ export default function AnimatedHomePage() {
       </MotionSection>
 
       <MotionSection delay={0.5}>
-        <Services />
+        <PartnersSection />
       </MotionSection>
 
       <MotionSection delay={0.6}>
-        <StudentSuccessStories />
+        <ClientFeedbackSection />
       </MotionSection>
 
       <MotionSection delay={0.7}>
-        <Testimonials />
+        <Services />
       </MotionSection>
 
       <MotionSection delay={0.8}>
-        <LatestBlogs />
+        <StudentSuccessStories />
       </MotionSection>
 
       <MotionSection delay={0.9}>
+        <LatestBlogs />
+      </MotionSection>
+
+      <MotionSection delay={1.0}>
         <ContactSection />
       </MotionSection>
 

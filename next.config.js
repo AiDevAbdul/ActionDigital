@@ -27,6 +27,14 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+      },
+    ],
+  },
   async headers() {
     return [
       {

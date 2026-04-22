@@ -3,173 +3,232 @@
 'use client';
 
 import { motion } from '@/lib/motion-shim';
-import { Code, Brain, Zap, Palette, Video, Globe, MessageCircle } from 'lucide-react';
+import { Code, Brain, Zap, Palette, Globe, MessageCircle } from 'lucide-react';
+import { useState } from 'react';
 
 const servicesData = [
   {
     icon: Code,
     title: 'Software Solutions',
-    company: 'Action Digital Institute',
-    duration: 'Development & Design',
+    color: 'from-blue-500 to-cyan-500',
+    accentColor: 'bg-blue-500/20 border-blue-500/50',
     details: [
-      "Web Design and Development - Complete web solutions tailored to business needs.",
-      "AI/Python Programming - Training and implementation of AI solutions.",
-      "Software Development - Custom software solutions for businesses.",
-      "Mobile Application Development - Building iOS and Android applications.",
+      "Web Design and Development",
+      "AI/Python Programming",
+      "Software Development",
+      "Mobile Application Development",
     ],
-    type: 'service',
   },
   {
     icon: Zap,
-    title: 'Digital Marketing & Advertising',
-    company: 'Action Digital Institute',
-    duration: 'Growth Strategy',
+    title: 'Digital Marketing',
+    color: 'from-amber-500 to-orange-500',
+    accentColor: 'bg-amber-500/20 border-amber-500/50',
     details: [
-      "Digital Marketing Strategy - Comprehensive strategies for online growth.",
-      "Search Engine Optimization (SEO) - Improve your website's visibility.",
-      "Social Media Management - Managing social media presence effectively.",
-      "Pay-Per-Click (PPC) Advertising - Targeted advertising campaigns.",
-      "Email Marketing - Engaging with your audience through email.",
-      "Content Marketing - Creating valuable content for your audience.",
+      "Digital Marketing Strategy",
+      "Search Engine Optimization",
+      "Social Media Management",
+      "PPC Advertising",
     ],
-    type: 'service',
   },
   {
     icon: Palette,
     title: 'Creative Services',
-    company: 'Action Digital Institute',
-    duration: 'Design & Production',
+    color: 'from-pink-500 to-rose-500',
+    accentColor: 'bg-pink-500/20 border-pink-500/50',
     details: [
-      "3D Animation - Creating stunning 3D animations for various purposes.",
-      "Video Editing - Professional video editing services.",
-      "Graphic Designing - Creating visual assets for marketing and branding.",
-      "Audio Editing & Voice Over - Professional audio services including voice-overs.",
+      "3D Animation",
+      "Video Editing",
+      "Graphic Designing",
+      "Audio & Voice Over",
     ],
-    type: 'service',
   },
   {
     icon: Globe,
     title: 'Physical Marketing',
-    company: 'Action Digital Institute',
-    duration: 'Traditional Outreach',
+    color: 'from-emerald-500 to-teal-500',
+    accentColor: 'bg-emerald-500/20 border-emerald-500/50',
     details: [
-      "Hoarding & SMDs - Large-scale outdoor advertising solutions.",
-      "Newspaper Advertisements - Marketing through print media.",
-      "Steamers & Banners - Mobile and static display advertising.",
-      "Promotional Materials - Brochures, flyers, and other promotional items.",
+      "Hoarding & SMDs",
+      "Newspaper Advertisements",
+      "Steamers & Banners",
+      "Promotional Materials",
     ],
-    type: 'service',
   },
   {
     icon: Brain,
-    title: 'AI Training Services',
-    company: 'Action Digital Institute',
-    duration: 'Skill Development',
+    title: 'AI Training',
+    color: 'from-purple-500 to-indigo-500',
+    accentColor: 'bg-purple-500/20 border-purple-500/50',
     details: [
-      "AI Content Creation - Training on generating appropriate AI prompts for marketing.",
-      "Data Analysis Tools - Using AI tools for business intelligence.",
-      "Data-Driven Decision Making - Leveraging AI for strategic business decisions.",
+      "AI Content Creation",
+      "Data Analysis Tools",
+      "Data-Driven Decisions",
+      "AI Implementation",
     ],
-    type: 'service',
   },
   {
     icon: MessageCircle,
-    title: 'Social Media & E-Commerce',
-    company: 'Action Digital Institute',
-    duration: 'Online Business',
+    title: 'Social & E-Commerce',
+    color: 'from-red-500 to-pink-500',
+    accentColor: 'bg-red-500/20 border-red-500/50',
     details: [
-      "Social Media Management - Managing brand presence on social platforms.",
-      "E-Commerce Solutions - Setting up and managing online stores.",
-      "YouTube Channel Management - Creating and managing profitable YouTube channels.",
-      "Freelancing Training - Helping clients sell skills and services online.",
+      "Social Media Management",
+      "E-Commerce Solutions",
+      "YouTube Management",
+      "Freelancing Training",
     ],
-    type: 'service',
   },
 ];
 
-// Animation for timeline items
-const itemVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0 },
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  },
+  hover: {
+    y: -8,
+    transition: {
+      duration: 0.3,
+    },
+  },
 };
 
 const Services = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   return (
-    <section id="services" className="section bg-surface">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Title */}
+    <section id="services" className="section bg-surface relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Professional Services
-          </p>
-          <h2 className="section-title text-primary">
+          <div className="inline-block mb-4">
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent px-4 py-2 rounded-full bg-accent/10 border border-accent/30">
+              Professional Services
+            </p>
+          </div>
+          <h2 className="section-title text-primary mb-4">
             Services We Offer
           </h2>
-          <p className="section-subtitle text-secondary">
-            Comprehensive technology and marketing solutions for your business needs
+          <p className="section-subtitle text-secondary max-w-2xl mx-auto">
+            Comprehensive technology and marketing solutions tailored to elevate your business
           </p>
         </motion.div>
 
-        {/* Vertical Timeline Container */}
-        <div className="relative pl-8 md:pl-16"> 
-          {/* Vertical Line */}
-          <div className="absolute left-4 md:left-6 w-0.5 bg-accent h-full"></div> 
-          
-          {servicesData.map((item, index) => (
+        {/* Services Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {servicesData.map((service, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.1 + (index * 0.1) }}
-              className="mb-12 flex items-start"
+              variants={cardVariants}
+              whileHover="hover"
+              className="group cursor-pointer"
+              onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
             >
-                {/* Timeline Dot & Icon Container */}
-                <div className="flex-shrink-0 relative mr-6 -ml-10 md:-ml-12">
-                    {/* Timeline Dot */}
-                    <div className="relative z-10 flex items-center justify-center w-10 h-10 rounded-full bg-primary-gradient text-white shadow-glow">
-                      <item.icon className="w-5 h-5" />
-                    </div>
-                </div>
+              <div className={`relative h-full rounded-2xl border backdrop-blur-sm transition-all duration-300 overflow-hidden ${service.accentColor}`}>
+                {/* Gradient background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
 
-                {/* Content Card */}
-                <div className="flex-grow">
-                  <div className="glass-card card transition-colors duration-300 p-6">
-                    
-                    <div className="flex items-center text-sm font-semibold uppercase text-accent mb-2">
-                      <span>{item.duration}</span>
-                    </div>
+                {/* Content */}
+                <div className="relative p-8 h-full flex flex-col">
+                  {/* Icon */}
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <service.icon className="w-7 h-7 text-white" />
+                  </div>
 
-                    <h3 className="text-xl font-bold mb-1 text-primary">
-                      {item.title}
-                    </h3>
-                    <p className={`font-medium mb-3 ${item.type === 'education' ? 'text-secondary-gradient' : 'text-accent'}`}>
-                      {item.company}
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-accent transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  {/* Details - Always visible on mobile, expandable on desktop */}
+                  <div className={`flex-1 transition-all duration-300 ${expandedIndex === index ? 'opacity-100' : 'opacity-0 md:opacity-100'}`}>
+                    <ul className="space-y-3">
+                      {service.details.map((detail, idx) => (
+                        <motion.li
+                          key={idx}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="text-secondary text-sm flex items-start gap-3"
+                        >
+                          <span className={`inline-block w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.color} flex-shrink-0 mt-2`}></span>
+                          <span>{detail}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Expand indicator - Mobile only */}
+                  <div className="md:hidden mt-4 pt-4 border-t border-accent/20">
+                    <p className="text-xs text-accent font-semibold">
+                      {expandedIndex === index ? 'Tap to collapse' : 'Tap to expand'}
                     </p>
-                    
-                    {item.details.length > 0 && (
-                      <ul className="space-y-2">
-                        {item.details.map((detail, idx) => (
-                          <li key={idx} className="text-secondary flex items-start">
-                            <span className="inline-block mr-2 text-accent mt-1.5">•</span>
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
                   </div>
                 </div>
+
+                {/* Hover border animation */}
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none`}></div>
+              </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-20 text-center"
+        >
+          <p className="text-secondary mb-6">
+            Ready to transform your business with our services?
+          </p>
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-8 py-3 rounded-xl bg-gradient-to-r from-accent to-accent/80 text-white font-semibold hover:shadow-lg transition-shadow duration-300"
+          >
+            Get Started Today
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
