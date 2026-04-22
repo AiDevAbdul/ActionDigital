@@ -33,6 +33,7 @@ npx prisma migrate dev   # Database migrations
 3. **Motion**: Use `@/lib/motion-shim`, not `framer-motion` (React 19 compatible)
 4. **Imports**: Always use `@/` alias (maps to `src/`)
 5. **Dependencies**: Install with `npm install --legacy-peer-deps`
+6. **ESLint Compatibility**: Keep ESLint at v9.x (not 10.x) - `eslint-plugin-react` doesn't support ESLint 10 yet. Also keep `@eslint/js` at v9.x to match. If upgrading dependencies causes ERESOLVE conflicts, regenerate lock file with `npm install --force`
 
 ## Documentation
 Detailed guides in `docs/` directory:
