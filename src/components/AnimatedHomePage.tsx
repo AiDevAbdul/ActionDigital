@@ -2,7 +2,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import ProjectsSection from '@/components/ProjectsSection';
-import { PartnersSection, ClientFeedbackSection } from '@/components/ClientsPartnersSection';
+import { ClientFeedbackSection } from '@/components/ClientsPartnersSection';
 import StudentSuccessStories from '@/components/StudentSuccessStories';
 import LatestBlogs from '@/components/LatestBlogs';
 import ContactSection from '@/components/ContactSection';
