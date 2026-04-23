@@ -29,9 +29,9 @@ export default function AnimatedHomePage() {
         <ProjectsSection />
       </MotionSection>
 
-      <MotionSection delay={0.5}>
+      {/* <MotionSection delay={0.5}>
         <PartnersSection />
-      </MotionSection>
+      </MotionSection> */}
 
       <MotionSection delay={0.6}>
         <ClientFeedbackSection />
