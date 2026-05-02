@@ -2,7 +2,6 @@ import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
-import importPlugin from "eslint-plugin-import";
 import globals from "globals";
 
 export default [
@@ -10,6 +9,7 @@ export default [
     ignores: [
       "node_modules/**",
       ".next/**",
+      ".vercel/**",
       "out/**",
       "build/**",
       "dist/**",
@@ -27,7 +27,6 @@ export default [
     plugins: {
       react: reactPlugin,
       "react-hooks": reactHooksPlugin,
-      import: importPlugin,
     },
     languageOptions: {
       ecmaVersion: "latest",
