@@ -2,7 +2,7 @@
 import './globals.css';
 import { ThemeProvider } from '@/context/ThemeProvider';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Space_Grotesk, DM_Sans } from 'next/font/google';
 import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -11,7 +11,20 @@ import SessionBanner from '@/components/SessionBanner';
 import { Analytics } from "@vercel/analytics/next"
 import { siteConfig } from '@/lib/site';
 
-const inter = Inter({ subsets: ['latin'] });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  variable: '--font-body',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -62,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
       </head>
-      <body className={`${inter.className} text-primary`}>
+      <body className={`${spaceGrotesk.variable} ${dmSans.variable} font-body text-primary`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
