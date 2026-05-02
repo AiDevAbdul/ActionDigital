@@ -265,7 +265,7 @@ export default function DevSetupSessionPage() {
           transition={{ delay: 0.6 }}
         >
           {!isRegistered ? (
-            <RegistrationForm onSuccess={handleRegistrationSuccess} />
+            <RegistrationForm inline onSuccess={handleRegistrationSuccess} />
           ) : (
             <RegistrationSuccess />
           )}

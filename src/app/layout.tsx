@@ -7,7 +7,6 @@ import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedPageWrapper from '@/components/AnimatedPageWrapper';
-import SessionBanner from '@/components/SessionBanner';
 import { Analytics } from "@vercel/analytics/next"
 import { siteConfig } from '@/lib/site';
 
@@ -81,7 +80,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <ThemeProvider>
-          <SessionBanner />
           <Header />
           <AnimatedPageWrapper>
             {children}
