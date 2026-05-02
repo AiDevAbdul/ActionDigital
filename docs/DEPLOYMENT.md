@@ -2,7 +2,7 @@
 
 ## Vercel Deployment
 
-This project is optimized for Vercel deployment.
+This project is optimized for Vercel deployment. Node.js version: **22.x**.
 
 ## Build Process
 
@@ -12,7 +12,7 @@ npm start                  # Start production server
 ```
 
 - Build uses **Turbopack** for faster compilation
-- All 37 routes successfully generate during build
+- 43 routes successfully generate during build (as of May 2026)
 - Zero security vulnerabilities in dependencies (as of March 2026)
 
 ## Environment Variables
@@ -42,10 +42,31 @@ Configure these variables in Vercel project settings:
 ## Deployment Steps
 
 1. Push code to main branch
-2. Vercel automatically detects changes
+2. Vercel automatically detects changes via GitHub webhook
 3. Build runs with Turbopack
 4. Tests and checks execute
 5. Deploy to production on success
+
+## CLI Fallback (when git-triggered deploy fails)
+
+If the Vercel–GitHub integration is broken, deploy directly from the CLI:
+
+```bash
+vercel --prod --archive=tgz
+```
+
+The `--archive=tgz` flag bundles files into a single tarball to avoid the 5000-file upload limit on the free tier.
+
+## GitHub Integration Troubleshooting
+
+**Symptom:** Deployment errors in ~27ms with "unable to fetch required git information".  
+**Cause:** Vercel's GitHub App lost access to the repository (token expired, app revoked, or repo removed from app scope).  
+**Diagnosis:** Check `gh api /repos/AiDevAbdul/ActionDigital/hooks` — Vercel's webhook will be missing.
+
+**Fix:**
+1. GitHub → Settings → Applications → Installed GitHub Apps → **Vercel** → Configure
+2. Ensure `ActionDigital` is listed under "Repository access" → Save
+3. If that doesn't restore auto-deploys: Vercel dashboard → project Settings → Git → Disconnect → Reconnect to `AiDevAbdul/ActionDigital`
 
 ## Monitoring
 

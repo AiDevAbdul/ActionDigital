@@ -312,4 +312,9 @@ Dedicated AI page — most "techy" feel:
 ---
 
 *Plan created: 2026-05-02*
-*Status: Ready for Phase 1 implementation*
+*Status: **Fully implemented** — all 5 phases complete as of 2026-05-02*
+
+### Implementation Notes
+- `StatCard`, `TestimonialCard`, `ProjectCard`, `GlassInput`, `AnimatedCounter`, `GradientText`, `ScrollMarquee` from the component library table are not yet built as standalone `ui/` components (functionality is inlined in the pages that use them)
+- AI Dev page (`/aidev`) uses a session-registration flow, not the animated particle hero described in the plan
+- Projects page (`/projects`) uses a static grid, not the filterable masonry layout described

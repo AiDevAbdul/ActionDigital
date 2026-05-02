@@ -14,7 +14,8 @@ The project uses Next.js App Router with the following structure:
   - Page components: `Hero`, `About`, `Services`, `ProjectsSection`, `CoursesSection`, etc.
   - Admin components: `ProjectForm`, `ProjectList` (in `admin/` subdirectory)
   - Blog components: `BlogPostContent` (in `blog/` subdirectory)
-  - Shared: `Header`, `AnimatedPageWrapper`, `MotionSection`
+  - Shared: `Header`, `Footer`, `AnimatedPageWrapper`, `MotionSection`
+  - **`ui/`**: Design-system primitives — `GlassCard`, `GlowButton`, `AmbientBlob`, `SectionHeading`, `BentoGrid`, `PillBadge`
 
 - **`src/lib/`**: Utility libraries
   - `db.ts`: Prisma client singleton
