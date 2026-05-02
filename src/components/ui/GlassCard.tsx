@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 type GlowColor = 'orange' | 'indigo' | 'none';
 
-interface GlassCardProps {
+interface GlassCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   glow?: GlowColor;
@@ -18,9 +18,11 @@ export default function GlassCard({
   strong = false,
   hover = false,
   padding = 'p-6',
+  ...rest
 }: GlassCardProps) {
   return (
     <div
+      {...rest}
       className={cn(
         strong ? 'glass-card-strong' : 'glass-card',
         padding,
