@@ -58,24 +58,24 @@ const PartnersSection = () => {
 
   if (loading) {
     return (
-      <section className="section bg-surface">
+      <section className="section" style={{ background: '#090D1A' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent">
               Our Network
             </p>
-            <h2 className="section-title text-primary">
+            <h2 className="section-title" style={{ color: '#F1F5FF' }}>
               Partners & Collaborators
             </h2>
           </div>
-          <div className="h-64 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse"></div>
+          <div className="h-64 rounded-lg animate-pulse" style={{ background: 'rgba(255,255,255,0.06)' }}></div>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="section bg-surface">
+    <section className="section" style={{ background: '#090D1A' }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -199,19 +199,19 @@ const ClientFeedbackSection = () => {
 
   if (loading) {
     return (
-      <section className="section bg-surface">
+      <section className="section" style={{ background: '#0E1426' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent">
               What Our Clients Say
             </p>
-            <h2 className="section-title text-primary">
+            <h2 className="section-title" style={{ color: '#F1F5FF' }}>
               Client Feedback
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[1, 2, 3].map((item) => (
-              <div key={item} className="h-48 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse"></div>
+              <div key={item} className="h-48 rounded-lg animate-pulse" style={{ background: 'rgba(255,255,255,0.06)' }}></div>
             ))}
           </div>
         </div>
@@ -250,7 +250,7 @@ const ClientFeedbackSection = () => {
   };
 
   return (
-    <section className="section bg-surface relative overflow-hidden">
+    <section className="section relative overflow-hidden" style={{ background: '#0E1426' }}>
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-32 -left-32 w-64 h-64 bg-gradient-to-br from-accent/5 to-transparent rounded-full blur-3xl"></div>
@@ -295,7 +295,7 @@ const ClientFeedbackSection = () => {
               onMouseEnter={() => setActiveIndex(index)}
               className="group cursor-pointer h-full"
             >
-              <div className="relative h-full rounded-2xl border border-accent/20 backdrop-blur-sm bg-gradient-to-br from-surface/50 to-surface/30 overflow-hidden transition-all duration-300 hover:border-accent/50">
+              <div className="relative h-full rounded-2xl overflow-hidden transition-all duration-300 hover:border-accent/50" style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(24px)', border: '1px solid rgba(239,126,46,0.15)' }}>
                 {/* Gradient accent line */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 

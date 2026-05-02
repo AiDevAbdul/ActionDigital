@@ -60,7 +60,7 @@ const StudentSuccessStories = () => {
       <Star
         key={index}
         className={`w-4 h-4 ${
-          index < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
+          index < rating ? 'text-yellow-400 fill-yellow-400' : 'text-white/20'
         }`}
       />
     ));
@@ -73,7 +73,7 @@ const StudentSuccessStories = () => {
   };
 
   return (
-    <section id="success-stories" className="section bg-surface">
+    <section id="success-stories" className="section" style={{ background: '#090D1A' }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Section Title */}

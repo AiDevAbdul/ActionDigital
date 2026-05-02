@@ -7,7 +7,7 @@ export default function AnimatedLogo() {
   return (
     <motion.div
       // Use Framer Motion for the container's entrance animation
-      className="flex items-center justify-center select-none"
+      className="flex items-center justify-center select-none cursor-pointer"
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}

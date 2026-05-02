@@ -44,7 +44,9 @@ export default function Header() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16 md:h-[70px]">
 
           {/* Logo */}
-          <AnimatedLogo />
+          <Link href="/" aria-label="Go to homepage">
+            <AnimatedLogo />
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
