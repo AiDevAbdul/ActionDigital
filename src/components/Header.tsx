@@ -11,11 +11,13 @@ type NavLink = { name: string; href: string };
 const navLinks: NavLink[] = [
   { name: 'About',    href: '/about' },
   { name: 'Courses',  href: '/courses' },
+  { name: 'Pricing',  href: '/pricing' },
   { name: 'Services', href: '/services' },
   { name: 'Projects', href: '/projects' },
   { name: 'AI Dev',   href: '/aidev' },
   { name: 'Blog',     href: '/blog' },
   { name: 'Team',     href: '/team' },
+  { name: 'FAQ',      href: '/faq' },
 ];
 
 export default function Header() {
