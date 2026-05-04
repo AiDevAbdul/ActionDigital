@@ -32,6 +32,12 @@ export default function AdminLayout({
           >
             Session Registrations
           </Link>
+          <Link
+            href="/admin/messages"
+            className="py-3 px-2 text-secondary hover:text-primary border-b-2 border-transparent hover:border-primary transition-colors"
+          >
+            Messages
+          </Link>
         </div>
       </nav>
 
