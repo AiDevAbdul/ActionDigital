@@ -1,23 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 import { cookies } from 'next/headers';
+import { verifyAdminToken, getAdminCookieName } from '@/lib/auth';
 
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
   try {
-    // Check authentication
-    const cookieStore = await cookies();
-    const token = cookieStore.get('adi_admin')?.value;
+    const secret = process.env.ADMIN_JWT_SECRET;
+    if (!secret) {
+      return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
+    }
 
-    if (!token) {
+    const cookieStore = await cookies();
+    const token = cookieStore.get(getAdminCookieName())?.value;
+    const payload = token ? await verifyAdminToken(token, secret) : null;
+
+    if (!payload) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Get all registrations
     const registrations = await prisma.sessionRegistration.findMany({
       orderBy: { registeredAt: 'desc' },
     });
 
-    // Create CSV content
     const headers = ['Name', 'Email', 'Phone', 'Experience', 'Registered At'];
     const rows = registrations.map((reg) => [
       reg.name,
@@ -41,9 +45,6 @@ export async function GET(request: NextRequest) {
     });
   } catch (error) {
     console.error('Export error:', error);
-    return NextResponse.json(
-      { error: 'Failed to export registrations' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to export registrations' }, { status: 500 });
   }
 }

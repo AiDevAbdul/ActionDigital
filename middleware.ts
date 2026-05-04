@@ -3,7 +3,9 @@ import { getAdminCookieName, verifyAdminToken } from './src/lib/auth';
 
 const isWriteMethod = (method: string) => ['POST', 'PUT', 'PATCH', 'DELETE'].includes(method);
 
-const isAdminRoute = (pathname: string) => pathname.startsWith('/admin') && pathname !== '/admin/login';
+const PUBLIC_ADMIN_PATHS = ['/admin/login', '/admin/forgot-password', '/admin/reset-password'];
+const isAdminRoute = (pathname: string) =>
+  pathname.startsWith('/admin') && !PUBLIC_ADMIN_PATHS.includes(pathname);
 
 const isProtectedApiRoute = (pathname: string) => pathname.startsWith('/api/projects');
 
