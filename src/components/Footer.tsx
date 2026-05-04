@@ -100,14 +100,14 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               <li className="flex items-start gap-2 text-[#8892A4] text-sm">
                 <Mail className="w-4 h-4 mt-0.5 text-[#EF7E2E] shrink-0" />
-                <a href="mailto:hello@actiondigital.com" className="hover:text-[#EF7E2E] transition-colors">
-                  hello@actiondigital.com
+                <a href="mailto:coord_adi@outlook.com" className="hover:text-[#EF7E2E] transition-colors">
+                  coord_adi@outlook.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-[#8892A4] text-sm">
                 <Phone className="w-4 h-4 mt-0.5 text-[#EF7E2E] shrink-0" />
-                <a href="tel:+923001234567" className="hover:text-[#EF7E2E] transition-colors">
-                  +92 300 123 4567
+                <a href="tel:+923189532843" className="hover:text-[#EF7E2E] transition-colors">
+                  +92 3189532843
                 </a>
               </li>
               <li className="flex items-start gap-2 text-[#8892A4] text-sm">

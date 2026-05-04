@@ -7,8 +7,8 @@ import Link from 'next/link';
 import emailjs from '@emailjs/browser';
 
 const socialLinks = [
-  { icon: Mail, href: 'mailto:info@actiondigitalinstitute.com', label: 'Email' },
-  { icon: Smartphone, href: 'tel:+15551234567', label: 'Phone' },
+  { icon: Mail, href: 'mailto:coord_adi@outlook.com', label: 'Email' },
+  { icon: Smartphone, href: 'tel:+923189532843', label: 'Phone' },
   { icon: Linkedin, href: 'https://linkedin.com/company/actiondigitalinstitute', label: 'LinkedIn' },
   { icon: Facebook, href: 'https://facebook.com/actiondigitalinstitute', label: 'Facebook' },
   { icon: Youtube, href: 'https://youtube.com/actiondigitalinstitute', label: 'YouTube' },

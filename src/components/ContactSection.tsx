@@ -8,7 +8,7 @@ import GlassCard from '@/components/ui/GlassCard';
 import AmbientBlob from '@/components/ui/AmbientBlob';
 
 const CONTACT_INFO = [
-  { icon: Mail,  label: 'Email',        value: 'MD_ADI@OUTLOOK.COM',                href: 'mailto:MD_ADI@OUTLOOK.COM' },
+  { icon: Mail,  label: 'Email',        value: 'coord_adi@outlook.com',             href: 'mailto:coord_adi@outlook.com' },
   { icon: Phone, label: 'Phone',        value: '+92 318 9532843',                   href: 'tel:+923189532843' },
   { icon: MapPin,label: 'Address',      value: 'House 98F, Zaryab Colony, Faqirabad No 2, Peshawar, KPK, Pakistan', href: null },
   { icon: Clock, label: 'Office Hours', value: 'Mon–Fri: 9 AM–6 PM · Sat: 10 AM–2 PM · Sun: Closed', href: null },
