@@ -7,6 +7,7 @@
 import Link from 'next/link';
 import { motion } from '@/lib/motion-shim';
 import { Star, GraduationCap, Briefcase, Award, Users, BriefcaseBusiness } from 'lucide-react';
+import SectionHeading from '@/components/ui/SectionHeading';
 import { useState } from 'react';
 
 type SuccessStory = {
@@ -84,15 +85,11 @@ const StudentSuccessStories = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Success Stories
-          </p>
-          <h2 className="section-title text-primary">
-            Our Students' Journeys
-          </h2>
-          <p className="section-subtitle text-secondary">
-            Real results from our 10+ essential digital skills training programs with incubation support
-          </p>
+          <SectionHeading
+            eyebrow="Success Stories"
+            heading="Our Students' Journeys"
+            subtext="Real results from our 10+ essential digital skills training programs with incubation support"
+          />
         </motion.div>
 
         {/* Stats Section */}
@@ -105,23 +102,23 @@ const StudentSuccessStories = () => {
         >
           <div className="glass-card card p-6">
             <Users className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">1000+</h3>
-            <p className="text-secondary">Students Trained</p>
+            <h3 className="text-3xl font-bold text-[#F1F5FF]">1000+</h3>
+            <p className="text-[#8892A4]">Students Trained</p>
           </div>
           <div className="glass-card card p-6">
             <Briefcase className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">95%</h3>
-            <p className="text-secondary">Satisfaction Rate</p>
+            <h3 className="text-3xl font-bold text-[#F1F5FF]">95%</h3>
+            <p className="text-[#8892A4]">Satisfaction Rate</p>
           </div>
           <div className="glass-card card p-6">
             <GraduationCap className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">10+</h3>
-            <p className="text-secondary">Skills</p>
+            <h3 className="text-3xl font-bold text-[#F1F5FF]">10+</h3>
+            <p className="text-[#8892A4]">Skills</p>
           </div>
           <div className="glass-card card p-6">
             <BriefcaseBusiness className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-primary">50+</h3>
-            <p className="text-secondary">Startups</p>
+            <h3 className="text-3xl font-bold text-[#F1F5FF]">50+</h3>
+            <p className="text-[#8892A4]">Startups</p>
           </div>
 
         </motion.div>
@@ -140,9 +137,9 @@ const StudentSuccessStories = () => {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-bold text-primary">{story.name}</h3>
+                  <h3 className="text-xl font-bold text-[#F1F5FF]">{story.name}</h3>
                   <p className="text-accent font-medium">{story.title}</p>
-                  <span className="text-sm text-secondary italic">Completed: {story.program}</span>
+                  <span className="text-sm text-[#8892A4] italic">Completed: {story.program}</span>
                 </div>
                 <div className="flex">
                   {renderStars(story.rating)}
@@ -150,13 +147,13 @@ const StudentSuccessStories = () => {
               </div>
 
               <div className="mb-4">
-                <h4 className="font-bold text-primary mb-2">Journey:</h4>
-                <p className="text-secondary">{story.story}</p>
+                <h4 className="font-bold text-[#F1F5FF] mb-2">Journey:</h4>
+                <p className="text-[#8892A4]">{story.story}</p>
               </div>
 
               <div className="mb-4">
-                <h4 className="font-bold text-primary mb-2">Results:</h4>
-                <p className="text-secondary">{story.result}</p>
+                <h4 className="font-bold text-[#F1F5FF] mb-2">Results:</h4>
+                <p className="text-[#8892A4]">{story.result}</p>
               </div>
 
               <div className="mt-auto pt-4 border-t border-default">
@@ -177,8 +174,8 @@ const StudentSuccessStories = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-16"
         >
-          <h3 className="text-2xl font-bold text-primary mb-4">Ready to Start Your Success Story?</h3>
-          <p className="text-secondary max-w-2xl mx-auto mb-8">
+          <h3 className="text-2xl font-bold text-[#F1F5FF] mb-4">Ready to Start Your Success Story?</h3>
+          <p className="text-[#8892A4] max-w-2xl mx-auto mb-8">
             Join hundreds of students who have transformed their lives with our comprehensive training programs and 1-month incubation support. We empower individuals and businesses, especially women entrepreneurs, through transformative IT & AI skills that transcend barriers to poverty and help emerge as visionary business leaders of the digital age.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">

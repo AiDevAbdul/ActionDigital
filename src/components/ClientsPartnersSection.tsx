@@ -4,6 +4,7 @@ import { motion } from '@/lib/motion-shim';
 import { Star } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 type Partner = {
   id: string;
@@ -61,12 +62,7 @@ const PartnersSection = () => {
       <section className="section" style={{ background: '#090D1A' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-              Our Network
-            </p>
-            <h2 className="section-title" style={{ color: '#F1F5FF' }}>
-              Partners & Collaborators
-            </h2>
+            <SectionHeading eyebrow="Our Network" heading="Partners & Collaborators" />
           </div>
           <div className="h-64 rounded-lg animate-pulse" style={{ background: 'rgba(255,255,255,0.06)' }}></div>
         </div>
@@ -85,15 +81,11 @@ const PartnersSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Our Network
-          </p>
-          <h2 className="section-title text-primary">
-            Partners & Collaborators
-          </h2>
-          <p className="section-subtitle text-secondary">
-            Trusted partners and collaborators in our ecosystem
-          </p>
+          <SectionHeading
+            eyebrow="Our Network"
+            heading="Partners & Collaborators"
+            subtext="Trusted partners and collaborators in our ecosystem"
+          />
         </motion.div>
 
         {/* Partners Carousel - Continuous Sliding Animation */}
@@ -202,12 +194,7 @@ const ClientFeedbackSection = () => {
       <section className="section" style={{ background: '#0E1426' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-              What Our Clients Say
-            </p>
-            <h2 className="section-title" style={{ color: '#F1F5FF' }}>
-              Client Feedback
-            </h2>
+            <SectionHeading eyebrow="What Our Clients Say" heading="Client Feedback" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[1, 2, 3].map((item) => (
@@ -266,17 +253,11 @@ const ClientFeedbackSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <div className="inline-block mb-4">
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent px-4 py-2 rounded-full bg-accent/10 border border-accent/30">
-              What Our Clients Say
-            </p>
-          </div>
-          <h2 className="section-title text-primary mb-4">
-            Client Feedback
-          </h2>
-          <p className="section-subtitle text-secondary max-w-2xl mx-auto">
-            Real stories from clients who've transformed their business with our solutions
-          </p>
+          <SectionHeading
+            eyebrow="What Our Clients Say"
+            heading="Client Feedback"
+            subtext="Real stories from clients who've transformed their business with our solutions"
+          />
         </motion.div>
 
         {/* Feedback Cards Grid */}
@@ -295,7 +276,7 @@ const ClientFeedbackSection = () => {
               onMouseEnter={() => setActiveIndex(index)}
               className="group cursor-pointer h-full"
             >
-              <div className="relative h-full rounded-2xl overflow-hidden transition-all duration-300 hover:border-accent/50" style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(24px)', border: '1px solid rgba(239,126,46,0.15)' }}>
+              <div className="relative h-full glass-card overflow-hidden transition-all duration-300" style={{ borderColor: 'rgba(239,126,46,0.15)' }}>
                 {/* Gradient accent line */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -321,7 +302,7 @@ const ClientFeedbackSection = () => {
                   </div>
 
                   {/* Feedback Text */}
-                  <p className="text-secondary mb-8 flex-grow leading-relaxed text-sm md:text-base">
+                  <p className="text-[#8892A4] mb-8 flex-grow leading-relaxed text-sm md:text-base">
                     {item.feedback}
                   </p>
 
@@ -337,10 +318,10 @@ const ClientFeedbackSection = () => {
                       {item.name.charAt(0)}
                     </motion.div>
                     <div className="min-w-0">
-                      <p className="font-semibold text-primary text-sm truncate">
+                      <p className="font-semibold text-[#F1F5FF] text-sm truncate">
                         {item.name}
                       </p>
-                      <p className="text-xs text-secondary truncate">
+                      <p className="text-xs text-[#8892A4] truncate">
                         {item.company}
                       </p>
                     </div>
@@ -389,19 +370,19 @@ const ClientFeedbackSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <p className="text-3xl font-bold text-accent mb-2">100%</p>
-              <p className="text-sm text-secondary">5-Star Ratings</p>
+              <p className="text-sm text-[#8892A4]">5-Star Ratings</p>
             </div>
             <div>
               <p className="text-3xl font-bold text-accent mb-2">{displayFeedback.length}+</p>
-              <p className="text-sm text-secondary">Happy Clients</p>
+              <p className="text-sm text-[#8892A4]">Happy Clients</p>
             </div>
             <div>
               <p className="text-3xl font-bold text-accent mb-2">98%</p>
-              <p className="text-sm text-secondary">Satisfaction Rate</p>
+              <p className="text-sm text-[#8892A4]">Satisfaction Rate</p>
             </div>
             <div>
               <p className="text-3xl font-bold text-accent mb-2">24/7</p>
-              <p className="text-sm text-secondary">Support Available</p>
+              <p className="text-sm text-[#8892A4]">Support Available</p>
             </div>
           </div>
         </motion.div>

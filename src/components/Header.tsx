@@ -37,8 +37,8 @@ export default function Header() {
         className={[
           'sticky top-0 z-50 w-full transition-all duration-[280ms]',
           scrolled
-            ? 'bg-[rgba(9,13,26,0.85)] backdrop-blur-2xl border-b border-white/8 shadow-[0_4px_30px_rgba(0,0,0,0.35)]'
-            : 'bg-transparent border-b border-transparent',
+            ? 'bg-[rgba(9,13,26,0.92)] backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.35)]'
+            : 'bg-[rgba(5,7,15,0.55)] backdrop-blur-md border-b border-white/[0.06]',
         ].join(' ')}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16 md:h-[70px]">
