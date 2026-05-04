@@ -8,6 +8,7 @@ import ContactSection from '@/components/ContactSection';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { ClientFeedbackSection } from '@/components/ClientsPartnersSection';
 import StudentSuccessStories from '@/components/StudentSuccessStories';
+import EventsStrip from '@/components/EventsStrip';
 
 export default function AnimatedHomePage() {
   return (
@@ -19,6 +20,7 @@ export default function AnimatedHomePage() {
       <ClientFeedbackSection />
       <Testimonials />
       <StudentSuccessStories />
+      <EventsStrip />
       <LatestBlogs />
       <ContactSection />
       <WhatsAppButton />
