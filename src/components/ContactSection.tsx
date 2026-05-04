@@ -63,12 +63,20 @@ export default function ContactSection() {
     setSubmitting(true);
     setError('');
     try {
-      await new Promise((r) => setTimeout(r, 1400));
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error ?? 'Failed to send message.');
+      }
       setSuccess(true);
       setForm({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSuccess(false), 6000);
-    } catch {
-      setError('Failed to send message. Please try again later.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again later.');
     } finally {
       setSubmitting(false);
     }

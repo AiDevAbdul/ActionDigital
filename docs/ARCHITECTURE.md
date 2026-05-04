@@ -5,10 +5,10 @@
 The project uses Next.js App Router with the following structure:
 
 - **`src/app/`**: Next.js pages and API routes
-  - Public pages: `/`, `/about`, `/services`, `/projects`, `/blog`, `/courses`, `/contact`
+  - Public pages: `/`, `/about`, `/services`, `/projects`, `/blog`, `/courses`, `/contact`, `/pricing`, `/faq`, `/aidev`, `/events`
   - Admin pages: `/admin`, `/admin/login` (protected by middleware)
   - Dashboard: `/dashboard` (student LMS interface)
-  - API routes: `/api/admin/*`, `/api/projects/*`, `/api/lms/*`, `/api/payments/*`
+  - API routes: `/api/admin/*`, `/api/contact`, `/api/projects/*`, `/api/lms/*`, `/api/payments/*`
 
 - **`src/components/`**: React components
   - Page components: `Hero`, `About`, `Services`, `ProjectsSection`, `CoursesSection`, etc.

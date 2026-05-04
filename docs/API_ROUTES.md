@@ -8,6 +8,9 @@ API routes follow standard REST patterns:
 - `POST /api/admin/login` - Authenticate admin user
 - `POST /api/admin/logout` - Clear admin session
 
+### Contact Route
+- `POST /api/contact` - Submit contact form message (saves to DB, sends email notification if SMTP is configured)
+
 ### Projects Routes
 - `GET /api/projects` - Get all projects
 - `POST /api/projects` - Create new project (requires auth)

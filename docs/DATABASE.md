@@ -2,10 +2,11 @@
 
 ## Schema Overview
 
-The Prisma schema includes two main domains:
+The Prisma schema includes three main domains:
 
 1. **Portfolio/Projects**: `Project` model for showcasing work
-2. **LMS (Learning Management System)**: Full course platform with:
+2. **Contact**: `ContactMessage` model — stores submissions from the /contact page
+3. **LMS (Learning Management System)**: Full course platform with:
    - `User` (with roles: ADMIN, INSTRUCTOR, STUDENT)
    - `Course` → `Module` → `Lesson` hierarchy
    - `Enrollment`, `LessonProgress`, `Certificate` for student tracking

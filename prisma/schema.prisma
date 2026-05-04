@@ -245,3 +245,13 @@ model SessionRegistration {
   registeredAt DateTime @default(now())
   attended    Boolean? // track if they showed up
 }
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
