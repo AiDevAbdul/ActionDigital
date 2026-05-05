@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
   try {
     const students = await db.user.findMany({
       where: { role: 'STUDENT' },
-      select: { id: true, name: true, email: true },
+      select: { id: true, name: true, email: true, createdAt: true, _count: { select: { enrollments: true } } },
       orderBy: { createdAt: 'desc' },
     });
     return Response.json(students);

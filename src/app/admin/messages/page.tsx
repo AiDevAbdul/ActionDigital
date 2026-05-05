@@ -18,28 +18,23 @@ export default async function ContactMessagesPage() {
   const unread = messages.filter((m) => !m.read).length;
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-5xl space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Contact Messages</h1>
-        <p className="text-slate-600 dark:text-slate-400 mt-1">
-          Messages submitted via the /contact page
-        </p>
+        <h1 className="text-2xl font-bold text-white">Contact Messages</h1>
+        <p className="text-sm text-white/40 mt-0.5">Submitted via the /contact page</p>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow">
-          <p className="text-sm text-slate-600 dark:text-slate-400">Total</p>
-          <p className="text-3xl font-bold text-slate-900 dark:text-white">{messages.length}</p>
-        </div>
-        <div className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow">
-          <p className="text-sm text-slate-600 dark:text-slate-400">Unread</p>
-          <p className="text-3xl font-bold text-blue-600">{unread}</p>
-        </div>
-        <div className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow">
-          <p className="text-sm text-slate-600 dark:text-slate-400">Read</p>
-          <p className="text-3xl font-bold text-green-600">{messages.length - unread}</p>
-        </div>
+      <div className="grid grid-cols-3 gap-3">
+        {[
+          { label: 'Total', value: messages.length, color: 'text-white' },
+          { label: 'Unread', value: unread, color: 'text-orange-400' },
+          { label: 'Read', value: messages.length - unread, color: 'text-green-400' },
+        ].map((s) => (
+          <div key={s.label} className="rounded-2xl bg-white/4 border border-white/8 p-4">
+            <p className="text-xs text-white/40 mb-1">{s.label}</p>
+            <p className={`text-2xl font-bold ${s.color}`}>{s.value}</p>
+          </div>
+        ))}
       </div>
 
       <ContactMessagesTable messages={messages} />
